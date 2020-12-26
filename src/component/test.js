@@ -4,6 +4,7 @@ const test = () =>{
     <>
     <div>Hello, branch ^^ changed!!</div>
     <div>another compoter</div>
+    <div>master branch?</div>
     </>
   )
 
