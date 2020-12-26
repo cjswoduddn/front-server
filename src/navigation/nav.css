@@ -1,0 +1,29 @@
+.nav-top{
+  position: fixed;
+  height: 102px;
+  background-color: white;
+  top: 0ch;
+}
+.nav-bottom{
+  position: fixed;
+  height: 60px;
+  background-color: white;
+  top: 0ch;
+}
+
+.nav-ul{
+  float: right;
+}
+.nav-li{
+  align-items: flex-end;
+  display: inline;
+}
+
+.nav-link{
+  font-size: 20px;
+  width: 200px;
+  color: gray;
+  text-decoration: none;
+  text-decoration: none;
+  padding: 20px;
+}
