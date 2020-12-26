@@ -5,6 +5,7 @@ const test = () =>{
     <div>Hello, branch ^^ changed!!</div>
     <div>another compoter</div>
     <div>third computer</div>
+    <div>secon computer</div>
     </>
   )
 
