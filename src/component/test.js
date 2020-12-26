@@ -6,6 +6,7 @@ const test = () =>{
     <div>another compoter</div>
     <div>master branch?</div>
     <div>hello</div>
+    <div>hello</div>
     </>
   )
 
