@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Grid } from '@material-ui/core';
 import './nav.css';
-import BigImage from './images/big.png';
-import SmallImage from './images/small.png';
+import BigImage from '../factory/images/big.png';
+import SmallImage from '../factory/images/small.png';
 import NavItem from './NavItem';
 import { Link } from 'react-router-dom';
 
