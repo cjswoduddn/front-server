@@ -2,11 +2,11 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { Grid } from '@material-ui/core';
 
-import Nav from './navigation/Nav';
-import Accounts from './accounts/Accounts';
-import Home from './home/Home';
-import HeadHunt from './headhunt/HeadHunt';
-import Template from './template/Template';
+import Nav from './component/navigation/Nav';
+import Accounts from './component/accounts/Accounts';
+import Home from './component/home/Home';
+import HeadHunt from './component/headhunt/HeadHunt';
+import Template from './component/template/Template';
 
 function App() {
   return (
