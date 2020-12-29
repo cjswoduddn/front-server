@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import FullpageContext from './FullpageContext';
-import logo from "../factory/images/logotem2.png";
+import logo from "../../factory/images/logotem2.png";
 import {Link} from "react-router-dom";
 
 const FullpageSectionContext = React.createContext();
