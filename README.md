@@ -9,7 +9,7 @@ In the project directory, you can run:
 ### `npm install` 
 ### `npm start`
 
-## Learn More
+## Released
 
 ### ~ 2020. 12. 31
 
