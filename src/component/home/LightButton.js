@@ -1,5 +1,5 @@
 import React from "react";
-import './LightButton.css'
+import './lightbutton.css'
 
 function LightButton() {
       return (

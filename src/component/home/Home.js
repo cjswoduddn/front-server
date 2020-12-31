@@ -1,29 +1,34 @@
-import React from "react";
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Fullpage from "../fullpage/FullPage";
-import FullPageSections from "../fullpage/FullPageSections";
-import FullpageSection from "../fullpage/FullpageSection";
-import FullpageNavigation from "../fullpage/FullpageNavigation";
+import ReactFullpage from '@fullpage/react-fullpage';
+
 import Grid from "@material-ui/core/Grid";
-
-// import logo from  '../../factory/images/logotem2.png'
-import back3 from '../../factory/images/back3.gif'
-import ls2 from '../../factory/images/ls5.jpg'
-import sang from '../../factory/images/sang.png'
-import min from '../../factory/images/min.png'
-import woo from '../..//factory/images/woo.png'
-import {Typography} from "@material-ui/core";
+import back3 from '../../factory/images/back3.gif';
 import LightButton from "./LightButton";
+import ls2 from '../../factory/images/ls5.jpg';
+import {Typography} from "@material-ui/core";
+import sang from '../../factory/images/sang.png';
+import min from '../../factory/images/min.png';
+import woo from '../../factory/images/woo.png';
+import logo from '../../factory/images/logotem2.png';
 
-function Home() {
-  return (
-    <Fullpage>
-        <FullpageNavigation></FullpageNavigation>
-        <FullPageSections>
-            <FullpageSection style={{
+const Home = () => (
+  <>
+
+    {/* <img src={logo} style={{position: "fixed", zIndex: 1}}></img> */}
+    <ReactFullpage
+      //fullpage options
+      scrollingSpeed = {1500} /* Options here */
+      navigation
+
+      render={({ state, fullpageApi }) => {
+        return (
+          <ReactFullpage.Wrapper>
+            <div 
+                className="section"
+                style={{
                 backgroundImage: `url(${back3})`,
-            // background: 'linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), `url(${back3})`',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center', padding: '1em'}}>
 
@@ -34,10 +39,10 @@ function Home() {
                         </Link>
                     </Grid>
                 </Grid>
-
-            </FullpageSection>
-
-            <FullpageSection style={{backgroundColor: 'rgb(235, 234, 229)', padding: '1em',}}>
+            </div>
+            <div 
+            className="section"
+            style={{backgroundColor: 'rgb(235, 234, 229)', padding: '1em',}}>
                 <Grid container direction="row" justify="center" alignItems="center" style={{minHeight: '75vh'}}>
 
                     <Grid item xs={5} style={{marginRight: '5%'}}>
@@ -55,10 +60,10 @@ function Home() {
                         <img src={ls2} width='100%' />
                     </Grid>
                 </Grid>
-
-            </FullpageSection>
-
-            <FullpageSection style={{backgroundColor: 'rgb(25,25,25)', padding: '1em',}}>
+            </div>
+            <div 
+            className="section"
+            style={{backgroundColor: 'rgb(25,25,25)', padding: '1em',}}>
 
                 <Grid container direction="row" justify="center" alignItems="center" style={{textAlign: "center"}}>
                     <Grid item xs={12} style={{marginBottom: '2%'}}>
@@ -87,11 +92,14 @@ function Home() {
                     </Grid>
 
                 </Grid>
-
-            </FullpageSection>
-        </FullPageSections>
-    </Fullpage>
-  );
-}
+            </div>
+          </ReactFullpage.Wrapper>
+        );
+      }}
+    />
+  </>
+);
 
 export default Home;
+
+// 참고자료: https://github.com/alvarotrigo/react-fullpage
