@@ -15,55 +15,43 @@ import logo from '../../factory/images/logotem2.png';
 
 const Home = () => (
   <>
+      <img src={logo} style={{height: '10%', position: "fixed", zIndex: 1, margin: '1%'}}></img>
+      <ReactFullpage
+          scrollingSpeed = {800} navigation
+          render={({ state, fullpageApi }) => {
+              return (
+                  <ReactFullpage.Wrapper>
+                      <div className="section"
+                          style={{backgroundImage: `url(${back3})`, backgroundSize: 'cover', backgroundPosition: 'center', padding: '1em'}}>
 
-    {/* <img src={logo} style={{position: "fixed", zIndex: 1}}></img> */}
-    <ReactFullpage
-      //fullpage options
-      scrollingSpeed = {1500} /* Options here */
-      navigation
+                          <Grid container direction="column" justify="center" alignItems="center" style={{minHeight: '75vh'}}>
+                              <Grid item xs={5}>
+                                  <Link to="/template">
+                                      <LightButton />
+                                  </Link>
+                              </Grid>
+                          </Grid>
+                      </div>
 
-      render={({ state, fullpageApi }) => {
-        return (
-          <ReactFullpage.Wrapper>
-            <div 
-                className="section"
-                style={{
-                backgroundImage: `url(${back3})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center', padding: '1em'}}>
+                      <div className="section" style={{backgroundColor: 'rgb(235, 234, 229)', padding: '1em',}}>
+                          <Grid container direction="row" justify="center" alignItems="center" style={{minHeight: '75vh'}}>
+                              <Grid item xs={5} style={{marginRight: '5%'}}>
+                                  <Grid container direction="column">
+                                      <Grid item>
+                                          <Typography variant="h2" style={{float: 'right', fontWeight: 900}}>FEF</Typography>
+                                      </Grid>
+                                      <Grid item>
+                                          <Typography variant="h4" style={{float: 'right', fontWeight: 900}}>Fast Easy Free</Typography>
+                                      </Grid>
+                                  </Grid>
+                              </Grid>
+                              <Grid item xs={5} style={{marginTop: '1%'}}>
+                                  <img src={ls2} width='100%' />
+                              </Grid>
+                          </Grid>
+                      </div>
 
-                <Grid container direction="column" justify="center" alignItems="center" style={{minHeight: '75vh'}}>
-                    <Grid item xs={5}>
-                        <Link to="/template">
-                            <LightButton />
-                        </Link>
-                    </Grid>
-                </Grid>
-            </div>
-            <div 
-            className="section"
-            style={{backgroundColor: 'rgb(235, 234, 229)', padding: '1em',}}>
-                <Grid container direction="row" justify="center" alignItems="center" style={{minHeight: '75vh'}}>
-
-                    <Grid item xs={5} style={{marginRight: '5%'}}>
-                        <Grid container direction="column">
-                            <Grid item>
-                                <Typography variant="h2" style={{float: 'right', fontWeight: 900}}>FEF</Typography>
-                            </Grid>
-                            <Grid item>
-                                <Typography variant="h4" style={{float: 'right', fontWeight: 900}}>Fast Easy Free</Typography>
-                            </Grid>
-                        </Grid>
-
-                    </Grid>
-                    <Grid item xs={5} style={{marginTop: '1%'}}>
-                        <img src={ls2} width='100%' />
-                    </Grid>
-                </Grid>
-            </div>
-            <div 
-            className="section"
-            style={{backgroundColor: 'rgb(25,25,25)', padding: '1em',}}>
+                      <div className="section" style={{backgroundColor: 'rgb(25,25,25)', padding: '1em',}}>
 
                 <Grid container direction="row" justify="center" alignItems="center" style={{textAlign: "center"}}>
                     <Grid item xs={12} style={{marginBottom: '2%'}}>
