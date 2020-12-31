@@ -1,75 +1,105 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import ReactFullpage from '@fullpage/react-fullpage';
-// import Styles from './styles.css';
 
-const SEL = 'custom-section';
-const SECTION_SEL = `.${SEL}`;
+import Grid from "@material-ui/core/Grid";
+import back3 from '../../factory/images/back3.gif';
+import LightButton from "./LightButton";
+import ls2 from '../../factory/images/ls5.jpg';
+import {Typography} from "@material-ui/core";
+import sang from '../../factory/images/sang.png';
+import min from '../../factory/images/min.png';
+import woo from '../../factory/images/woo.png';
+import logo from '../../factory/images/logotem2.png';
 
+const Home = () => (
+  <>
 
-const originalColors = ['#ff5f45', '#0798ec', '#fc6c7c', '#435b71', 'orange', 'blue', 'purple', 'yellow'];
+    {/* <img src={logo} style={{position: "fixed", zIndex: 1}}></img> */}
+    <ReactFullpage
+      //fullpage options
+      scrollingSpeed = {1500} /* Options here */
+      navigation
 
-class Home extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      sectionsColor: [...originalColors],
-      fullpages: [
-        {
-          text: 'Section 1',
-        },
-        {
-          text: 'Section 2',
-        },
-        {
-          text: 'Section 3',
-        }
-      ],
-    };
-  }
+      render={({ state, fullpageApi }) => {
+        return (
+          <ReactFullpage.Wrapper>
+            <div 
+                className="section"
+                style={{
+                backgroundImage: `url(${back3})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center', padding: '1em'}}>
 
- 
+                <Grid container direction="column" justify="center" alignItems="center" style={{minHeight: '75vh'}}>
+                    <Grid item xs={5}>
+                        <Link to="/template">
+                            <LightButton />
+                        </Link>
+                    </Grid>
+                </Grid>
+            </div>
+            <div 
+            className="section"
+            style={{backgroundColor: 'rgb(235, 234, 229)', padding: '1em',}}>
+                <Grid container direction="row" justify="center" alignItems="center" style={{minHeight: '75vh'}}>
 
-  render() {
-    const { fullpages } = this.state;
+                    <Grid item xs={5} style={{marginRight: '5%'}}>
+                        <Grid container direction="column">
+                            <Grid item>
+                                <Typography variant="h2" style={{float: 'right', fontWeight: 900}}>FEF</Typography>
+                            </Grid>
+                            <Grid item>
+                                <Typography variant="h4" style={{float: 'right', fontWeight: 900}}>Fast Easy Free</Typography>
+                            </Grid>
+                        </Grid>
 
-    if (!fullpages.length) {
-      return null;
-    }
+                    </Grid>
+                    <Grid item xs={5} style={{marginTop: '1%'}}>
+                        <img src={ls2} width='100%' />
+                    </Grid>
+                </Grid>
+            </div>
+            <div 
+            className="section"
+            style={{backgroundColor: 'rgb(25,25,25)', padding: '1em',}}>
 
-    const Menu = () => (
-      <div
-        className="menu"
-        style={{
-          position: 'fixed',
-          top: 0,
-          zIndex: 100,
-        }}
-      >
-        <h1>logo</h1>
-      </div>
-    );
+                <Grid container direction="row" justify="center" alignItems="center" style={{textAlign: "center"}}>
+                    <Grid item xs={12} style={{marginBottom: '2%'}}>
+                        <Typography variant="h3" style={{fontSpacing: 5, fontWeight: 900, padding: 0, color: 'white', fontVariant: 'small-caps'}}>creator team</Typography>
+                    </Grid>
 
-    return (
-      <>
-        <Menu />
-        <ReactFullpage
-          navigation
-          sectionSelector={SECTION_SEL}
-          sectionsColor={this.state.sectionsColor}
+                    <Grid item xs={3} md={3} style={{marginLeft: '8%'}}>
+                        <img src={sang} width='100%' style={{borderRadius: '50%'}} />
+                        <Typography variant="h4" style={{color: 'white', fontVariant: 'small-caps'}}>jisang yu</Typography>
+                        <Typography variant="h5" style={{color: 'white', fontVariant: 'small-caps'}}>economics</Typography>
+                        <Typography variant="h6" style={{color: 'white', fontVariant: 'small-caps'}}>jisang yu</Typography>
+                    </Grid>
 
-          render={comp => (
-            <ReactFullpage.Wrapper>
-              {fullpages.map(({ text }) => (
-                <div key={text} className={SEL}>
-                  <h1>{text}</h1>
-                </div>
-              ))}
-            </ReactFullpage.Wrapper>
-          )}
-        />
-      </>
-    );
-  }
-}
+                    <Grid item xs={3} md={3} style={{marginRight: '3%', marginLeft: '3%'}}>
+                        <img src={woo} width='100%' style={{borderRadius: '50%'}} />
+                        <Typography variant="h4" style={{color: 'white', fontVariant: 'small-caps'}}>youngwoo choi</Typography>
+                        <Typography variant="h5" style={{color: 'white', fontVariant: 'small-caps'}}>computer science</Typography>
+                        <Typography variant="h6" style={{color: 'white', fontVariant: 'small-caps'}}>youngwoo choi</Typography>
+                    </Grid>
+
+                    <Grid item xs={3} md={3} style={{marginRight: '8%'}}>
+                        <img src={min} width='100%' style={{borderRadius: '50%'}} />
+                        <Typography variant="h4" style={{color: 'white', fontVariant: 'small-caps'}}>minho choi</Typography>
+                        <Typography variant="h5" style={{color: 'white', fontVariant: 'small-caps'}}>computer science</Typography>
+                        <Typography variant="h6" style={{color: 'white', fontVariant: 'small-caps'}}>minho choi</Typography>
+                    </Grid>
+
+                </Grid>
+            </div>
+          </ReactFullpage.Wrapper>
+        );
+      }}
+    />
+  </>
+);
 
 export default Home;
+
+// 참고자료: https://github.com/alvarotrigo/react-fullpage
