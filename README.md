@@ -15,4 +15,7 @@ In the project directory, you can run:
 
 * create backbone
 * add home screen  
+* changed fullpage
+* fix logo size
+ 
 
