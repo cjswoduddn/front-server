@@ -60,21 +60,21 @@ const Home = () => (
                         <Typography variant="h3" style={{fontSpacing: 5, fontWeight: 900, padding: 0, color: 'white', fontVariant: 'small-caps'}}>creator team</Typography>
                     </Grid>
 
-                    <Grid item xs={3} md={3} style={{marginLeft: '8%'}}>
+                    <Grid item xs={3} style={{marginLeft: '8%'}}>
                         <img src={sang} width='100%' style={{borderRadius: '50%'}} />
                         <Typography variant="h4" style={{color: 'white', fontVariant: 'small-caps'}}>jisang yu</Typography>
                         <Typography variant="h5" style={{color: 'white', fontVariant: 'small-caps'}}>economics</Typography>
                         <Typography variant="h6" style={{color: 'white', fontVariant: 'small-caps'}}>jisang yu</Typography>
                     </Grid>
 
-                    <Grid item xs={3} md={3} style={{marginRight: '3%', marginLeft: '3%'}}>
+                    <Grid item xs={3} style={{marginRight: '3%', marginLeft: '3%'}}>
                         <img src={woo} width='100%' style={{borderRadius: '50%'}} />
                         <Typography variant="h4" style={{color: 'white', fontVariant: 'small-caps'}}>youngwoo choi</Typography>
                         <Typography variant="h5" style={{color: 'white', fontVariant: 'small-caps'}}>computer science</Typography>
                         <Typography variant="h6" style={{color: 'white', fontVariant: 'small-caps'}}>youngwoo choi</Typography>
                     </Grid>
 
-                    <Grid item xs={3} md={3} style={{marginRight: '8%'}}>
+                    <Grid item xs={3} style={{marginRight: '8%'}}>
                         <img src={min} width='100%' style={{borderRadius: '50%'}} />
                         <Typography variant="h4" style={{color: 'white', fontVariant: 'small-caps'}}>minho choi</Typography>
                         <Typography variant="h5" style={{color: 'white', fontVariant: 'small-caps'}}>computer science</Typography>

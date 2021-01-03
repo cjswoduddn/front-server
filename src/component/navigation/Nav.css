@@ -1,6 +1,6 @@
 .nav-init {
   position: fixed;
-  height: 10%;
+  height: 13%;
   background-color: black;
   webkit-transition: all 0.7s ease-in-out;
   transition: all 0.7s ease-in-out;
@@ -12,7 +12,19 @@
   webkit-transition: all 0.7s ease-in-out;
   transition: all 0.7s ease-in-out;
 }
-
+.img-init {
+  margin: 1%;
+  position: fixed;
+  height: 10%;
+  webkit-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+}
+.img-shrink {
+  position: fixed;
+  height: 8%;
+  webkit-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+}
 .nav-ul{
   float: right;
 }
