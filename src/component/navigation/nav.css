@@ -1,14 +1,16 @@
-.nav-top{
+.nav-init {
   position: fixed;
-  height: 102px;
-  background-color: white;
-  top: 0ch;
+  height: 10%;
+  background-color: black;
+  webkit-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
 }
-.nav-bottom{
+.nav-shrink {
   position: fixed;
-  height: 60px;
-  background-color: white;
-  top: 0ch;
+  height: 8%;
+  background-color: black;
+  webkit-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
 }
 
 .nav-ul{
@@ -23,7 +25,6 @@
   font-size: 20px;
   width: 200px;
   color: gray;
-  text-decoration: none;
   text-decoration: none;
   padding: 20px;
 }
