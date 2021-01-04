@@ -2,9 +2,8 @@ import React from 'react';
 
 const Accounts = () =>{
   return (
-    <>
-    Accounts
-    </>
+    <div style={{backgroundColor: "green", height: '100vh', marginTop: '-7.1%'}}>
+    </div>
   );
 }
 

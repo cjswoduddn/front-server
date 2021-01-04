@@ -32,7 +32,6 @@ const Nav = () =>{
         <Link to="/"><img className={mode2} src={logo} /></Link>
         <NavItem />
       </AppBar>
-
   )
 }
 
