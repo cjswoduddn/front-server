@@ -4,6 +4,7 @@ import './Nav.css';
 import logo from '../../factory/images/logotem2.png';
 import NavItem from './NavItem';
 import { Link } from 'react-router-dom';
+import { AppBar, Toolbar, Button, Typography } from "@material-ui/core";
 
 const Nav = () =>{
   const [mode, setMode] = useState("nav-init");
@@ -27,17 +28,11 @@ const Nav = () =>{
   }, [])
 
   return(
-    <Grid container justify="center" className={mode}>
-      <Grid item xs={12}>
-        <Grid item xs="4" className="item">
-          <Link to="/"><img className={mode2} src={logo} /></Link>
-        </Grid>
+      <AppBar className={mode} style={{justifyContent: 'center'}}>
+        <Link to="/"><img className={mode2} src={logo} /></Link>
+        <NavItem />
+      </AppBar>
 
-        <Grid item xs="8" className="item">
-          <NavItem/>
-        </Grid>
-      </Grid>
-    </Grid>
   )
 }
 

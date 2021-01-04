@@ -16,7 +16,7 @@ import logo from '../../factory/images/logotem2.png';
 const Home = () => (
   <>
       <Link to="/">
-        <img onClick src={logo} style={{height: '10%', position: "fixed", zIndex: 1, margin: '1%'}}></img>
+        <img onClick src={logo} style={{top: 0, height: '10%', position: "fixed", zIndex: 1, margin: '1%'}}></img>
       </Link>
       <ReactFullpage
           scrollingSpeed = {800} navigation

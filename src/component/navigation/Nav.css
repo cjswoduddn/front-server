@@ -1,26 +1,27 @@
 .nav-init {
-  position: fixed;
   height: 13%;
-  background-color: black;
-  webkit-transition: all 0.7s ease-in-out;
-  transition: all 0.7s ease-in-out;
 }
 .nav-shrink {
-  position: fixed;
   height: 8%;
-  background-color: black;
-  webkit-transition: all 0.7s ease-in-out;
-  transition: all 0.7s ease-in-out;
 }
+
+.MuiAppBar-colorPrimary {
+  /*background-color: transparent !important;*/
+  webkit-transition: all 0.7s ease-in-out !important;
+  transition: all 0.7s ease-in-out !important;
+}
+
 .img-init {
   margin: 1%;
   position: fixed;
   height: 10%;
+  top: 0;
   webkit-transition: all 0.7s ease-in-out;
   transition: all 0.7s ease-in-out;
 }
 .img-shrink {
   position: fixed;
+  top: 0;
   height: 8%;
   webkit-transition: all 0.7s ease-in-out;
   transition: all 0.7s ease-in-out;
@@ -29,7 +30,7 @@
   float: right;
 }
 .nav-li{
-  align-items: flex-end;
+  align-items: center;
   display: inline;
 }
 
