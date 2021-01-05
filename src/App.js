@@ -16,7 +16,7 @@ function App() {
         <Route path="/"><Nav /></Route>
       </Switch>
 
-      <Route path="/"><Grid container style={{height: "102px"}}></Grid></Route>
+      {/*<Route path="/"><Grid container style={{height: "102px"}}></Grid></Route>*/}
 
       <Switch>
         <Route path="/sign_in"><SignIn /></Route>
