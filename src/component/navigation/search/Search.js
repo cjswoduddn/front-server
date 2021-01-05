@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-
-import './search.css';
 import { FiSearch } from 'react-icons/fi';
 import {useHistory} from 'react-router-dom';
+
+import './search.css';
 
 
 const Search = () =>{
@@ -36,7 +36,7 @@ const Search = () =>{
       history.push({
         pathname: "/search/"+body.keyword,
         state:{
-          template: res.data
+          resume: res.data
         }
       });
 
@@ -52,7 +52,7 @@ const Search = () =>{
         <form onSubmit={searchEvent}>
           <p className="search-button-font">
             <FiSearch/>
-            검색 
+            검색{" "}
             {mode === 0 ? <></> :
               <input className="search-button-input" id='keyword' name='keyword' type='keyword' autoFocus></input>
             }

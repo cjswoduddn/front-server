@@ -1,0 +1,12 @@
+.pagination-btn{
+  margin-top: 25px;
+  margin-bottom: 25px;
+  width: 100%;
+  font-size: 50px;
+}
+.pagination-span1{
+  color: gray;
+}
+.pagination-span2{
+  color: lightslategray;
+}

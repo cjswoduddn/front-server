@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Search from '../search/Search';
+import Search from './search/Search';
 import { Link } from 'react-router-dom';
 import './nav.css';
 
