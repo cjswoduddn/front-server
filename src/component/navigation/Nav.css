@@ -2,6 +2,7 @@
   height: 13%;
 }
 .nav-shrink {
+  background-color: black;
   height: 8%;
 }
 
@@ -26,6 +27,7 @@
   webkit-transition: all 0.7s ease-in-out;
   transition: all 0.7s ease-in-out;
 }
+
 .nav-ul{
   float: right;
 }
@@ -33,7 +35,6 @@
   align-items: center;
   display: inline;
 }
-
 .nav-link{
   font-size: 23px;
   width: 200px;
