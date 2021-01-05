@@ -11,6 +11,9 @@
   webkit-transition: all 0.7s ease-in-out !important;
   transition: all 0.7s ease-in-out !important;
 }
+.MuiPaper-elevation4 {
+  box-shadow: none !important;
+}
 
 .img-init {
   top: 0;
