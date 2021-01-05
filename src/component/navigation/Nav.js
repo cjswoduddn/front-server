@@ -30,13 +30,13 @@ const Nav = () =>{
 
   return(
     <Grid container justify="center" className={mode}>
-      <Grid container xs="11" className="item">
+      <Grid container xs="11">
 
-        <Grid item xs="4" className="item">
+        <Grid item xs="4">
           <Link to="/"><img src={img}/></Link>
         </Grid>
 
-        <Grid item xs="8" className="item">
+        <Grid item xs="8" >
           <NavItem/>
         </Grid>
         

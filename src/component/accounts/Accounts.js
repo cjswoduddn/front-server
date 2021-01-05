@@ -1,10 +1,13 @@
 import React from 'react';
 
+import {useHistory} from 'react-router-dom';
+
 const Accounts = () =>{
+
+  const history = useHistory();
+
   return (
-    <>
-    Accounts
-    </>
+    <button onClick={()=>history.push("/")}>fj</button>
   );
 }
 

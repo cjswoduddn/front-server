@@ -20,7 +20,7 @@ function App() {
 
       <Switch>
         <Route path="/accounts"><Accounts /></Route>
-        <Route path="/head_hunt"><HeadHunt/></Route>
+        <Route path="/search/:path"><HeadHunt/></Route>
         <Route path="/template"><Template/></Route>
       </Switch>
     </>
