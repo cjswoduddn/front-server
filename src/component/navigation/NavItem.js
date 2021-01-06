@@ -1,15 +1,16 @@
 import React from 'react';
+
+import Search from './search/Search';
 import { Link } from 'react-router-dom';
 import './Nav.css';
 
 const NavItem = () =>{
+
     const pathname = window.location.pathname
         return (
             <nav style={{ display: pathname == '/sign_in'? 'none': null }}>
                 <ul className="nav-ul">
-                    <Link to="/head_hunt" className="nav-link" >
-                        <li className="nav-li">head hunting</li>
-                    </Link>
+                    <li className="nav-li"><Search/></li>
                     <Link to="/template" className="nav-link">
                         <li className="nav-li">template</li>
                     </Link>

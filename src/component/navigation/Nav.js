@@ -4,7 +4,7 @@ import './Nav.css';
 import logo from '../../factory/images/logo.png';
 import NavItem from './NavItem';
 import { Link } from 'react-router-dom';
-import { AppBar, Toolbar, Button, Typography } from "@material-ui/core";
+import { AppBar } from "@material-ui/core";
 
 const Nav = () =>{
   const [mode, setMode] = useState("nav-init");

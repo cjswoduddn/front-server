@@ -1,0 +1,28 @@
+.vertical-item-btn{
+  height: 103px;
+  background-color: transparent !important;
+  border-color: transparent;
+  outline: none;
+  cursor: pointer;
+}
+.vertical-item-img{
+  height: 103px;
+  width: 100%;
+  /*
+  개선 : 이미지 크기를 유지하되 중심을 가지며 짤리는 기능 
+  현재는 전체를 유지하되 비율이 작아짐
+  */
+}
+.vertical-item-title{
+  font-weight: 100;
+  font-size: 25px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* 
+  1. 설명 :글자 굵기, 글자 크기, 공백처리여부, 너비를 초과한 텍스를 보일 것인가?, 어떻게 처리할래
+  2. 개선 : 2줄까지 출력하고 나머지 ... 처리하기
+  https://webdir.tistory.com/483 [WEBDIR]
+  */
+}

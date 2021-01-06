@@ -1,0 +1,9 @@
+.keyword-static{
+  font-size: 60px;
+  color: chocolate;
+}
+.keyword-dynamic{
+  font-size: 60px;
+  color: brown;
+  word-break: break-all;
+}
