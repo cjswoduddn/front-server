@@ -4,19 +4,19 @@ import { Link } from 'react-router-dom';
 import ReactFullpage from '@fullpage/react-fullpage';
 
 import Grid from "@material-ui/core/Grid";
-import back3 from '../../factory/images/back3.gif';
+import back3 from '../../factory/images/home_back1.gif';
 import LightButton from "./LightButton";
-import ls2 from '../../factory/images/ls5.jpg';
+import ls2 from '../../factory/images/home_back2.jpg';
 import {Typography} from "@material-ui/core";
 import sang from '../../factory/images/sang.png';
 import min from '../../factory/images/min.png';
 import woo from '../../factory/images/woo.png';
-import logo from '../../factory/images/logotem2.png';
+import logo from '../../factory/images/logo.png';
 
 const Home = () => (
   <>
       <Link to="/">
-        <img onClick src={logo} style={{height: '10%', position: "fixed", zIndex: 1, margin: '1%'}}></img>
+        <img onClick src={logo} style={{top: 0, height: '10%', position: "fixed", zIndex: 1, margin: '1%'}}></img>
       </Link>
       <ReactFullpage
           scrollingSpeed = {800} navigation
@@ -60,21 +60,21 @@ const Home = () => (
                         <Typography variant="h3" style={{fontSpacing: 5, fontWeight: 900, padding: 0, color: 'white', fontVariant: 'small-caps'}}>creator team</Typography>
                     </Grid>
 
-                    <Grid item xs={3} md={3} style={{marginLeft: '8%'}}>
+                    <Grid item xs={3} style={{marginLeft: '8%'}}>
                         <img src={sang} width='100%' style={{borderRadius: '50%'}} />
                         <Typography variant="h4" style={{color: 'white', fontVariant: 'small-caps'}}>jisang yu</Typography>
                         <Typography variant="h5" style={{color: 'white', fontVariant: 'small-caps'}}>economics</Typography>
                         <Typography variant="h6" style={{color: 'white', fontVariant: 'small-caps'}}>jisang yu</Typography>
                     </Grid>
 
-                    <Grid item xs={3} md={3} style={{marginRight: '3%', marginLeft: '3%'}}>
+                    <Grid item xs={3} style={{marginRight: '3%', marginLeft: '3%'}}>
                         <img src={woo} width='100%' style={{borderRadius: '50%'}} />
                         <Typography variant="h4" style={{color: 'white', fontVariant: 'small-caps'}}>youngwoo choi</Typography>
                         <Typography variant="h5" style={{color: 'white', fontVariant: 'small-caps'}}>computer science</Typography>
                         <Typography variant="h6" style={{color: 'white', fontVariant: 'small-caps'}}>youngwoo choi</Typography>
                     </Grid>
 
-                    <Grid item xs={3} md={3} style={{marginRight: '8%'}}>
+                    <Grid item xs={3} style={{marginRight: '8%'}}>
                         <img src={min} width='100%' style={{borderRadius: '50%'}} />
                         <Typography variant="h4" style={{color: 'white', fontVariant: 'small-caps'}}>minho choi</Typography>
                         <Typography variant="h5" style={{color: 'white', fontVariant: 'small-caps'}}>computer science</Typography>
