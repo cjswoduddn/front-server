@@ -5,7 +5,7 @@ import { Grid } from '@material-ui/core';
 import Nav from './component/navigation/Nav';
 import Accounts from './component/accounts/Accounts';
 import Home from './component/home/Home';
-import HeadHunt from './component/headhunt/HeadHunt';
+import Search from './component/service/Search';
 import Template from './component/template/Template';
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
 
       <Switch>
         <Route path="/accounts"><Accounts /></Route>
-        <Route path="/search/:path"><HeadHunt/></Route>
+        <Route path="/search/:path"><Search/></Route>
         <Route path="/template"><Template/></Route>
       </Switch>
     </>
