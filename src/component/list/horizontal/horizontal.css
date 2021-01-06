@@ -1,0 +1,17 @@
+.horizontal-item-grid{
+
+}
+.horizontal-item-img{
+  height: 176px;
+  width: 100%;
+}
+.horizontal-item-btn{
+  background-color: transparent !important;
+  border-color: transparent;
+  outline: none;
+  cursor: pointer;
+}
+.horizontal-item-title{
+  font-weight: 100;
+  font-size: 25px;
+}
