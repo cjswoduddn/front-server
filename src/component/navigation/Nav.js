@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Grid } from '@material-ui/core';
-import './nav.css';
+import './Nav.css';
 import logo from '../../factory/images/logo.png';
 import NavItem from './NavItem';
 import { Link } from 'react-router-dom';
