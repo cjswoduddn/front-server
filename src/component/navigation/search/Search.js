@@ -3,7 +3,7 @@ import axios from 'axios';
 import { FiSearch } from 'react-icons/fi';
 import {useHistory} from 'react-router-dom';
 
-import './search.css';
+import './Search.css';
 
 
 const Search = () =>{
