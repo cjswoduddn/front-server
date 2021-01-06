@@ -25,4 +25,5 @@ In the project directory, you can run:
 ### ~2020. 1. 06
 * accounts page v.1.0 complete
 * [animation effect, form validation] -ing...
+* add searching function 
 
