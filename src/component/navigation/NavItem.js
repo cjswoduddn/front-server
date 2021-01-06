@@ -14,7 +14,7 @@ const NavItem = () =>{
                         <li className="nav-li">template</li>
                     </Link>
                     <Link to="/sign_in" className="nav-link">
-                        <li onClick className="nav-li">sign in</li>
+                        <li className="nav-li">sign in</li>
                     </Link>
                 </ul>
             </nav>
