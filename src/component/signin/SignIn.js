@@ -57,7 +57,7 @@ const Login = React.memo(function Login() {
                          style={{ marginTop: '3%'}} />
                 </FormControl>
                 <FormControl style={{width: '100%'}}>
-                    <TextField id="filled-basic" label="비밀번" variant="filled" type="email"
+                    <TextField id="filled-basic" label="비밀번호" variant="filled" type="password"
                          InputProps={{
                            style: { backgroundColor: 'whitesmoke'}
                          }}
