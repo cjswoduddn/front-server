@@ -44,7 +44,7 @@ const List = ({keyword, resume}) =>{
 
 
   return (
-    <Grid container justify="center">
+    <Grid container justify="center" style={{marginTop: 102}}>
       <Keyword mode={mode} keyword={keyword}/>
       {mode === 0 ?
         <Horizontal resume={resume} count={count}/>
