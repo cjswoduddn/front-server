@@ -7,6 +7,7 @@ import SignIn from './component/signin/SignIn';
 import Home from './component/home/Home';
 import Search from './component/service/Search';
 import Template from './component/template/Template';
+import Template1 from "./component/template/Template1";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/sign_in"><SignIn /></Route>
         <Route path="/search/:path"><Search/></Route>
         <Route path="/template"><Template/></Route>
+        <Route path="/template1" component={Template1} />
       </Switch>
     </>
   );

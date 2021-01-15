@@ -5,10 +5,12 @@ import logo from '../../factory/images/logo.png';
 import NavItem from './NavItem';
 import { Link } from 'react-router-dom';
 import { AppBar } from "@material-ui/core";
+import Search from "./search/Search";
 
 const Nav = () =>{
   const [mode, setMode] = useState("nav-init");
   const [mode2, setMode2] = useState("img-init");
+  const pathname = window.location.pathname
 
   useEffect(()=>{
     function handleMode(){
@@ -30,7 +32,18 @@ const Nav = () =>{
   return(
       <AppBar className={mode} style={{justifyContent: 'center'}}>
         <Link to="/"><img className={mode2} src={logo} /></Link>
-        <NavItem />
+        {/*<NavItem />*/}
+        <nav style={{ display: pathname == '/sign_in'? 'none': null, backgroundColor: mode === 'nav-shrink' ? '#081328' : null, paddingRight: '3%' }}>
+          <ul className="nav-ul">
+            <li className="nav-li" ><Search/></li>
+            <Link to="/template" className="nav-link">
+              <li className="nav-li" style={{color: mode === 'nav-shrink' ? 'white' : null}}>템플릿</li>
+            </Link>
+            <Link to="/sign_in" className="nav-link">
+              <li onClick className="nav-li"  style={{color: mode === 'nav-shrink' ? 'white' : null}}>로그인</li>
+            </Link>
+          </ul>
+        </nav>
       </AppBar>
   )
 }

@@ -1,0 +1,17 @@
+.required_input {
+    width: 100%;
+    height: 80px;
+}
+
+.input {
+    width: 100%;
+    height: 56px;
+}
+
+.input2 {
+    width: 95%;
+}
+.MuiFormHelperText-root {
+    margin-top: 0 !important;
+    text-align: right !important;
+}

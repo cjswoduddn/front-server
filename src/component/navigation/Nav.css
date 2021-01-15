@@ -33,14 +33,17 @@
 
 .nav-ul{
   float: right;
+  margin: 0;
 }
 .nav-li{
   align-items: center;
   display: inline;
+  margin-right: 20px;
 }
 .nav-link{
-  font-size: 23px;
+  font-size: 19px;
   width: 200px;
+  /*font-weight: 00;*/
   color: gray;
   text-decoration: none;
   font-variant: small-caps;

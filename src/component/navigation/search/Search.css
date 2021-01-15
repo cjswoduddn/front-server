@@ -10,12 +10,13 @@
 }
 
 .search-button-font{
-  font-size: 20px;
+  margin-right: 20px;
+  font-size: 19px;
   color: gray;
 } 
 
 .search-button-input{
-  font-size: 20px;
+  font-size: 19px;
   background-color: floralwhite;
   border: none;
 }
