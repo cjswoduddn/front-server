@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import './SignIn.css'
 import signin_back from '../../factory/images/signin_back3.jpg';
 import {Grid, TextField, Typography, Button, FormControl, FormLabel, FormGroup, FormControlLabel, Checkbox, FormHelperText} from "@material-ui/core";
+import SignUp from './SignUp';
+import LogIn from './LogIn';
 
 const SignIn = () =>{
     const [mode, setMode] = useState(0);
@@ -24,7 +26,7 @@ const SignIn = () =>{
                           </Grid>) : <Grid item xs={6}></Grid>
                       }
 
-                      {mode === 0 ? <Login/> :
+                      {mode === 0 ? <LogIn/> :
                        mode === 1 ? <SignUp/> :
                                     <FindPassword/>}
 
@@ -41,82 +43,6 @@ const SignIn = () =>{
 
   );
 }
-
-const Login = React.memo(function Login() {
-  console.log("login");
-  return<Grid item xs={12}>
-            <form
-                // onSubmit
-            >
-                <FormControl style={{width: '100%'}}>
-                    <TextField id="filled-basic" label="이메일 (example@gmail.com)" variant="filled" type="email"
-                         InputProps={{
-                           style: { backgroundColor: 'whitesmoke'}
-                         }}
-                         name="name"
-                         style={{ marginTop: '3%'}} />
-                </FormControl>
-                <FormControl style={{width: '100%'}}>
-                    <TextField id="filled-basic" label="비밀번" variant="filled" type="email"
-                         InputProps={{
-                           style: { backgroundColor: 'whitesmoke'}
-                         }}
-                         name="name"
-                         style={{ marginTop: '3%'}} />
-                </FormControl>
-
-                    <Button variant="contained" className="form-button" style={{marginTop: '3%', fontSize: '18px', borderRadius: '30px'}}>로그인</Button>
-
-            </form>
-        </Grid>;
-});
-
-const SignUp = React.memo(function SignUp() {
-  console.log("signup");
-  const [state, setState] = React.useState({
-    gilad: true,
-    jason: false,
-    antoine: false,
-  });
-
-  const handleChange = (event) => {
-    setState({ ...state, [event.target.name]: event.target.checked });
-  };
-
-  const { gilad, jason, antoine } = state;
-  const error = [gilad, jason, antoine].filter((v) => v).length !== 2;
-  return<Grid item xs={12}>
-            <form>
-              <FormControl style={{width: '100%'}}>
-                  <TextField id="filled-basic" label="이름 (2자 이상)" variant="filled" type="name"
-                         InputProps={{
-                           style: { backgroundColor: 'whitesmoke'}
-                         }}
-                         style={{ marginTop: '3%'}} />
-              </FormControl>
-              <FormControl style={{width: '100%'}}>
-                  <TextField id="filled-basic" label="이메일 (example@gamil.com)" variant="filled" type="email"
-                         InputProps={{
-                           style: { backgroundColor: 'whitesmoke'}
-                         }}
-                         style={{ marginTop: '3%'}} />
-              </FormControl>
-              <FormControl style={{width: '100%'}}>
-                  <TextField id="filled-basic" label="비밀번호 (6자 이상)" variant="filled" type="password"
-                         InputProps={{
-                           style: { backgroundColor: 'whitesmoke'}
-                         }}
-                         style={{ marginTop: '3%'}} />
-              </FormControl>
-
-
-              
-
-
-              <Button onClick={refreshPage} variant="contained" className="form-button" style={{marginTop: '3%', fontSize: '18px', borderRadius: '30px'}}>계정 생성하기</Button>
-            </form>
-        </Grid>;
-});
 
 const FindPassword = React.memo(function FindPassword() {
   console.log("forget password");
