@@ -1,0 +1,22 @@
+.sib-background{
+  /* margin-top: 102px; */
+  /* min-height: 736px; */
+  min-height: 838px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  /* color: transparent; */
+}
+/*
+이미지 크기는 현실적으로 맞추기어렵다
+정적이미지가 더 나은 대안인듯하다
+*/
+
+.sib-thumbnails{
+  /* background-attachment: fixed; */
+  /* background-position: center; */
+  background-repeat: no-repeat;
+  background-size: 125px 150px;
+  color: transparent;
+}

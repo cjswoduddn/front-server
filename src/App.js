@@ -8,6 +8,8 @@ import Home from './component/home/Home';
 import Search from './component/service/Search';
 import Template from './component/template/Template';
 
+import Sib from './component/sib/Sib';
+
 function App() {
   return (
     <>
@@ -21,7 +23,8 @@ function App() {
       <Switch>
         <Route path="/sign_in"><SignIn /></Route>
         <Route path="/search/:path"><Search/></Route>
-        <Route path="/template"><Template/></Route>
+        {/* <Route path="/template"><Template/></Route> */}
+        <Route path="/template"><Sib/></Route>
       </Switch>
     </>
   );
