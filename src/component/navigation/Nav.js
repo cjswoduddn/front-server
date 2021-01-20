@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Grid } from '@material-ui/core';
 import './Nav.css';
 import logo from '../../factory/images/logo.png';
 import NavItem from './NavItem';

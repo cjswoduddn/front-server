@@ -10,6 +10,8 @@
 
 # production
 /build
+/.gitignore
+/.eslintcache
 
 # misc
 .DS_Store
