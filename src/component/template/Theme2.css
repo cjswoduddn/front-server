@@ -1,0 +1,7 @@
+.card {
+    padding-bottom: 10px;
+    width: 95%;
+}
+.card:hover {
+    opacity: 50%;
+}

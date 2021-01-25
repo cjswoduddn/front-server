@@ -33,14 +33,14 @@ const Nav = () =>{
       <AppBar className={mode} style={{justifyContent: 'center'}}>
         <Link to="/"><img className={mode2} src={logo} /></Link>
         {/*<NavItem />*/}
-        <nav style={{ display: pathname == '/sign_in'? 'none': null, backgroundColor: mode === 'nav-shrink' ? '#081328' : null, paddingRight: '3%' }}>
+        <nav style={{ display: pathname == '/sign_in'? 'none': null, backgroundColor: mode === 'nav-shrink' ? 'rgb(26, 26, 26)' : null, paddingRight: '3%' }}>
           <ul className="nav-ul">
             <li className="nav-li" ><Search/></li>
             <Link to="/template" className="nav-link">
-              <li className="nav-li" style={{color: mode === 'nav-shrink' ? 'white' : null}}>템플릿</li>
+              <li className="nav-li" style={{color: mode === 'nav-shrink' ? 'white' : null}}>template</li>
             </Link>
             <Link to="/sign_in" className="nav-link">
-              <li onClick className="nav-li"  style={{color: mode === 'nav-shrink' ? 'white' : null}}>로그인</li>
+              <li onClick className="nav-li"  style={{color: mode === 'nav-shrink' ? 'white' : null}}>login</li>
             </Link>
           </ul>
         </nav>
