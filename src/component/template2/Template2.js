@@ -1,43 +1,82 @@
 import React, {useState} from 'react';
-import {useForm} from 'react-hook-form';
-import {Grid, Button} from '@material-ui/core';
+import {Grid, Button, AppBar, Toolbar, Typography} from '@material-ui/core';
 import "./Template2.css";
 import axios from 'axios';
+import { Route, Switch, Link } from 'react-router-dom';
+import AboutMe from './AboutMe';
+import Career from './Career';
+import Project from './Project';
 
 const TEMPLATE_BASE_URL = 'http://localhost:8080/portfolio';
 
 const Template2 = () =>{
 
-  const [thumbnail, setThumbnail] = useState({file: '', previewUrl: ''})
-  const {register, handleSubmit, watch, errors} = useForm();
+  const [project, setProject] = useState({
+    project: ''
+  });
 
-  const onSubmit = data => {
-    console.log(data);
-    const form = new FormData();
-    for (const [key, value] of Object.entries(data)) {
-      if(typeof value === 'object'){
-        form.append(key, value[0]);
-      }
-      else{
-        form.append(key, value);
-      }
+  const [aboutMe, setAboutMe] = useState({
+    dtype: "sampleportfolio",
+    // thumbnail: undefined,
+    // name: '',
+    // title: '',
+    // skill: '',
+    // intro: ''
+  })
+
+  const onSubmit = (e) => {
+    // const form = new FormData();
+    // for (const [key, value] of Object.entries(data)) {
+    //   if(typeof value === 'object'){
+    //     form.append(key, value[0]);
+    //   }
+    //   else{
+    //     form.append(key, value);
+    //   }
+    // }
+    for(const [key, value] of Object.entries(aboutMe)){
+      console.log(key +" "+value);
     }
-    axios({
-      method: 'post',
-      headers:{
-        'Content-Type': `multipart/form-data`
-      },
-      url: TEMPLATE_BASE_URL,
-      data: form
-    })
-    .then((res)=>{
-      console.log(res.body);
-    })
-    .catch((err)=>{
-      console.log(err);
-    });
+    for(const [key, value] of Object.entries(project)){
+      console.log(key +" "+value);
+    }
   }
 
+
+  return (
+    <>
+      <AppBar style={{marginTop: "100px",}}>
+        <Toolbar>
+          <Typography type="title" color="inherit" style={{ flex: 1 }}>
+          </Typography>
+          <Link to="/template/aboutme"><Button color="inherit">ABOUTME</Button></Link>
+          <Link to="/template/project"><Button color="inherit">PROJECT</Button></Link>
+          <Link to="/template/career"><Button color="inherit">CAREER</Button></Link>
+        </Toolbar>
+      </AppBar>
+
+      <Switch>
+        <Route path="/template/aboutme">
+          <AboutMe state={aboutMe} setState={setAboutMe}/>
+        </Route>
+        <Route path="/template/project">
+          <Project project={project} setProject={setProject}/>
+        </Route>
+        <Route path="/template/career">
+          <Career/>
+        </Route>
+      </Switch>
+
+      <Grid container justify="center">
+        <Button variant="outlined" size="large" onClick={onSubmit}>SUBMIT</Button>
+      </Grid>
+    </>
+  );
+}
+
+export default Template2;
+/*
+  const [thumbnail, setThumbnail] = useState({file: '', previewUrl: ''})
   const changeThumbnails = (e) =>{
     e.preventDefault();
 
@@ -53,63 +92,18 @@ const Template2 = () =>{
     }
     reader.readAsDataURL(file);
   }
-
-  return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input type="hidden" name="dtype" value="sampleportfolio" ref={register}/>
-      <Grid container className="template2-container">
-        <Grid item xs="5" className="template2-left-item">
-          <Grid container xs="7" className="template2-left-item-profile" justify="center">
-            <label className="template2-left-item-profile-thumbnail-label" 
-              for="thumbnail"
-              style={{backgroundImage: `url(${thumbnail.previewUrl})`}}>
-              IMG
-              <input
-                id="thumbnail"
-                accept="image/*" type="file"
-                className="template2-left-item-profile-thumbnail"
-                onChange={changeThumbnails}
-                name="thumbnail"
-                ref={register}
-              />
-            </label>
-            <input
-              type="text"
-              className="template2-left-item-profile-name" 
-              placeholder="NAME"
-              name="name"
-              ref={register}
-            />
-          </Grid>
-        </Grid>
-        <Grid item xs="7" className="template2-right-item">
-          <input 
-            type="text" 
-            className="template2-right-item-title" 
-            placeholder="TITLE"
-            name="title"
-            ref={register}
-          />
-          <input 
-            type="text" 
-            className="template2-right-item-skill" 
-            placeholder="skill"
-            name="skill"
-            ref={register}
-          />
-          <textarea 
-            className="template2-right-item-intro" 
-            placeholder="INTRO"
-            name="intro"
-            ref={register}
-            />
-        </Grid>
-      </Grid>
-      <Grid container justify="center">
-        <Button type="submit" variant="outlined" size="large">SUBMIT</Button>
-      </Grid>
-    </form>
-  );
-}
-
-export default Template2;
+    axios({
+      method: 'post',
+      headers:{
+        'Content-Type': `multipart/form-data`
+      },
+      url: TEMPLATE_BASE_URL,
+      data: form
+    })
+    .then((res)=>{
+      console.log(res.body);
+    })
+    .catch((err)=>{
+      console.log(err);
+    });
+    */
