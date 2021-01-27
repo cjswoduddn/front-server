@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Grid, Button, AppBar, Toolbar, Typography} from '@material-ui/core';
+import {Button, AppBar, Toolbar, Typography} from '@material-ui/core';
 import "./Template2.css";
 import axios from 'axios';
 import { Route, Switch, Link } from 'react-router-dom';
@@ -11,18 +11,11 @@ const TEMPLATE_BASE_URL = 'http://localhost:8080/portfolio';
 
 const Template2 = () =>{
 
-  const [project, setProject] = useState({
-    project: ''
-  });
+  const dtype = "template2";
 
-  const [aboutMe, setAboutMe] = useState({
-    dtype: "sampleportfolio",
-    // thumbnail: undefined,
-    // name: '',
-    // title: '',
-    // skill: '',
-    // intro: ''
-  })
+  const [project, setProject] = useState({});
+  const [aboutMe, setAboutMe] = useState({});
+  const [career, setCareer] = useState({});
 
   const onSubmit = (e) => {
     // const form = new FormData();
@@ -47,6 +40,7 @@ const Template2 = () =>{
     <>
       <AppBar style={{marginTop: "100px",}}>
         <Toolbar>
+          <Button variant="outlined" size="large" onClick={onSubmit}>SUBMIT</Button>
           <Typography type="title" color="inherit" style={{ flex: 1 }}>
           </Typography>
           <Link to="/template/aboutme"><Button color="inherit">ABOUTME</Button></Link>
@@ -60,38 +54,18 @@ const Template2 = () =>{
           <AboutMe state={aboutMe} setState={setAboutMe}/>
         </Route>
         <Route path="/template/project">
-          <Project project={project} setProject={setProject}/>
+          <Project state={project} setState={setProject}/>
         </Route>
         <Route path="/template/career">
-          <Career/>
+          <Career state={career} setState={setCareer}/>
         </Route>
       </Switch>
-
-      <Grid container justify="center">
-        <Button variant="outlined" size="large" onClick={onSubmit}>SUBMIT</Button>
-      </Grid>
     </>
   );
 }
 
 export default Template2;
 /*
-  const [thumbnail, setThumbnail] = useState({file: '', previewUrl: ''})
-  const changeThumbnails = (e) =>{
-    e.preventDefault();
-
-    let reader = new FileReader();
-    let filelist = e.target.files;
-    if(filelist === null || filelist.length === 0) return;
-    let file = filelist[0];
-    reader.onloadend = () => {
-      setThumbnail({
-        file : file,
-        previewUrl : reader.result
-      })
-    }
-    reader.readAsDataURL(file);
-  }
     axios({
       method: 'post',
       headers:{
@@ -106,4 +80,4 @@ export default Template2;
     .catch((err)=>{
       console.log(err);
     });
-    */
+*/
