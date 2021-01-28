@@ -5,3 +5,12 @@
 .card:hover {
     opacity: 50%;
 }
+
+.TextField-without-border-radius fieldset {
+  border: 0;
+}
+
+.TextField-without-border-radius .inputCus:hover {
+  border: 1px solid black !important;
+    font-size: 30px;
+}

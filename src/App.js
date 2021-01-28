@@ -23,8 +23,8 @@ function App() {
       <Switch>
         <Route path="/sign_in"><SignIn /></Route>
         <Route path="/search/:path"><Search/></Route>
-        <Route path="/template"><Template/></Route>
-        <Route path="/t1" component={Theme1} />
+        <Route path="/template" exact><Template/></Route>
+        <Route path="/template/t1" component={Theme1} />
         <Route path="/t2" component={Theme2} />
       </Switch>
     </>

@@ -30,10 +30,10 @@ const Nav = () =>{
   }, [])
 
   return(
-      <AppBar className={mode} style={{justifyContent: 'center'}}>
+      <AppBar  className={mode}>
         <Link to="/"><img className={mode2} src={logo} /></Link>
         {/*<NavItem />*/}
-        <nav style={{ display: pathname == '/sign_in'? 'none': null, backgroundColor: mode === 'nav-shrink' ? 'rgb(26, 26, 26)' : null, paddingRight: '3%' }}>
+        <nav style={{ display: pathname == '/sign_in'? 'none': null, backgroundColor: mode === 'nav-shrink' ? 'rgb(26, 26, 26)' : null, paddingRight: '3%', height: '100%', justifyContent: 'center' }}>
           <ul className="nav-ul">
             <li className="nav-li" ><Search/></li>
             <Link to="/template" className="nav-link">

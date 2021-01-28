@@ -10,6 +10,7 @@ import './Search.css';
 
 const Search = () =>{
   const [mode, setMode] = useState(0);
+  const [focused, setFocus] = useState(false);
   const history = useHistory();
   const TEMPLATE_BASE_URL = 'http://localhost:8080/template';
 
@@ -17,6 +18,11 @@ const Search = () =>{
     if(mode === 0){
       setMode(1)
     }
+  }
+
+  const focus = (e) => {
+    e.preventDefault();
+    setFocus(value => !value);
   }
 
   const searchEvent = (e) =>{
@@ -33,35 +39,40 @@ const Search = () =>{
       url: TEMPLATE_BASE_URL,
       data: body
     })
-    .then((res)=>{
-      history.push({
-        pathname: "/search/"+body.keyword,
-        state:{
-          resume: res.data
-        }
-      });
+        .then((res)=>{
+          history.push({
+            pathname: "/search/"+body.keyword,
+            state:{
+              resume: res.data
+            }
+          });
 
-    })
-    .catch((err)=>{
-      console.log(err);
-    });
+        })
+        .catch((err)=>{
+          console.log(err);
+        });
   }
 
   return(
-    <>
-
-      <button className="search-button" onClick={modeHandler}>
-        <form onSubmit={searchEvent}>
-          <p className="search-button-font">
-            <FiSearch/>
-            검색{" "}
-            {mode === 0 ? <></> :
-              <input className="search-button-input" id='keyword' name='keyword' type='keyword' autoFocus></input>
-            }
-          </p>
-        </form>
-      </button>
-    </>
+      <>
+        <div className="app">
+          <div className="container">
+            <input type="text" className={focused && 'focused' } placeholder="Search"/>
+            <button onClick={focus} id="search-button" className={focused && 'active'}>🔍</button>
+          </div>
+        </div>
+        {/*<button className="search-button" onClick={modeHandler}>*/}
+        {/*  <form onSubmit={searchEvent}>*/}
+        {/*    <p className="search-button-font">*/}
+        {/*      <FiSearch/>*/}
+        {/*      검색{" "}*/}
+        {/*      {mode === 0 ? <></> :*/}
+        {/*        <input className="search-button-input" id='keyword' name='keyword' type='keyword' autoFocus></input>*/}
+        {/*      }*/}
+        {/*    </p>*/}
+        {/*  </form>*/}
+        {/*</button>*/}
+      </>
   );
 }
 

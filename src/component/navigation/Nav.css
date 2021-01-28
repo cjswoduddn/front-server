@@ -5,7 +5,9 @@
   background-color: black !important;
   height: 8%;
 }
-
+.nav {
+  height: 100%;
+}
 .MuiAppBar-colorPrimary {
   background-color: transparent !important;
   webkit-transition: all 0.7s ease-in-out !important;
@@ -39,18 +41,16 @@
   align-items: center;
   display: inline;
   margin-right: 20px;
+  height: 20px;
 }
 .nav-link{
   font-size: 19px;
   width: 200px;
+  height: 70px;
   /*font-weight: 00;*/
   color: gray;
   font-weight: 600;
   text-decoration: none;
   font-variant: small-caps;
   padding: 20px;
-}
-
-.nav-link:hover {
-  border: 1px solid black;
 }
