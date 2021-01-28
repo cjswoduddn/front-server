@@ -8,52 +8,9 @@ import {useHistory} from 'react-router-dom';
 
 import './Search.css';
 
-const useStyles = makeStyles((theme) => ({
-  search: {
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: 'red',
-    '&:hover': {
-      backgroundColor: 'red',
-    },
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(1),
-      width: 'auto',
-    },
-  },
-  searchIcon: {
-    // padding: theme.spacing(0, 2),
-    padding: '0 2%',
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  inputRoot: {
-    color: 'inherit',
-  },
-  inputInput: {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      width: '12ch',
-      '&:focus': {
-        width: '20ch',
-      },
-    },
-  },
-}));
-
 const Search = () =>{
-  const classes = useStyles();
   const [mode, setMode] = useState(0);
+  const [focused, setFocus] = useState(false);
   const history = useHistory();
   const TEMPLATE_BASE_URL = 'http://localhost:8080/template';
 
@@ -61,6 +18,11 @@ const Search = () =>{
     if(mode === 0){
       setMode(1)
     }
+  }
+
+  const focus = (e) => {
+    e.preventDefault();
+    setFocus(value => !value);
   }
 
   const searchEvent = (e) =>{
@@ -77,48 +39,40 @@ const Search = () =>{
       url: TEMPLATE_BASE_URL,
       data: body
     })
-    .then((res)=>{
-      history.push({
-        pathname: "/search/"+body.keyword,
-        state:{
-          resume: res.data
-        }
-      });
+        .then((res)=>{
+          history.push({
+            pathname: "/search/"+body.keyword,
+            state:{
+              resume: res.data
+            }
+          });
 
-    })
-    .catch((err)=>{
-      console.log(err);
-    });
+        })
+        .catch((err)=>{
+          console.log(err);
+        });
   }
 
   return(
-    <>
-      <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-            />
+      <>
+        <div className="app">
+          <div className="container">
+            <input type="text" className={focused && 'focused' } placeholder="Search"/>
+            <button onClick={focus} id="search-button" className={focused && 'active'}>🔍</button>
           </div>
-
-      {/*<button className="search-button" onClick={modeHandler}>*/}
-      {/*  <form onSubmit={searchEvent}>*/}
-      {/*    <p className="search-button-font">*/}
-      {/*      <FiSearch/>*/}
-      {/*      검색{" "}*/}
-      {/*      {mode === 0 ? <></> :*/}
-      {/*        <input className="search-button-input" id='keyword' name='keyword' type='keyword' autoFocus></input>*/}
-      {/*      }*/}
-      {/*    </p>*/}
-      {/*  </form>*/}
-      {/*</button>*/}
-    </>
+        </div>
+        {/*<button className="search-button" onClick={modeHandler}>*/}
+        {/*  <form onSubmit={searchEvent}>*/}
+        {/*    <p className="search-button-font">*/}
+        {/*      <FiSearch/>*/}
+        {/*      검색{" "}*/}
+        {/*      {mode === 0 ? <></> :*/}
+        {/*        <input className="search-button-input" id='keyword' name='keyword' type='keyword' autoFocus></input>*/}
+        {/*      }*/}
+        {/*    </p>*/}
+        {/*  </form>*/}
+        {/*</button>*/}
+      </>
   );
 }
 

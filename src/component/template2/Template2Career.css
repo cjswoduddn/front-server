@@ -1,0 +1,49 @@
+
+.template2-career-container{
+  background-color: rgb(219, 212, 197);
+  margin-top: 102px;
+}
+
+.template2-career-item-container{
+  margin-top: 100px !important;
+  box-shadow: 20px 20px 20px grey;
+  background-color: white
+}
+
+.template2-career-item-title{
+  background: transparent;
+  border: dotted;
+  font-size: 30px;
+  font-weight: 700;
+  width: 100%;
+}
+.template2-career-item-intro{
+  background: transparent;
+  border: dotted;
+  height: 250px;
+  max-height: 250px;
+  width: 75%;
+  font-size: 22px;
+}
+.template2-career-item-date{
+  background: transparent;
+  border: dotted;
+  margin: 10px;
+  font-size: 32px;
+  color: blue;
+  width: 90%;
+}
+.template2-career-item-stack{
+  background: transparent;
+  border: dotted;
+  margin: 10px;
+  font-size: 20px;
+  width: 90%;
+}
+.template2-career-item-position{
+  background: transparent;
+  border: dotted;
+  margin: 10px;
+  font-size: 20px;
+  width: 90%;
+}
