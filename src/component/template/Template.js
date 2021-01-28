@@ -1,20 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Route, Switch} from 'react-router-dom';
 
+import TemplateSelector from './TemplateSelector';
+import Theme1 from "../../component/template/Theme1";
+import Theme2 from "../../component/template/Theme2";
+import Template2 from '../../component/template2/Template2';
 const Template = () =>{
     return (
-        <div>
-          <div className="wallpaper" style={{textAlign: "center", alignItems: "center"}}>
-              <div className="content">
-                  <Link to="/template/t1"><div className="block x1">x1</div></Link>
-                  <Link to="/t2"><div className="block x2">x2</div></Link>
-                  <div className="block x3">x3</div>
-                  <div className="block x4">x4</div>
-                  <div className="block x5">x5</div>
-              </div>
-          </div>
-        </div>
-
+        <Switch>
+          <Route exact path="/template"><TemplateSelector/></Route>
+          <Route path="/template/t1"><Theme1/></Route>
+          <Route path="/template/t2"><Theme2/></Route>
+          <Route path="/template/t3"><Template2/></Route>
+        </Switch>
     );
 }
 

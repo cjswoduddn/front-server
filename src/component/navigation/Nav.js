@@ -36,8 +36,8 @@ const Nav = () =>{
             <Link to="/template" className="nav-link">
               <li className="nav-li" style={{color: mode === 'nav-shrink' ? 'white' : null}}>template</li>
             </Link>
-            <Link to="/sign_in" className="nav-link">
-              <li onClick className="nav-li"  style={{color: mode === 'nav-shrink' ? 'white' : null}}>login</li>
+            <Link to="/account" className="nav-link">
+              <li className="nav-li"  style={{color: mode === 'nav-shrink' ? 'white' : null}}>login</li>
             </Link>
           </ul>
         </nav>

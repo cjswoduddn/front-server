@@ -6,8 +6,6 @@ import SignIn from './component/signin/SignIn';
 import Home from './component/home/Home';
 import Search from './component/service/Search';
 import Template from './component/template/Template';
-import Theme1 from "./component/template/Theme1";
-import Theme2 from "./component/template/Theme2";
 
 function App() {
   return (
@@ -18,10 +16,9 @@ function App() {
       </Switch>
 
       <Switch>
-        <Route path="/sign_in"><SignIn /></Route>
+        <Route path="/account"><SignIn /></Route>
         <Route path="/search/:path"><Search/></Route>
         <Route path="/template"><Template/></Route>
-        <Route path="/t2" component={Theme2} />
       </Switch>
     </>
   );

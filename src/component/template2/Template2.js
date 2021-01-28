@@ -66,20 +66,23 @@ const Template2 = () =>{
           <Button variant="outlined" size="large" onClick={onSubmit}>SUBMIT</Button>
           <Typography type="title" color="inherit" style={{ flex: 1 }}>
           </Typography>
-          <Link to="/template/aboutme" style={{textDecoration: "none"}}><Button>ABOUTME</Button></Link>
-          <Link to="/template/project" style={{textDecoration: "none"}}><Button>PROJECT</Button></Link>
-          <Link to="/template/career" style={{textDecoration: "none"}}><Button>CAREER</Button></Link>
+          <Link to="/template/t3/aboutme" style={{textDecoration: "none"}}><Button>ABOUTME</Button></Link>
+          <Link to="/template/t3/project" style={{textDecoration: "none"}}><Button>PROJECT</Button></Link>
+          <Link to="/template/t3/career" style={{textDecoration: "none"}}><Button>CAREER</Button></Link>
         </Toolbar>
       </AppBar>
 
       <Switch>
-        <Route path="/template/aboutme">
+        <Route exact path="/template/t3">
           <AboutMe state={aboutMe} setState={setAboutMe}/>
         </Route>
-        <Route path="/template/project">
+        <Route path="/template/t3/aboutme">
+          <AboutMe state={aboutMe} setState={setAboutMe}/>
+        </Route>
+        <Route path="/template/t3/project">
           <Project state={project} setState={setProject}/>
         </Route>
-        <Route path="/template/career">
+        <Route path="/template/t3/career">
           <Career state={career} setState={setCareer}/>
         </Route>
       </Switch>
