@@ -1,15 +1,4 @@
-.template2-container{
-  margin-top: 102px;
-  height: 650px;
-}
-
-.template2-left-item{
-  background-color: rgb(219, 212, 197);
-}
-.template2-right-item{
-
-}
-.template2-left-item-profile{
+.template2-aboutme-item-left-profile{
   background-color: rgb(240, 237, 233);
   height: 500px;
   margin-left: 50% !important;
@@ -18,7 +7,7 @@
   vertical-align: bottom;
 }
 
-.template2-left-item-profile-thumbnail-label{
+.template2-aboutme-item-left-profile-thumbnail-label{
   margin-top: 30px;
   border-radius: 50%;
   border: dotted;
@@ -32,11 +21,7 @@
   background-size: 250px 250px;
 }
 
-.template2-left-item-profile-thumbnail{
-  display: none;
-}
-
-.template2-left-item-profile-name{
+.template2-aboutme-item-left-profile-name{
   background: transparent;
   border: dotted;
   width: 70%;
@@ -45,7 +30,7 @@
   text-align: center;
 }
 
-.template2-right-item-title{
+.template2-aboutme-item-right-title{
   margin-top: 11%;
   margin-left: 12%;
   height: 100px;
@@ -54,7 +39,7 @@
   font-weight: 700;
   border: dotted;
 }
-.template2-right-item-skill{
+.template2-aboutme-item-right-skill{
   margin-top: 30px;
   margin-left: 12%;
   max-width: 80%;
@@ -62,7 +47,7 @@
   font-weight:bolder;
   border: dotted;
 }
-.template2-right-item-intro{
+.template2-aboutme-item-right-intro{
   margin-top: 30px;
   margin-left: 12%;
   font-size: 50px;
@@ -72,6 +57,3 @@
   width: 80%;
 }
 
-.template2-nav-link{
-  float: right;
-}
