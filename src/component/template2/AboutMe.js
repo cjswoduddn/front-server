@@ -17,13 +17,14 @@ const AboutMe = ({state, setState}) =>{
     let reader = new FileReader();
     let filelist = e.target.files;
     if(filelist === null || filelist.length === 0) return;
+    let Url = "Url"
 
 
     reader.onloadend = () => {
       setState({
         ...state,
-        thumbnail : filelist[0],
-        thumbnailUrl: reader.result
+        [e.target.name] : filelist[0],
+        ["noSubmit"+e.target.name] : reader.result
       })
     }
     reader.readAsDataURL(filelist[0]);
@@ -35,16 +36,16 @@ const AboutMe = ({state, setState}) =>{
         <Grid item xs="5" className="template2-left-item">
           <Grid container xs="7" className="template2-left-item-profile" justify="center">
             <label className="template2-left-item-profile-thumbnail-label" 
-              for="thumbnail"
-              style={{backgroundImage: `url(${state.thumbnailUrl})`}}
+              for="aboutmeThumbnail"
+              style={{backgroundImage: `url(${state.noSubmitaboutmeThumbnail})`}}
               >
               IMG
               <input
-                id="thumbnail"
+                id="aboutmeThumbnail"
                 accept="image/*" type="file"
                 className="template2-left-item-profile-thumbnail"
                 onChange={changeThumbnails}
-                name="thumbnail"
+                name="aboutmeThumbnail"
               />
             </label>
             <input

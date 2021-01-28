@@ -5,3 +5,52 @@
 
 .template2-project-title{
 }
+
+
+.template2-project-item-container{
+  margin-top: 100px !important;
+  box-shadow: 20px 20px 20px grey;
+  background-color: white
+}
+
+.template2-project-item-name{
+  background: transparent;
+  border: dotted;
+  font-size: 30px;
+  font-weight: 700;
+  width: 100%;
+  margin-left: 10%;
+  color: blue
+}
+
+.template2-project-item-role{
+  background: transparent;
+  border: dotted;
+  font-size: 15px;
+  font-weight: 700;
+  width: 100%;
+  margin-left: 10%;
+}
+.template2-project-item-intro{
+  background: transparent;
+  border: dotted;
+  height: 250px;
+  max-height: 250px;
+  font-size: 22px;
+  margin-top: 20px;
+  width: 100%;
+}
+.template2-project-item-thumbnail-label{
+  border: dotted;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  font-size: xx-large;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+.template2-project-item-thumbnail-img{
+  display: none;
+}

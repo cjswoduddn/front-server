@@ -102,7 +102,7 @@ const Career = ({state, setState}) =>{
 
       </Grid>
 
-      <Grid container style={{marginTop: "50px"}}></Grid>
+      <Grid container style={{marginTop: "100px"}}></Grid>
 
     </Grid>
 
