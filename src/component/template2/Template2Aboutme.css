@@ -1,0 +1,59 @@
+.template2-aboutme-item-left-profile{
+  background-color: rgb(240, 237, 233);
+  height: 500px;
+  margin-left: 50% !important;
+  margin-top: 15% !important;
+  box-shadow: 20px 20px 20px grey;
+  vertical-align: bottom;
+}
+
+.template2-aboutme-item-left-profile-thumbnail-label{
+  margin-top: 30px;
+  border-radius: 50%;
+  border: dotted;
+  height: 250px;
+  width: 250px;
+  text-align: center;
+  font-size: xx-large;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 250px 250px;
+}
+
+.template2-aboutme-item-left-profile-name{
+  background: transparent;
+  border: dotted;
+  width: 70%;
+  height: 50px;
+  font-size: 50px;
+  text-align: center;
+}
+
+.template2-aboutme-item-right-title{
+  margin-top: 11%;
+  margin-left: 12%;
+  height: 100px;
+  max-width: 80%;
+  font-size: 90px;
+  font-weight: 700;
+  border: dotted;
+}
+.template2-aboutme-item-right-skill{
+  margin-top: 30px;
+  margin-left: 12%;
+  max-width: 80%;
+  font-size: 50px;
+  font-weight:bolder;
+  border: dotted;
+}
+.template2-aboutme-item-right-intro{
+  margin-top: 30px;
+  margin-left: 12%;
+  font-size: 50px;
+  font-weight:bold;
+  border: dotted;
+  height: 260px;
+  width: 80%;
+}
+
