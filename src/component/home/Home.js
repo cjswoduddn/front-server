@@ -15,9 +15,19 @@ import logo from '../../factory/images/logo.png';
 
 const Home = () => (
   <>
+      <Typography style={{flexGrow: 1}}>
       <Link to="/">
         <img onClick src={logo} style={{top: 0, height: '10%', position: "fixed", zIndex: 1, margin: '1%'}}></img>
       </Link>
+          </Typography>
+      {/*<Typography style={{flexGrow:1}}>*/}
+      {/*      <Link to="/">*/}
+      {/*        <img*/}
+      {/*            // onClick src={logo} height={this.state.imgHeight} style={{WebkitTransition: 'all 0.7s ease-in-out', transition: 'all 0.7s ease-in-out', verticalAlign: "middle"}}*/}
+      {/*            heightstyle={{height: '13%'}} src={logo}*/}
+      {/*        />*/}
+      {/*      </Link>*/}
+      {/*    </Typography>*/}
       <ReactFullpage
           scrollingSpeed = {800} navigation
           render={({ state, fullpageApi }) => {

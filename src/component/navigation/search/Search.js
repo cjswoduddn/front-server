@@ -55,12 +55,12 @@ const Search = () =>{
 
   return(
       <>
-        <div className="app">
+        {/*<div className="app">*/}
           <div className="container">
             <input type="text" className={focused && 'focused' } placeholder="Search"/>
             <button onClick={focus} id="search-button" className={focused && 'active'}>🔍</button>
           </div>
-        </div>
+        {/*</div>*/}
         {/*<button className="search-button" onClick={modeHandler}>*/}
         {/*  <form onSubmit={searchEvent}>*/}
         {/*    <p className="search-button-font">*/}
