@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useForm } from 'react-hook-form';
 import './Theme2.css';
 import {Box, Grid, Tab, Tabs, TextField, Typography} from "@material-ui/core";
@@ -13,6 +13,7 @@ import t2_8 from '../../factory/images/t2/t2-8.png';
 import t2_9 from '../../factory/images/t2/t2-9.png';
 import avatar from '../../factory/images/t2/avatar.jpg';
 import edit from '../../factory/images/edit.png';
+import upload from '../../factory/images/upload.png';
 import {Link} from "react-router-dom";
 
 function TabPanel(props) {
@@ -47,6 +48,13 @@ const Theme2 = () =>{
         setValue(newValue);
     };
 
+    const [picture, setPicture] = useState('');
+
+    const onChangePicture = e => {
+        console.log('picture: ', picture);
+        setPicture(URL.createObjectURL(e.target.files[0]));
+    };
+
 
 
     return (
@@ -74,20 +82,90 @@ const Theme2 = () =>{
                 <TabPanel value={value} index={0}>
                     <Grid item container direction="row" style={{textAlign: 'center'}}>
                         <Grid item xs={4}>
-                            <Link to="/t2"><img className="card" width="100%" src={t2_1} /></Link>
-                            <img className="card" width="100%" src={t2_4} />
-                            <img className="card" width="100%" src={t2_2} />
+                            <div>
+                                <label htmlFor="file-upload" className="custom-file-upload">
+                                    <img src={upload} width="50%"/>
+                                </label><input id="file-upload" type="file" onChange={onChangePicture}/>
+                                <img className="card" width="100%"
+                                     src={ picture ? (picture) : (t2_1) }
+                                     onChange={onChangePicture}
+                                />
+                            </div>
                         </Grid>
                         <Grid item xs={4}>
-                            <img className="card" width="100%" src={t2_7} />
-                            <img className="card" width="100%" src={t2_5} />
-                            <img className="card" width="100%" src={t2_8} />
+                            <div>
+                                <label htmlFor="file-upload" className="custom-file-upload">
+                                    <img src={upload} width="50%"/>
+                                </label><input id="file-upload" type="file" onChange={onChangePicture}/>
+                                <img className="card" width="100%"
+                                     src={ picture ? (picture) : (t2_2) }
+                                     onChange={onChangePicture}
+                                />
+                            </div>
+                        </Grid><Grid item xs={4}>
+                            <div>
+                                <label htmlFor="file-upload" className="custom-file-upload">
+                                    <img src={upload} width="50%"/>
+                                </label><input id="file-upload" type="file" onChange={onChangePicture}/>
+                                <img className="card" width="100%"
+                                     src={ picture ? (picture) : (t2_3) }
+                                     onChange={onChangePicture}
+                                />
+                            </div>
                         </Grid>
                         <Grid item xs={4}>
-                            <img className="card" width="100%" src={t2_3} />
-                            <img className="card" width="100%" src={t2_6} />
-                            <img className="card" width="100%" src={t2_9} />
+                            <div>
+                                <label htmlFor="file-upload" className="custom-file-upload">
+                                    <img src={upload} width="50%"/>
+                                </label><input id="file-upload" type="file" onChange={onChangePicture}/>
+                                <img className="card" width="100%"
+                                     src={ picture ? (picture) : (t2_4) }
+                                     onChange={onChangePicture}
+                                />
+                            </div>
                         </Grid>
+                        <Grid item xs={4}>
+                            <div>
+                                <label htmlFor="file-upload" className="custom-file-upload">
+                                    <img src={upload} width="50%"/>
+                                </label><input id="file-upload" type="file" onChange={onChangePicture}/>
+                                <img className="card" width="100%"
+                                     src={ picture ? (picture) : (t2_5) }
+                                     onChange={onChangePicture}
+                                />
+                            </div>
+                        </Grid>
+                        <Grid item xs={4}>
+                            <div>
+                                <label htmlFor="file-upload" className="custom-file-upload">
+                                    <img src={upload} width="50%"/>
+                                </label><input id="file-upload" type="file" onChange={onChangePicture}/>
+                                <img className="card" width="100%"
+                                     src={ picture ? (picture) : (t2_6) }
+                                     onChange={onChangePicture}
+                                />
+                            </div>
+                        </Grid>
+
+
+
+
+
+                        {/*<Grid item xs={4}>*/}
+                        {/*    <Link to="/t2"><img className="card" width="100%" src={t2_1} /></Link>*/}
+                        {/*    <img className="card" width="100%" src={t2_4} />*/}
+                        {/*    <img className="card" width="100%" src={t2_2} />*/}
+                        {/*</Grid>*/}
+                        {/*<Grid item xs={4}>*/}
+                        {/*    <img className="card" width="100%" src={t2_7} />*/}
+                        {/*    <img className="card" width="100%" src={t2_5} />*/}
+                        {/*    <img className="card" width="100%" src={t2_8} />*/}
+                        {/*</Grid>*/}
+                        {/*<Grid item xs={4}>*/}
+                        {/*    <img className="card" width="100%" src={t2_3} />*/}
+                        {/*    <img className="card" width="100%" src={t2_6} />*/}
+                        {/*    <img className="card" width="100%" src={t2_9} />*/}
+                        {/*</Grid>*/}
                     </Grid>
                 </TabPanel>
                 <TabPanel value={value} index={1} style={{width: '100%'}}>

@@ -14,3 +14,17 @@
   border: 1px solid black !important;
     font-size: 30px;
 }
+
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    text-align: left;
+    width: 5%;
+    position: absolute;
+    z-index: 9999;
+    padding: 7px;
+    /*border: 1px solid #ccc;*/
+    display: inline-block;
+    cursor: pointer;
+}
