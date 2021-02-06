@@ -6,6 +6,7 @@ import AboutMe from './AboutMe';
 import Career from './Career';
 import Project from './Project';
 
+import Test from './Test';
 const TEMPLATE_BASE_URL = 'http://localhost:8080/portfolio';
 
 const Template2 = () =>{
@@ -84,6 +85,10 @@ const Template2 = () =>{
         </Route>
         <Route path="/template/t3/career">
           <Career state={career} setState={setCareer}/>
+        </Route>
+
+        <Route path="/template/t3/test">
+          <Test/>
         </Route>
       </Switch>
     </>
