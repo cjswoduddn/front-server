@@ -21,11 +21,9 @@ const Template2 = () =>{
     const form = new FormData();
     form.append("dtype", dtype);
     for(const [key, value] of Object.entries(text)){
-      let keyString = key.toString();
       form.append(key, value);
     }
     for(const [key, value] of Object.entries(thumbnail)){
-      let keyString = key.toString();
       form.append(key, value);
     }
     axios({
@@ -38,7 +36,6 @@ const Template2 = () =>{
       data: form
     })
     .then((res)=>{
-      console.log(res);
       history.push({
         pathname: "/template/"+res.data
       })

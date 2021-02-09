@@ -1,0 +1,43 @@
+.template2-project-viewer-container{
+  background-color: rgb(219, 212, 197);
+  margin-top: 102px;
+}
+.template2-project-viewer-item-container{
+  margin-top: 100px !important;
+  box-shadow: 20px 20px 20px grey;
+  background-color: white
+}
+
+.template2-project-viewer-item-name{
+  background: transparent;
+  font-size: 30px;
+  font-weight: 700;
+  width: 100%;
+  margin-left: 10%;
+  color: blue
+}
+
+.template2-project-viewer-item-role{
+  background: transparent;
+  font-size: 15px;
+  font-weight: 700;
+  width: 100%;
+  margin-left: 10%;
+}
+.template2-project-viewer-item-intro{
+  background: transparent;
+  height: 250px;
+  max-height: 250px;
+  font-size: 22px;
+  margin-top: 20px;
+  width: 100%;
+}
+.template2-project-viewer-item-thumbnail-label{
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  font-size: xx-large;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}

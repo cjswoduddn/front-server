@@ -12,7 +12,6 @@ const LogIn = () =>{
   const { handleSubmit, reset, control} = methods;
   const history = useHistory();
   const onSubmit = data =>{
-    console.log(data);
     axios({
       method: 'post',
       headers:{
@@ -23,15 +22,15 @@ const LogIn = () =>{
       data: data
     })
     .then((res)=>{
-      console.log("succeslla");
-      console.log(res);
       history.push({
-        pathname: "/template"
+        pathname: "/template",
+        state:{
+          memberId: res.data
+        }
       });
     })
     .catch((err)=>{
-      console.log("sail");
-      console.log(err);
+      alert(err.data);
     });
 
   }
