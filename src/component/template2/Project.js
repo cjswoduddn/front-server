@@ -2,12 +2,18 @@ import React from 'react';
 import {Grid} from '@material-ui/core';
 import "./Template2Project.css";
 
-const Project = ({state, setState}) =>{
+const Project = (props) =>{
 
+  const text = props.text;
+  const setText = props.setText;
+  const thumbnail = props.thumbnail;
+  const setThumbnail = props.setThumbnail;
+  const preview = props.preview;
+  const setPreview = props.setPreview;
 
   const onChange=(e)=>{
-    setState({
-      ...state,
+    setText({
+      ...text,
       [e.target.name] : e.target.value
     })
   }
@@ -19,10 +25,13 @@ const Project = ({state, setState}) =>{
     if(filelist === null || filelist.length === 0) return;
 
     reader.onloadend = () => {
-      setState({
-        ...state,
+      setThumbnail({
+        ...thumbnail,
         [e.target.name] : filelist[0],
-        ["noSubmit"+e.target.name] : reader.result
+      })
+      setPreview({
+        ...preview,
+        [e.target.name] : reader.result
       })
     }
     reader.readAsDataURL(filelist[0]);
@@ -42,7 +51,7 @@ const Project = ({state, setState}) =>{
                 <input type="text"
                   name="projectItem1Name"
                   className="template2-project-item-name"
-                  defaultValue={state.projectItem1Name}
+                  defaultValue={text.projectItem1Name}
                   onChange={onChange}
                   placeholder="project name"
                 />
@@ -51,7 +60,7 @@ const Project = ({state, setState}) =>{
                 <input type="text" 
                   name="projectItem1Role"
                   className="template2-project-item-role"
-                  defaultValue={state.projectItem1Role}
+                  defaultValue={text.projectItem1Role}
                   onChange={onChange}
                   placeholder="project role"
                 />
@@ -64,14 +73,14 @@ const Project = ({state, setState}) =>{
                   placeholder="INTRO"
                   onChange={onChange}
                   name="projectItem1Intro"
-                  defaultValue={state.projectItem1Intro}
+                  defaultValue={text.projectItem1Intro}
             />
           </Grid>
         </Grid>
         <Grid container item xs="5">
           <label className="template2-project-item-thumbnail-label" 
             for="projectItem1Thumbnail"
-            style={{backgroundImage: `url(${state.noSubmitprojectItem1Thumbnail})`}}
+            style={{backgroundImage: `url(${preview.projectItem1Thumbnail})`}}
             >
             IMG
             <input
@@ -94,7 +103,7 @@ const Project = ({state, setState}) =>{
                 <input type="text"
                   name="projectItem2Name"
                   className="template2-project-item-name"
-                  defaultValue={state.projectItem2Name}
+                  defaultValue={text.projectItem2Name}
                   onChange={onChange}
                   placeholder="project name"
                 />
@@ -103,7 +112,7 @@ const Project = ({state, setState}) =>{
                 <input type="text" 
                   name="projectItem2Role"
                   className="template2-project-item-role"
-                  defaultValue={state.projectItem2Role}
+                  defaultValue={text.projectItem2Role}
                   onChange={onChange}
                   placeholder="project role"
                 />
@@ -116,14 +125,14 @@ const Project = ({state, setState}) =>{
                   placeholder="INTRO"
                   onChange={onChange}
                   name="projectItem2Intro"
-                  defaultValue={state.projectItem2Intro}
+                  defaultValue={text.projectItem2Intro}
             />
           </Grid>
         </Grid>
         <Grid container item xs="5">
           <label className="template2-project-item-thumbnail-label" 
             for="projectItem2Thumbnail"
-            style={{backgroundImage: `url(${state.noSubmitprojectItem2Thumbnail})`}}
+            style={{backgroundImage: `url(${preview.projectItem2Thumbnail})`}}
             >
             IMG
             <input

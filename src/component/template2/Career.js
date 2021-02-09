@@ -2,11 +2,18 @@ import React from 'react';
 import {Grid} from '@material-ui/core';
 import "./Template2Career.css";
 
-const Career = ({state, setState}) =>{
+const Career = (props) =>{
+
+  const text = props.text;
+  const setText = props.setText;
+  const thumbnail = props.thumbnail;
+  const setThumbnail = props.setThumbnail;
+  const preview = props.preview;
+  const setPreview = props.setPreview;
 
   const onChange=(e)=>{
-    setState({
-      ...state,
+    setText({
+      ...text,
       [e.target.name] : e.target.value
     })
   }
@@ -21,7 +28,7 @@ const Career = ({state, setState}) =>{
 
         <Grid item>
           <input type="text" name="careerItem1Title" className="template2-career-item-title"
-            defaultValue={state.careerItem1Title}
+            defaultValue={text.careerItem1Title}
             onChange={onChange}
             placeholder="company name"/>
         </Grid>
@@ -31,17 +38,17 @@ const Career = ({state, setState}) =>{
           <Grid container xs="4" direction="column" alignContent="center">
             <input className="template2-career-item-date"
               name="careerItem1Date"
-              defaultValue={state.careerItem1Date}
+              defaultValue={text.careerItem1Date}
               onChange={onChange}
               placeholder="when"/>
             <input className="template2-career-item-position" 
               name="careerItem1Position"
-              defaultValue={state.careerItem1Position}
+              defaultValue={text.careerItem1Position}
               onChange={onChange}
               placeholder="position"/>
             <input className="template2-career-item-stack" 
               name="careerItem1Stack"
-              defaultValue={state.careerItem1Stack}
+              defaultValue={text.careerItem1Stack}
               onChange={onChange}
               placeholder="stack"/>
           </Grid>
@@ -52,7 +59,7 @@ const Career = ({state, setState}) =>{
                 placeholder="INTRO"
                 onChange={onChange}
                 name="careerItem1Intro"
-                defaultValue={state.careerItem1Intro}
+                defaultValue={text.careerItem1Intro}
                 />
           </Grid>
 
@@ -63,7 +70,7 @@ const Career = ({state, setState}) =>{
 
         <Grid item>
           <input type="text" name="careerItem2Title" className="template2-career-item-title"
-            defaultValue={state.careerItem2Title}
+            defaultValue={text.careerItem2Title}
             onChange={onChange}
             placeholder="company name"/>
         </Grid>
@@ -73,17 +80,17 @@ const Career = ({state, setState}) =>{
           <Grid container xs="4" direction="column" alignContent="center">
             <input className="template2-career-item-date"
               name="careerItem2Date"
-              defaultValue={state.careerItem2Date}
+              defaultValue={text.careerItem2Date}
               onChange={onChange}
               placeholder="when"/>
             <input className="template2-career-item-position" 
               name="careerItem2Position"
-              defaultValue={state.careerItem2Position}
+              defaultValue={text.careerItem2Position}
               onChange={onChange}
               placeholder="position"/>
             <input className="template2-career-item-stack" 
               name="careerItem2Stack"
-              defaultValue={state.careerItem2Stack}
+              defaultValue={text.careerItem2Stack}
               onChange={onChange}
               placeholder="stack"/>
           </Grid>
@@ -94,7 +101,7 @@ const Career = ({state, setState}) =>{
                 placeholder="INTRO"
                 onChange={onChange}
                 name="careerItem2Intro"
-                defaultValue={state.careerItem2Intro}
+                defaultValue={text.careerItem2Intro}
                 />
           </Grid>
 

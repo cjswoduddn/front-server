@@ -3,7 +3,7 @@ import {Grid, TextField, Button, FormControl} from "@material-ui/core";
 import { useForm, Controller } from 'react-hook-form';
 import axios from 'axios';
 
-const TEMPLATE_BASE_URL = 'http://localhost:8080/member';
+const TEMPLATE_BASE_URL = 'http://localhost:8080/signup';
 
 const SignUp = () => {
   const methods = useForm();

@@ -3,12 +3,14 @@ import './SignIn.css'
 import {Grid, TextField, Button, FormControl} from "@material-ui/core";
 import { useForm, Controller } from 'react-hook-form';
 import axios from 'axios';
+import {useHistory} from 'react-router-dom';
 
-const TEMPLATE_BASE_URL = 'http://localhost:8080/process';
+const TEMPLATE_BASE_URL = 'http://localhost:8080/signin';
 
 const LogIn = () =>{
   const methods = useForm();
   const { handleSubmit, reset, control} = methods;
+  const history = useHistory();
   const onSubmit = data =>{
     console.log(data);
     axios({
@@ -16,12 +18,16 @@ const LogIn = () =>{
       headers:{
         'Content-Type': 'application/json'
       },
+      withCredentials: true,
       url: TEMPLATE_BASE_URL,
       data: data
     })
     .then((res)=>{
       console.log("succeslla");
       console.log(res);
+      history.push({
+        pathname: "/template"
+      });
     })
     .catch((err)=>{
       console.log("sail");
@@ -35,7 +41,7 @@ const LogIn = () =>{
       <form onSubmit={handleSubmit(onSubmit)}>
         <FormControl style={{width: '100%'}}>
           <Controller
-            name="username"
+            name="email"
             control={control}
             rules={{ required: "This is requierd", minLength: 2 }}
             as={

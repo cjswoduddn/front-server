@@ -5,6 +5,8 @@ import TemplateSelector from './TemplateSelector';
 import Theme1 from "../../component/template/Theme1";
 import Theme2 from "../../component/template/Theme2";
 import Template2 from '../../component/template2/Template2';
+import TemplateService from './TemplateService';
+
 const Template = () =>{
     return (
         <Switch>
@@ -12,6 +14,7 @@ const Template = () =>{
           <Route path="/template/t1"><Theme1/></Route>
           <Route path="/template/t2"><Theme2/></Route>
           <Route path="/template/t3"><Template2/></Route>
+          <Route path="/template/:id"><TemplateService/></Route>
         </Switch>
     );
 }

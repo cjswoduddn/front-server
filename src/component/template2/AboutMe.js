@@ -2,11 +2,18 @@ import React from 'react';
 import {Grid} from '@material-ui/core';
 import "./Template2Aboutme.css";
 
-const AboutMe = ({state, setState}) =>{
+const AboutMe = (props) =>{
+
+  const text = props.text;
+  const setText = props.setText;
+  const thumbnail = props.thumbnail;
+  const setThumbnail = props.setThumbnail;
+  const preview = props.preview;
+  const setPreview = props.setPreview;
 
   const onChange=(e)=>{
-    setState({
-      ...state,
+    setText({
+      ...text,
       [e.target.name] : e.target.value
     })
   }
@@ -18,10 +25,13 @@ const AboutMe = ({state, setState}) =>{
     if(filelist === null || filelist.length === 0) return;
 
     reader.onloadend = () => {
-      setState({
-        ...state,
+      setThumbnail({
+        ...thumbnail,
         [e.target.name] : filelist[0],
-        ["noSubmit"+e.target.name] : reader.result
+      })
+      setPreview({
+        ...preview,
+        [e.target.name] : reader.result
       })
     }
     reader.readAsDataURL(filelist[0]);
@@ -34,7 +44,7 @@ const AboutMe = ({state, setState}) =>{
           <Grid container xs="7" className="template2-aboutme-item-left-profile" justify="center">
             <label className="template2-aboutme-item-left-profile-thumbnail-label" 
               for="thumbnail"
-              style={{backgroundImage: `url(${state.noSubmitthumbnail})`}}
+              style={{backgroundImage: `url(${preview.thumbnail})`}}
               >
               IMG
               <input
@@ -51,7 +61,7 @@ const AboutMe = ({state, setState}) =>{
               placeholder="NAME"
               name="name"
               onChange={onChange}
-              defaultValue={state.name}
+              defaultValue={text.name}
             />
           </Grid>
         </Grid>
@@ -62,7 +72,7 @@ const AboutMe = ({state, setState}) =>{
             placeholder="TITLE"
             name="title"
             onChange={onChange}
-            defaultValue={state.title}
+            defaultValue={text.title}
           />
           <input 
             type="text" 
@@ -70,14 +80,14 @@ const AboutMe = ({state, setState}) =>{
             placeholder="skill"
             name="skill"
             onChange={onChange}
-            defaultValue={state.skill}
+            defaultValue={text.skill}
           />
           <textarea 
             className="template2-aboutme-item-right-intro" 
             placeholder="INTRO"
             name="intro"
             onChange={onChange}
-            defaultValue={state.intro}
+            defaultValue={text.intro}
             />
         </Grid>
       </Grid>

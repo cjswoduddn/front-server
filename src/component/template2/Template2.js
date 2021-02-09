@@ -1,49 +1,36 @@
 import React, {useState} from 'react';
 import {Button, AppBar, Toolbar, Typography} from '@material-ui/core';
 import axios from 'axios';
+import {useHistory} from 'react-router-dom';
 import { Route, Switch, Link } from 'react-router-dom';
 import AboutMe from './AboutMe';
 import Career from './Career';
 import Project from './Project';
 
-import Test from './Test';
 const TEMPLATE_BASE_URL = 'http://localhost:8080/portfolio';
 
 const Template2 = () =>{
 
   const dtype = "template2";
-
-  const [project, setProject] = useState({});
-  const [aboutMe, setAboutMe] = useState({});
-  const [career, setCareer] = useState({});
+  const [text, setText] = useState({});
+  const [thumbnail, setThumbnail] = useState({});
+  const [preview, setPreview] = useState({});
+  const history = useHistory();
 
   const onSubmit = (e) => {
     const form = new FormData();
     form.append("dtype", dtype);
-    for(const [key, value] of Object.entries(aboutMe)){
+    for(const [key, value] of Object.entries(text)){
       let keyString = key.toString();
-      if(keyString.startsWith("noSubmit")){
-        continue;
-      }
       form.append(key, value);
     }
-    for(const [key, value] of Object.entries(project)){
+    for(const [key, value] of Object.entries(thumbnail)){
       let keyString = key.toString();
-      if(keyString.startsWith("noSubmit")){
-        continue;
-      }
       form.append(key, value);
     }
-    for(const [key, value] of Object.entries(career)){
-      let keyString = key.toString();
-      if(keyString.startsWith("noSubmit")){
-        continue;
-      }
-      form.append(key, value);
-    }
-
     axios({
       method: 'post',
+      withCredentials: true,
       headers:{
         'Content-Type': `multipart/form-data`
       },
@@ -51,7 +38,10 @@ const Template2 = () =>{
       data: form
     })
     .then((res)=>{
-      console.log(res.body);
+      console.log(res);
+      history.push({
+        pathname: "/template/"+res.data
+      })
     })
     .catch((err)=>{
       console.log(err);
@@ -75,24 +65,47 @@ const Template2 = () =>{
 
       <Switch>
         <Route exact path="/template/t3">
-          <AboutMe state={aboutMe} setState={setAboutMe}/>
+          <AboutMe 
+            text={text}
+            setText={setText}
+            thumbnail={thumbnail}
+            setThumbnail={setThumbnail}
+            preview={preview}
+            setPreview={setPreview}
+          />
         </Route>
         <Route path="/template/t3/aboutme">
-          <AboutMe state={aboutMe} setState={setAboutMe}/>
+          <AboutMe
+            text={text}
+            setText={setText}
+            thumbnail={thumbnail}
+            setThumbnail={setThumbnail}
+            preview={preview}
+            setPreview={setPreview}
+          />
         </Route>
         <Route path="/template/t3/project">
-          <Project state={project} setState={setProject}/>
+          <Project
+            text={text}
+            setText={setText}
+            thumbnail={thumbnail}
+            setThumbnail={setThumbnail}
+            preview={preview}
+            setPreview={setPreview}
+          />
         </Route>
         <Route path="/template/t3/career">
-          <Career state={career} setState={setCareer}/>
-        </Route>
-
-        <Route path="/template/t3/test">
-          <Test/>
+          <Career
+            text={text}
+            setText={setText}
+            thumbnail={thumbnail}
+            setThumbnail={setThumbnail}
+            preview={preview}
+            setPreview={setPreview}
+          />
         </Route>
       </Switch>
     </>
   );
 }
-
 export default Template2;
