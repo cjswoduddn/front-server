@@ -9,14 +9,16 @@ import { useHistory } from "react-router"
 const TEMPLATE_BASE_URL = 'http://localhost:8000/api-token-auth/';
 
 let LogIn = () =>{
-  let history = useHistory()
-
   const methods = useForm();
   const { handleSubmit, reset, control} = methods;
+  const history = useHistory();
   const onSubmit = data =>{
     axios({
       method: 'post',
-      headers:{'Content-Type': 'application/json'},
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      withCredentials: true,
       url: TEMPLATE_BASE_URL,
       data: data
     })

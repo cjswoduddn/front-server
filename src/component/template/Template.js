@@ -8,6 +8,8 @@ import Theme3 from "../../component/template/Theme3";
 import Template2 from '../../component/template2/Template2';
 import Theme1view from "./Theme1view";
 import Theme2view from "./Theme2view";
+import TemplateService from './TemplateService';
+
 const Template = () =>{
     return (
         <Switch>
@@ -18,6 +20,7 @@ const Template = () =>{
           <Route path="/template/t2view"><Theme2view/></Route>
           <Route path="/template/t3"><Template2/></Route>
           <Route path="/template/t4"><Theme3/></Route>
+          <Route path="/template/:id"><TemplateService/></Route>
         </Switch>
     );
 }

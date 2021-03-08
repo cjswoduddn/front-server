@@ -5,8 +5,6 @@ import {Grid, TextField, Typography, Button, FormControl, FormLabel, FormGroup, 
 import SignUp from './SignUp';
 import LogIn from './LogIn';
 
-import { Field, reduxForm } from 'redux-form';
-
 
 const SignIn = (props) =>{
     const [mode, setMode] = useState(0);

@@ -2,11 +2,11 @@ import React from 'react';
 import {Grid} from '@material-ui/core';
 import "./Template2Aboutme.css";
 
-const AboutMe = ({state, setState}) =>{
+const AboutMe = ({aboutMe, setAboutMe}) =>{
 
   const onChange=(e)=>{
-    setState({
-      ...state,
+    setAboutMe({
+      ...aboutMe,
       [e.target.name] : e.target.value
     })
   }
@@ -18,10 +18,10 @@ const AboutMe = ({state, setState}) =>{
     if(filelist === null || filelist.length === 0) return;
 
     reader.onloadend = () => {
-      setState({
-        ...state,
+      setAboutMe({
+        ...aboutMe,
         [e.target.name] : filelist[0],
-        ["noSubmit"+e.target.name] : reader.result
+        previewThumbnail : reader.result
       })
     }
     reader.readAsDataURL(filelist[0]);
@@ -34,7 +34,7 @@ const AboutMe = ({state, setState}) =>{
           <Grid container xs="7" className="template2-aboutme-item-left-profile" justify="center">
             <label className="template2-aboutme-item-left-profile-thumbnail-label" 
               for="thumbnail"
-              style={{backgroundImage: `url(${state.noSubmitthumbnail})`}}
+              style={{backgroundImage: `url(${aboutMe.previewThumbnail})`}}
               >
               IMG
               <input
@@ -51,7 +51,7 @@ const AboutMe = ({state, setState}) =>{
               placeholder="NAME"
               name="name"
               onChange={onChange}
-              defaultValue={state.name}
+              defaultValue={aboutMe.name}
             />
           </Grid>
         </Grid>
@@ -62,7 +62,7 @@ const AboutMe = ({state, setState}) =>{
             placeholder="TITLE"
             name="title"
             onChange={onChange}
-            defaultValue={state.title}
+            defaultValue={aboutMe.title}
           />
           <input 
             type="text" 
@@ -70,14 +70,14 @@ const AboutMe = ({state, setState}) =>{
             placeholder="skill"
             name="skill"
             onChange={onChange}
-            defaultValue={state.skill}
+            defaultValue={aboutMe.skill}
           />
           <textarea 
             className="template2-aboutme-item-right-intro" 
             placeholder="INTRO"
             name="intro"
             onChange={onChange}
-            defaultValue={state.intro}
+            defaultValue={aboutMe.intro}
             />
         </Grid>
       </Grid>

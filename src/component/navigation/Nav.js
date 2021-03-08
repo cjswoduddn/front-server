@@ -4,10 +4,10 @@ import logo from '../../factory/images/logo.png';
 import { Link } from 'react-router-dom';
 import {AppBar, Toolbar, Typography} from "@material-ui/core";
 import Search from "./search/Search";
-import { useHistory } from "react-router"
+import { useHistory , useLocation} from "react-router"
 
 const Nav = () =>{
-  let history = useHistory()
+  const history = useHistory()
 
   const [mode, setMode] = useState("nav-init");
   const [mode2, setMode2] = useState("img-init");
@@ -18,6 +18,8 @@ const Nav = () =>{
     history.push('/login');
     window.location.reload();
   }
+  const location = useLocation();
+  const memberId = location.state === undefined ? "0" : location.state.memberId;
 
   useEffect(()=>{
     function handleMode(){
