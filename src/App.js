@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import AuthRoute from './AuthRoute';
 
 import Nav from './component/navigation/Nav';
@@ -9,28 +9,28 @@ import Search from './component/service/Search';
 import Template from './component/template/Template';
 
 function App() {
-  localStorage.memberId = 0;
-  return (
-    <>
-      <Switch>
-        <Route exact path="/"><Home /></Route>
-        <Route path="/"><Nav /></Route>
-      </Switch>
+    localStorage.memberId = 0;
+    return (
+        <>
+            <Switch>
+                <Route exact path="/"><Home/></Route>
+                <Route path="/"><Nav/></Route>
+            </Switch>
 
-      <Switch>
-        <Route path="/login"><SignIn /></Route>
-        <Route path="/template"><Template /></Route>
+            <Switch>
+                <Route path="/login"><SignIn/></Route>
+                {/*<Route path="/template"><Template/></Route>*/}
 
-        {/* <AuthRoute
-            authenticated={sessionStorage}
-            path="/template"
-            render={props => <Template {...props} />}
-          /> */}
-        <Route path="/search/:path"><Search/></Route>
-        {/*<Route path="/template"><Template/></Route>*/}
-      </Switch>
-    </>
-  );
+                <AuthRoute
+                    authenticated={sessionStorage}
+                    path="/template"
+                    render={props => <Template {...props} />}
+                />
+                <Route path="/search/:path"><Search/></Route>
+                {/*<Route path="/template"><Template/></Route>*/}
+            </Switch>
+        </>
+    );
 }
 
 export default App;

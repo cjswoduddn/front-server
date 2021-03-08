@@ -50,11 +50,20 @@ const Theme2 = () => {
         setValue(newValue);
     };
 
-    const [picture, setPicture] = useState('');
+    const [picture1, setPicture1] = useState('');
+    const [picture2, setPicture2] = useState('');
+    const [picture3, setPicture3] = useState('');
+    const [picture4, setPicture4] = useState('');
+    const [picture5, setPicture5] = useState('');
+    const [picture6, setPicture6] = useState('');
+    // const [picture7, setPicture7] = useState('');
+    // const [picture8, setPicture8] = useState('');
+    // const [picture9, setPicture9] = useState('');
 
-    const onChangePicture = e => {
-        console.log('picture: ', picture);
-        setPicture(URL.createObjectURL(e.target.files[0]));
+    const onChangePicture = (e, set) => {
+        console.log('picture: ', set);
+        set(URL.createObjectURL(e.target.files[0]));
+        // setPicture(URL.createObjectURL(e.target.files[0]));
     };
 
 
@@ -68,10 +77,10 @@ const Theme2 = () => {
             <Grid container justify="center" alignItems="center" style={{marginTop: '9%', textAlign: 'center'}}>
 
                 <Grid item xs={12} alignItems="center" style={{textAlign: 'center'}}>
-                    <div style={{width: '50%'}}>
-                        <input defaultValue="Y. S. Creator Design" name="title" register={register}
-                               style={{border: 'none', fontSize: 30, fontWeight: 600, textAlign: 'center', marginBottom: 30}}/>
-                        <CustomTextField register={register} name="title" label="" style={{width: '60%'}}/>
+                    <div style={{width: '30%', margin: 'auto', marginBottom: 25}}>
+                        {/*<input defaultValue="Y. S. Creator Design" name="title" register={register}*/}
+                        {/*       style={{border: 'none', fontSize: 30, fontWeight: 600, textAlign: 'center', marginBottom: 30}}/>*/}
+                        <CustomTextField register={register} name="title" label=""/>
 
                         {/*<div className="TextField-without-border-radius">*/}
                         {/*    <TextField className="inputCus" defaultValue="Y. S. Creator Design"*/}
@@ -99,10 +108,10 @@ const Theme2 = () => {
                                 <div>
                                     <label htmlFor="file-upload" className="custom-file-upload">
                                         <img src={upload} width="50%"/>
-                                    </label><input id="file-upload" type="file" onChange={onChangePicture}/>
+                                    </label><input id="file-upload" type="file" onChange={(e) => onChangePicture(e, setPicture1)}/>
                                     <img className="card" width="100%"
-                                         src={picture ? (picture) : (t2_1)}
-                                         onChange={onChangePicture}
+                                         src={picture1 ? (picture1) : (t2_1)}
+                                         // onChange={onChangePicture}
                                     />
                                 </div>
                             </Grid>
@@ -110,19 +119,19 @@ const Theme2 = () => {
                                 <div>
                                     <label htmlFor="file-upload" className="custom-file-upload">
                                         <img src={upload} width="50%"/>
-                                    </label><input id="file-upload" type="file" onChange={onChangePicture}/>
+                                    </label><input id="file-upload" type="file" onChange={(e) => onChangePicture(e, setPicture2)}/>
                                     <img className="card" width="100%"
-                                         src={picture ? (picture) : (t2_2)}
-                                         onChange={onChangePicture}
+                                         src={picture2 ? (picture2) : (t2_2)}
+                                         // onChange={onChangePicture}
                                     />
                                 </div>
                             </Grid><Grid item xs={4}>
                             <div>
                                 <label htmlFor="file-upload" className="custom-file-upload">
                                     <img src={upload} width="50%"/>
-                                </label><input id="file-upload" type="file" onChange={onChangePicture}/>
+                                </label><input id="file-upload" type="file" onChange={(e) => onChangePicture(e, setPicture3)}/>
                                 <img className="card" width="100%"
-                                     src={picture ? (picture) : (t2_3)}
+                                     src={picture3 ? (picture3) : (t2_3)}
                                      onChange={onChangePicture}
                                 />
                             </div>
@@ -131,9 +140,9 @@ const Theme2 = () => {
                                 <div>
                                     <label htmlFor="file-upload" className="custom-file-upload">
                                         <img src={upload} width="50%"/>
-                                    </label><input id="file-upload" type="file" onChange={onChangePicture}/>
+                                    </label><input id="file-upload" type="file" onChange={(e) => onChangePicture(e, setPicture4)}/>
                                     <img className="card" width="100%"
-                                         src={picture ? (picture) : (t2_4)}
+                                         src={picture4 ? (picture4) : (t2_4)}
                                          onChange={onChangePicture}
                                     />
                                 </div>
@@ -142,9 +151,9 @@ const Theme2 = () => {
                                 <div>
                                     <label htmlFor="file-upload" className="custom-file-upload">
                                         <img src={upload} width="50%"/>
-                                    </label><input id="file-upload" type="file" onChange={onChangePicture}/>
+                                    </label><input id="file-upload" type="file" onChange={(e) => onChangePicture(e, setPicture5)}/>
                                     <img className="card" width="100%"
-                                         src={picture ? (picture) : (t2_5)}
+                                         src={picture5 ? (picture5) : (t2_5)}
                                          onChange={onChangePicture}
                                     />
                                 </div>
@@ -153,9 +162,9 @@ const Theme2 = () => {
                                 <div>
                                     <label htmlFor="file-upload" className="custom-file-upload">
                                         <img src={upload} width="50%"/>
-                                    </label><input id="file-upload" type="file" onChange={onChangePicture}/>
+                                    </label><input id="file-upload" type="file" onChange={(e) => onChangePicture(e, setPicture6)}/>
                                     <img className="card" width="100%"
-                                         src={picture ? (picture) : (t2_6)}
+                                         src={picture6 ? (picture6) : (t2_6)}
                                          onChange={onChangePicture}
                                     />
                                 </div>

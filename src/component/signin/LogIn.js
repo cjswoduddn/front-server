@@ -5,8 +5,8 @@ import { useForm, Controller } from 'react-hook-form';
 import axios from 'axios';
 import { useHistory } from "react-router"
 
-// const TEMPLATE_BASE_URL = 'http://localhost:8080/process';
-const TEMPLATE_BASE_URL = 'http://localhost:8000/api-token-auth/';
+const TEMPLATE_BASE_URL = 'http://localhost:8080/signin';
+// const TEMPLATE_BASE_URL = 'http://localhost:8000/api-token-auth/';
 
 let LogIn = () =>{
   const methods = useForm();
@@ -33,6 +33,10 @@ let LogIn = () =>{
     .catch((err)=>{
       console.log(err);
       alert("Error")
+      return
+        <div>
+          asdf
+        </div>
     });
   }
 
