@@ -21,11 +21,11 @@ function App() {
         <Route path="/login"><SignIn /></Route>
         <Route path="/template"><Template /></Route>
 
-        {/* <AuthRoute
+        <AuthRoute
             authenticated={sessionStorage}
             path="/template"
             render={props => <Template {...props} />}
-          /> */}
+          />
         <Route path="/search/:path"><Search/></Route>
         {/*<Route path="/template"><Template/></Route>*/}
       </Switch>
