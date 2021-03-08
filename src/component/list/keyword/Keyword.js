@@ -6,8 +6,8 @@ const SearchResult = ({mode, keyword}) =>{
 
   return(
     <>
-      <Grid item xs={mode === 0 ? 8 : 12}>
-          <span className="keyword-dynamic">{keyword}</span>
+      <Grid item xs={mode === 0 ? 8 : 12} style={{marginBottom: 30, marginTop: 30, marginLeft: 30}}>
+          <span className="keyword-dynamic">{keyword} </span>
           <span className="keyword-static">{"  "}검색결과</span>
       </Grid>
     </>

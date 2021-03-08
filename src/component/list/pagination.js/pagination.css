@@ -3,10 +3,18 @@
   margin-bottom: 25px;
   width: 100%;
   font-size: 50px;
+  border: none;
 }
 .pagination-span1{
   color: gray;
+  font-size: 20px;
+  display: inline;
+
+
 }
 .pagination-span2{
   color: lightslategray;
+  font-size: 20px;
+  display: inline;
+
 }

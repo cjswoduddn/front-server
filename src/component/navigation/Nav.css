@@ -71,10 +71,10 @@
   width: 100px;
   text-align: center;
 }
-.padding:hover {
-  border: 1px solid white;
-  borderRadius: 30
-}
+/*.padding:hover {*/
+/*  border: 1px solid white;*/
+/*  borderRadius: 30*/
+/*}*/
 .padding:active {
   border: 1px solid white;
 }

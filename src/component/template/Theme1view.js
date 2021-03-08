@@ -1,10 +1,11 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import image from '../../factory/images/min.png';
 import {
     Button,
     Card,
     CardContent, FormControl, FormControlLabel, FormLabel,
-    Grid,
+    Grid, InputBase,
     Paper, Radio, RadioGroup,
     Table,
     TableBody, TableCell, TableContainer,
@@ -12,88 +13,103 @@ import {
     TextField,
     Typography
 } from '@material-ui/core';
-import CustomTextField from "./CustomTextField";
+import CustomTextField2 from "./CustomTextField2";
 
-const Theme1 = () =>{
+const Theme1view = () =>{
     const { handleSubmit, register, errors } = useForm();
+    const data = {
+        name: '홍길동',
+        englishName: 'Hong Gil Dong',
+        birth: '2001-01-01',
+        phone: '010-1234-5678',
+        address: '충청도',
+        email: 'hongildong@gmail.com',
+        avatar: image,
+        highSchoolDate: '2002-01-01',
+        highSchoolName: '길동고등학교',
+        highSchoolMajor: '무과',
+        highSchoolGraduation: '졸업',
+        highSchoolScore: '4.0',
+        collegeDate: '2003-01-01',
+        collegeName: '길동대학교',
+        collegeMajor: '정치외교학과',
+        collegeGraduation: '졸업',
+        collegeScore: '4.5',
+        graduateSchoolDate: ' ',
+        graduateSchoolName: ' ',
+        graduateSchoolMajor: ' ',
+        graduateSchoolGraduation: ' ',
+        graduateSchoolScore: ' ',
+        career1Date: '2004-01-01',
+        career1Name: '관청',
+        career1Title: ' ',
+        career1Postion: ' ',
+        career2Date: ' ',
+        career2Name: ' ',
+        career2Title: ' ',
+        career2Postion: ' ',
+        certificate1Date: ' ',
+        certiificate1Title: ' ',
+        certiificate1Origin: ' ',
+        certificate2Date: ' ',
+        certiificate2Title: ' ',
+        certiificate2Origin: ' ',
+        militaryCheck: ' '
+    }
+
 
     const onSubmit = (data) => {
         console.log(data);
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
+        // <form onSubmit={handleSubmit(onSubmit)}>
             <Grid container direction="row" alignItems="center" justify="center"
                   style={{marginTop: 102, textAlign: "center", paddingLeft: '15%', paddingRight: '15%'}}>
                 <Grid item xs={4}>
-                    <Button variant="contained" component="label">
-                        Image Upload
-                        <input type="file" hidden/>
-                    </Button>
+                    <img width="75%" src={image}/>
                 </Grid>
                 <Grid container xs={8} style={{textAlign: 'left'}}>
                     <Grid item xs={5}>
                         <Grid item xs={12}>
-                            {/* Customize TextField */}
-                            {/*<FormControl className="input">*/}
-                            {/*    <TextField*/}
-                            {/*        onChange={handleChange}*/}
-                            {/*        id="name" name="name"*/}
-                            {/*        label="이름 *"*/}
-                            {/*        variant="outlined"*/}
-                            {/*        inputRef={*/}
-                            {/*            register({*/}
-                            {/*                required: true, minLength: 2 })}*/}
-                            {/*        error={errors.name ? true : false}*/}
-                            {/*        helperText={errors.name ?*/}
-                            {/*            errors.name.type === "required" ? "This field is required" :*/}
-                            {/*            "min length is 2 characters" : null}*/}
-                            {/*    />*/}
-                            {/*</FormControl>*/}
-                            <CustomTextField
-                                register={register}
-                                errors={errors.name}    // 사용 errors.[사용할 filed name]
-                                name="name" label="이름" required={true}
+                            <CustomTextField2
+                                register={register} disabled="true"
+                                label={data.name} required={true}
                             />
                         </Grid>
                         <Grid item xs={12}>
-                            <CustomTextField
-                                register={register}
-                                errors={errors.eng_name}
-                                name="eng_name" label="영어이름" required={true}
+                            <CustomTextField2
+                                register={register} disabled="true"
+                                label={data.englishName} required={true}
                             />
                         </Grid>
                     </Grid>
                     <Grid item xs={1}></Grid>
                     <Grid item xs={5}>
                         <Grid item xs={12}>
-                            <CustomTextField
-                                register={register}
-                                errors={errors.birth}
-                                name="birth" label="생년월일" required={true}
+                            <CustomTextField2
+                                register={register} disabled="true"
+                                label={data.birth} required={true}
                             />
                         </Grid>
                         <Grid item xs={12}>
-                            <CustomTextField
-                                register={register}
-                                errors={errors.phone}
-                                name="phone" label="휴대폰" required={true}
+                            <CustomTextField2
+                                register={register} disabled="true"
+                                label={data.phone} required={true}
                             />
                         </Grid>
                     </Grid>
                     <Grid item xs={12}>
-                        <CustomTextField
-                            register={register}
-                            errors={errors.address}
-                            name="address" label="거주지(현주소)" required={true}
-                        />
+                        <CustomTextField2
+                                register={register} disabled="true"
+                                label={data.address} required={true}
+                            />
                     </Grid>
                     <Grid item xs={12}>
-                        <CustomTextField
-                            register={register}
-                            errors={errors.email}
-                            name="email" label="이메일" required={true}
-                        />
+                        <CustomTextField2
+                                register={register} disabled="true"
+                                label={data.email} required={true}
+                            />
                     </Grid>
                 </Grid>
                 <Grid item xs={12} style={{textAlign: 'left', marginBottom: 24}}>
@@ -114,55 +130,55 @@ const Theme1 = () =>{
                                 {/* HighSchool */}
                                 <TableRow>
                                     <TableCell>
-                                        <CustomTextField register={register} defaultValue=" " required={false} name="highSchoolDate" label=""/>
+                                        <CustomTextField2 register={register} disabled="true" label={data.highSchoolDate}/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="highSchoolName" required={false} label="고등학교"/>
+                                        <CustomTextField2 register={register} disabled="true" label={data.highSchoolName}/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="highSchoolMajor" label=""/>
+                                        <CustomTextField2 register={register} disabled="true" label={data.highSchoolMajor}/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="highSchoolGraduation" label=""/>
+                                        <CustomTextField2 register={register} disabled="true" label={data.highSchoolGraduation}/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="highSchoolScore" label=""/>
+                                        <CustomTextField2 register={register} disabled="true" label={data.highSchoolScore}/>
                                     </TableCell>
                                 </TableRow>
                                 {/* University */}
                                 <TableRow>
                                     <TableCell>
-                                        <CustomTextField register={register} name="collegeDate" label=""/>
+                                        <CustomTextField2 register={register} disabled="true" label={data.collegeDate}/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="collegeName" label="대학교"/>
+                                        <CustomTextField2 register={register} disabled="true" label={data.collegeName}/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="collegeMajor" label=""/>
+                                        <CustomTextField2 register={register} disabled="true" label={data.collegeMajor}/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="collegeGraduation" label=""/>
+                                        <CustomTextField2 register={register} disabled="true" label={data.collegeGraduation}/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="collegeScore" label=""/>
+                                        <CustomTextField2 register={register} disabled="true" label={data.collegeScore}/>
                                     </TableCell>
                                 </TableRow>
                                 {/* GraduateSchool */}
                                 <TableRow>
                                     <TableCell>
-                                        <CustomTextField register={register} name="graduateSchoolDate" label=""/>
+                                        <CustomTextField2 register={register} disabled="true" label={data.graduateSchoolDate}/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="graduateSchoolName" label="대학원"/>
+                                        <CustomTextField2 register={register} disabled="true" label={data.graduateSchoolName}/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="graduateSchoolMajor" label=""/>
+                                        <CustomTextField2 register={register} disabled="true" label={data.graduateSchoolMajor}/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="graduateSchoolGraduation" label=""/>
+                                        <CustomTextField2 register={register} disabled="true" label={data.graduateSchoolGraduation}/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="graduateSchoolScore" label=""/>
+                                        <CustomTextField2 register={register} disabled="true" label={data.graduateSchoolScore}/>
                                     </TableCell>
                                 </TableRow>
                             </TableBody>
@@ -183,34 +199,32 @@ const Theme1 = () =>{
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {/* Career1 */}
                                 <TableRow>
                                     <TableCell>
-                                        <CustomTextField register={register} name="career1Date" label=""/>
+                                        <CustomTextField2 register={register} disabled="true" label={data.career1Date}/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="career1Name" label=""/>
+                                        <CustomTextField2 register={register} disabled="true" label={data.career1Name}/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="career1Title" label=""/>
+                                        <CustomTextField2 register={register} disabled="true" label={data.career1Title}/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="career1Postion" label=""/>
+                                        <CustomTextField2 register={register} disabled="true" label={data.career1Postion}/>
                                     </TableCell>
                                 </TableRow>
-                                {/* Career2 */}
                                 <TableRow>
                                     <TableCell>
-                                        <CustomTextField register={register} name="career2Date" label=""/>
+                                        <CustomTextField2 register={register} disabled="true" label={data.career2Date}/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="career2Name" label=""/>
+                                        <CustomTextField2 register={register} disabled="true" label={data.career2Name}/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="career2Title" label=""/>
+                                        <CustomTextField2 register={register} disabled="true" label={data.career2Title}/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="career2Postion" label=""/>
+                                        <CustomTextField2 register={register} disabled="true" label={data.career2Postion}/>
                                     </TableCell>
                                 </TableRow>
                             </TableBody>
@@ -220,7 +234,7 @@ const Theme1 = () =>{
                 <Grid item xs={12} style={{textAlign: 'left', marginBottom: 24}}>
                     <TableContainer component={Paper} variant="outlined">
                         <Typography variant="h6" style={{paddingLeft: 10, backgroundColor: '#081328', color: 'whitesmoke'}}>자 격 사 항</Typography>
-                {/**/}
+
                         <Table>
                             <TableHead>
                                 <TableRow>
@@ -230,28 +244,28 @@ const Theme1 = () =>{
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {/* certificate1 */}
+                                {/* certificate */}
                                 <TableRow>
                                     <TableCell>
-                                        <CustomTextField register={register} name="certificate1Date" label=""/>
+                                        <CustomTextField2 register={register} disabled="true" label={data.certificate1Date}/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="certiificate1Title" label=""/>
+                                        <CustomTextField2 register={register} disabled="true" label={data.certiificate1Title}/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="certiificate1Origin" label=""/>
+                                        <CustomTextField2 register={register} disabled="true" label={data.certiificate1Origin}/>
                                     </TableCell>
                                 </TableRow>
-                                {/* certificate2 */}
+                                {/* certificate */}
                                 <TableRow>
                                     <TableCell>
-                                        <CustomTextField register={register} name="certificate2Date" label="" required={false}/>
+                                        <CustomTextField2 register={register} disabled="true" label={data.certificate2Date}/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="certiificate2Title" label=""/>
+                                        <CustomTextField2 register={register} disabled="true" label={data.certiificate2Title}/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="certiificate2Origin" label=""/>
+                                        <CustomTextField2 register={register} disabled="true" label={data.certiificate2Origin}/>
                                     </TableCell>
                                 </TableRow>
                             </TableBody>
@@ -261,7 +275,7 @@ const Theme1 = () =>{
                 <Grid item xs={5} style={{textAlign: 'left', marginBottom: 24}}>
                     <TableContainer component={Paper} variant="outlined">
                         <Typography variant="h6" style={{paddingLeft: 10, backgroundColor: '#081328', color: 'whitesmoke'}}>병 역 사 항</Typography>
-                {/**/}
+
                         <FormControl component="fieldset" style={{margin: 20}}>
                             <RadioGroup row  name="military_status" defaultValue="init">
                                 <FormControlLabel value="fulfilled" control={<Radio color="primary" />} label="군필" />
@@ -276,7 +290,7 @@ const Theme1 = () =>{
                 <Grid item xs={6} style={{textAlign: 'left', marginBottom: 24}}>
                     <TableContainer component={Paper} variant="outlined" style={{height: 116}}>
                         <Typography variant="h6" style={{paddingLeft: 10, backgroundColor: '#081328', color: 'whitesmoke'}}>기 타 사 항</Typography>
-                {/**/}
+
                     </TableContainer>
                 </Grid>
                 <Grid item xs={12}>
@@ -284,8 +298,8 @@ const Theme1 = () =>{
                 </Grid>
 
             </Grid>
-        </form>
+        // </form>
     );
 }
 
-export default Theme1;
+export default Theme1view;

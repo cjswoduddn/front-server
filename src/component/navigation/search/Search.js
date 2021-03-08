@@ -12,7 +12,8 @@ const Search = () =>{
   const [mode, setMode] = useState(0);
   const [focused, setFocus] = useState(false);
   const history = useHistory();
-  const TEMPLATE_BASE_URL = 'http://localhost:8080/template';
+  // const TEMPLATE_BASE_URL = 'http://localhost:8080/template';
+  const TEMPLATE_BASE_URL = 'http://localhost:8000/api/products';
 
   const modeHandler = () =>{
     if(mode === 0){
@@ -23,6 +24,9 @@ const Search = () =>{
   const focus = (e) => {
     e.preventDefault();
     setFocus(value => !value);
+    if(mode === 0){
+      setMode(1)
+    }
   }
 
   const searchEvent = (e) =>{
@@ -32,7 +36,8 @@ const Search = () =>{
     }
     if(body.keyword === "") return;
     axios({
-      method: 'post',
+      // method: 'post',
+      method: 'get',
       headers:{
         'Content-Type': 'application/json'
       },
@@ -56,10 +61,12 @@ const Search = () =>{
   return(
       <>
         {/*<div className="app">*/}
+        <form onSubmit={searchEvent}>
           <div className="container">
-            <input type="text" className={focused && 'focused' } placeholder="Search"/>
-            <button onClick={focus} id="search-button" className={focused && 'active'}>🔍</button>
+            <input className={'focused' } placeholder="Search" id='keyword' name='keyword' type='keyword'/>
+            <button onClick={modeHandler} id="search-button" className={focused && 'active'}>🔍</button>
           </div>
+        </form>
         {/*</div>*/}
         {/*<button className="search-button" onClick={modeHandler}>*/}
         {/*  <form onSubmit={searchEvent}>*/}

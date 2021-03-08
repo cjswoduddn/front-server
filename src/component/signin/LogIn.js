@@ -3,31 +3,35 @@ import './SignIn.css'
 import {Grid, TextField, Button, FormControl} from "@material-ui/core";
 import { useForm, Controller } from 'react-hook-form';
 import axios from 'axios';
+import { useHistory } from "react-router"
 
-const TEMPLATE_BASE_URL = 'http://localhost:8080/process';
+// const TEMPLATE_BASE_URL = 'http://localhost:8080/process';
+const TEMPLATE_BASE_URL = 'http://localhost:8000/api-token-auth/';
 
-const LogIn = () =>{
+let LogIn = () =>{
+  let history = useHistory()
+
   const methods = useForm();
   const { handleSubmit, reset, control} = methods;
   const onSubmit = data =>{
-    console.log(data);
     axios({
       method: 'post',
-      headers:{
-        'Content-Type': 'application/json'
-      },
+      headers:{'Content-Type': 'application/json'},
       url: TEMPLATE_BASE_URL,
       data: data
     })
     .then((res)=>{
-      console.log("succeslla");
-      console.log(res);
+      sessionStorage.setItem("user", data.email)
+      // sessionStorage.setItem("token", res.data.token);
+      console.log(sessionStorage.getItem('user'));
+      // redirect home page
+      history.push('/template');
+      window.location.reload();
     })
     .catch((err)=>{
-      console.log("sail");
       console.log(err);
+      alert("Error")
     });
-
   }
 
   return(
@@ -35,7 +39,7 @@ const LogIn = () =>{
       <form onSubmit={handleSubmit(onSubmit)}>
         <FormControl style={{width: '100%'}}>
           <Controller
-            name="username"
+            name="email"
             control={control}
             rules={{ required: "This is requierd", minLength: 2 }}
             as={
@@ -74,5 +78,6 @@ const LogIn = () =>{
     </Grid>
   )
 }
+
 
 export default LogIn;

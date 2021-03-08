@@ -2,7 +2,7 @@ import React from 'react';
 import {FormControl, TextField} from '@material-ui/core';
 import './Template.css'
 
-const CustomTextField = ({register, errors, name, label, required, disabled}) =>{
+const CustomTextField2 = ({register, errors, name, label, required, disabled}) =>{
     const [state, setState] = React.useState({
         name: '',
     })
@@ -24,7 +24,6 @@ const CustomTextField = ({register, errors, name, label, required, disabled}) =>
                         required: true,
                         minLength: 1,
                     })}
-                defaultValue=" "
                 error={errors ? true : false}
 
                 helperText={
@@ -38,4 +37,4 @@ const CustomTextField = ({register, errors, name, label, required, disabled}) =>
     );
 }
 
-export default CustomTextField;
+export default CustomTextField2;

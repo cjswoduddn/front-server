@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import AuthRoute from './AuthRoute';
 
 import Nav from './component/navigation/Nav';
 import SignIn from './component/signin/SignIn';
@@ -16,9 +17,15 @@ function App() {
       </Switch>
 
       <Switch>
-        <Route path="/account"><SignIn /></Route>
+        <Route path="/login"><SignIn /></Route>
+
+        <AuthRoute
+            authenticated={sessionStorage}
+            path="/template"
+            render={props => <Template {...props} />}
+          />
         <Route path="/search/:path"><Search/></Route>
-        <Route path="/template"><Template/></Route>
+        {/*<Route path="/template"><Template/></Route>*/}
       </Switch>
     </>
   );
