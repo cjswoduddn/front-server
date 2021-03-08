@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useForm} from 'react-hook-form';
-import './Theme2.css';
+import './Template3.css';
 import {Box, Button, Grid, Tab, TableCell, Tabs, TextField, Typography} from "@material-ui/core";
 import t2_1 from '../../factory/images/t2/t2-1.png';
 import t2_2 from '../../factory/images/t2/t2-2.png';
@@ -15,7 +15,7 @@ import avatar from '../../factory/images/t2/avatar.jpg';
 import edit from '../../factory/images/edit.png';
 import upload from '../../factory/images/upload.png';
 import {Link} from "react-router-dom";
-import CustomTextField from "./CustomTextField";
+import CustomTextField from "../template/CustomTextField";
 
 function TabPanel(props) {
     const {children, value, index, ...other} = props;
@@ -44,7 +44,7 @@ function a11yProps(index) {
     };
 }
 
-const Theme2 = () => {
+const Template3 = () => {
     const [value, setValue] = React.useState(0);
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -259,4 +259,4 @@ const Theme2 = () => {
     );
 }
 
-export default Theme2;
+export default Template3;

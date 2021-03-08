@@ -12,9 +12,9 @@ import {
     TextField,
     Typography
 } from '@material-ui/core';
-import CustomTextField from "./CustomTextField";
+import CustomTextField from "../template/CustomTextField";
 
-const Theme1 = () =>{
+const Template1 = () =>{
     const { handleSubmit, register, errors } = useForm();
 
     const onSubmit = (data) => {
@@ -288,4 +288,4 @@ const Theme1 = () =>{
     );
 }
 
-export default Theme1;
+export default Template1;

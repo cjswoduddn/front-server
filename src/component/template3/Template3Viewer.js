@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { useForm } from 'react-hook-form';
-import './Theme2.css';
+import './Template3.css';
 import {Box, Grid, Tab, Tabs, TextField, Typography} from "@material-ui/core";
 import t2_1 from '../../factory/images/t2/t2-1.png';
 import t2_2 from '../../factory/images/t2/t2-2.png';
@@ -42,7 +42,7 @@ function a11yProps(index) {
     };
 }
 
-const Theme2view = () =>{
+const Template3Viewer = () =>{
     const [value, setValue] = React.useState(0);
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -227,4 +227,4 @@ const Theme2view = () =>{
     );
 }
 
-export default Theme2view;
+export default Template3Viewer;

@@ -13,9 +13,9 @@ import {
     TextField,
     Typography
 } from '@material-ui/core';
-import CustomTextField2 from "./CustomTextField2";
+import CustomTextField2 from "../template/CustomTextField2";
 
-const Theme1view = () =>{
+const Template1Viewer = () =>{
     const { handleSubmit, register, errors } = useForm();
     const data = {
         name: '홍길동',
@@ -302,4 +302,4 @@ const Theme1view = () =>{
     );
 }
 
-export default Theme1view;
+export default Template1Viewer;
