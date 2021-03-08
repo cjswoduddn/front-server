@@ -8,6 +8,7 @@ import Search from './component/service/Search';
 import Template from './component/template/Template';
 
 function App() {
+  localStorage.memberId = 0;
   return (
     <>
       <Switch>

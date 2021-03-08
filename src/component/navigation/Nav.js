@@ -12,9 +12,7 @@ const Nav = () =>{
   const pathname = window.location.pathname
 
   const location = useLocation();
-  // let init = Object.keys(location).includes('memberId') ? location.memberId : null;
-
-  const memberId = location.state === undefined ? null : location.state.memberId;
+  const memberId = location.state === undefined ? "0" : location.state.memberId;
 
   useEffect(()=>{
     function handleMode(){

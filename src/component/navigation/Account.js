@@ -16,11 +16,9 @@ const Account = ({memberId, mode}) =>{
       url: TEMPLATE_BASE_URL,
     })
     .then((res)=>{
+      localStorage.memberId = "0";
       history.push({
-        pathname: "/template",
-        state:{
-          memberId: null
-        }
+        pathname: "/template"
       });
     })
     .catch((err)=>{
@@ -31,9 +29,10 @@ const Account = ({memberId, mode}) =>{
 
   useEffect(()=>{
   }, [memberId]);
+
   return(
     <>
-          {memberId == null ?
+          {memberId === "0"?
           <Link to="/account" className="nav-link">
             <li className="nav-li"  style={{color: mode === 'nav-shrink' ? 'white' : null}}>login</li>
           </Link>
