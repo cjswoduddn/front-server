@@ -18,21 +18,21 @@ function App() {
                 <Route path="/"><Nav/></Route>
             </Switch>
 
-            <Switch>
-                <Route path="/login"><SignIn/></Route>
-                {/*<Route path="/template"><Template/></Route>*/}
+      <Switch>
+        <Route path="/login"><SignIn /></Route>
 
-                <AuthRoute
-                    authenticated={sessionStorage}
-                    path="/template"
-                    render={props => <Template {...props} />}
-                />
-                <Route path="/search/:path"><Search/></Route>
-                {/*<Route path="/template"><Template/></Route>*/}
-                <Route path="/profile"><Profile/></Route>
-            </Switch>
-        </>
-    );
+
+        <AuthRoute
+            authenticated={sessionStorage}
+            path="/template"
+            render={props => <Template {...props} />}
+          />
+        <Route path="/search/:path"><Search/></Route>
+        {/*<Route path="/template"><Template/></Route>*/}
+      </Switch>
+    </>
+  );
+
 }
 
 export default App;
