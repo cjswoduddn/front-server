@@ -93,9 +93,9 @@ const Template2 = () =>{
           <Button variant="outlined" size="large" onClick={onSubmit}>SUBMIT</Button>
           <Typography type="title" color="inherit" style={{ flex: 1 }}>
           </Typography>
-          <Link to="/template/t3/aboutme" style={{textDecoration: "none"}}><Button>ABOUTME</Button></Link>
-          <Link to="/template/t3/project" style={{textDecoration: "none"}}><Button>PROJECT</Button></Link>
-          <Link to="/template/t3/career" style={{textDecoration: "none"}}><Button>CAREER</Button></Link>
+          <Link to="/template/t3/aboutme" style={{textDecoration: "none"}}><Button style={{marginRight: 20, letterSpacing: 1}}>ABOUT</Button></Link>
+          <Link to="/template/t3/project" style={{textDecoration: "none"}}><Button style={{marginRight: 20, letterSpacing: 1}}>PROJECT</Button></Link>
+          <Link to="/template/t3/career" style={{textDecoration: "none"}}><Button style={{marginRight: 20, letterSpacing: 1}}>CAREER</Button></Link>
         </Toolbar>
       </AppBar>
 

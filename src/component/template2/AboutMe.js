@@ -1,6 +1,8 @@
 import React from 'react';
 import {Grid} from '@material-ui/core';
 import "./Template2Aboutme.css";
+import logo from '../../factory/images/logo.png';
+
 
 const AboutMe = ({aboutMe, setAboutMe}) =>{
 
@@ -36,7 +38,6 @@ const AboutMe = ({aboutMe, setAboutMe}) =>{
               for="thumbnail"
               style={{backgroundImage: `url(${aboutMe.previewThumbnail})`}}
               >
-              IMG
               <input
                 id="thumbnail"
                 accept="image/*" type="file"
@@ -48,7 +49,7 @@ const AboutMe = ({aboutMe, setAboutMe}) =>{
             <input
               type="text"
               className="template2-aboutme-item-left-profile-name" 
-              placeholder="NAME"
+              placeholder="이름"
               name="name"
               onChange={onChange}
               defaultValue={aboutMe.name}
@@ -59,7 +60,7 @@ const AboutMe = ({aboutMe, setAboutMe}) =>{
           <input 
             type="text" 
             className="template2-aboutme-item-right-title" 
-            placeholder="TITLE"
+            placeholder="제목을 입력하세요."
             name="title"
             onChange={onChange}
             defaultValue={aboutMe.title}
@@ -67,14 +68,14 @@ const AboutMe = ({aboutMe, setAboutMe}) =>{
           <input 
             type="text" 
             className="template2-aboutme-item-right-skill" 
-            placeholder="skill"
+            placeholder="기술사항"
             name="skill"
             onChange={onChange}
             defaultValue={aboutMe.skill}
           />
           <textarea 
             className="template2-aboutme-item-right-intro" 
-            placeholder="INTRO"
+            placeholder="자세한 설명을 적어주세요."
             name="intro"
             onChange={onChange}
             defaultValue={aboutMe.intro}

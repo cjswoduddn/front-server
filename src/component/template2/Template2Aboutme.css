@@ -8,14 +8,14 @@
 }
 
 .template2-aboutme-item-left-profile-thumbnail-label{
-  margin-top: 30px;
+  margin-top: 50px;
   border-radius: 50%;
-  border: dotted;
+  border: 1px solid rgb(133, 133, 133);
   height: 250px;
   width: 250px;
   text-align: center;
-  font-size: xx-large;
   cursor: pointer;
+  /*background-image: url("../../factory/images/t2/avatar.jpg") !important;*/
   background-repeat: no-repeat;
   background-position: center;
   background-size: 250px 250px;
@@ -23,37 +23,59 @@
 
 .template2-aboutme-item-left-profile-name{
   background: transparent;
-  border: dotted;
   width: 70%;
   height: 50px;
-  font-size: 50px;
-  text-align: center;
+
+  font-family: "Noto Sans";
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  padding-left: 30px !important;
+  border-radius: 10px;
+  border: 1px solid rgb(133, 133, 133);
 }
 
 .template2-aboutme-item-right-title{
   margin-top: 11%;
   margin-left: 12%;
-  height: 100px;
-  max-width: 80%;
-  font-size: 90px;
-  font-weight: 700;
-  border: dotted;
+  height: 65px;
+  min-width: 70%;
+
+  font-family: "Noto Sans";
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  padding-left: 30px !important;
+  border-radius: 10px;
+  border: 1px solid rgb(133, 133, 133);
 }
 .template2-aboutme-item-right-skill{
-  margin-top: 30px;
+  margin-top: 20px;
   margin-left: 12%;
-  max-width: 80%;
-  font-size: 50px;
-  font-weight:bolder;
-  border: dotted;
+  height: 65px;
+  min-width: 70%;
+
+  font-family: "Noto Sans";
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  padding-left: 30px !important;
+  border-radius: 10px;
+  border: 1px solid rgb(133, 133, 133);
 }
 .template2-aboutme-item-right-intro{
-  margin-top: 30px;
+  margin-top: 18px;
   margin-left: 12%;
-  font-size: 50px;
-  font-weight:bold;
-  border: dotted;
+  padding-top: 25px;
   height: 260px;
   width: 80%;
+
+  font-family: "Noto Sans";
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  padding-left: 30px !important;
+  border-radius: 10px;
+  border: 1px solid rgb(133, 133, 133);
 }
 

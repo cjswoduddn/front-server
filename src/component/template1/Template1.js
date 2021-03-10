@@ -1,5 +1,5 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
+import React, {useState} from 'react';
+import {useForm} from 'react-hook-form';
 import {
     Button,
     Card,
@@ -13,12 +13,50 @@ import {
     Typography
 } from '@material-ui/core';
 import CustomTextField from "../template/CustomTextField";
+import axios from "axios";
 
-const Template1 = () =>{
-    const { handleSubmit, register, errors } = useForm();
+const Template1 = () => {
+    const TEMPLATE_BASE_URL = 'http://localhost:8080/templateone'
+    const {handleSubmit, register, errors} = useForm();
+    const [picture, setPicture] = useState('');
+    const [portfolioCommon, setPortfolioCommon] = useState({});
+
+    const onChangePicture = (e) => {
+        // console.log('picture: ', set);
+        // set(URL.createObjectURL(e.target.files[0]));
+        setPicture(URL.createObjectURL(e.target.files[0]));
+    };
 
     const onSubmit = (data) => {
-        console.log(data);
+        const form = new FormData();
+        for (const [key, value] of Object.entries(data)) {
+            if(key.startsWith("thumbnail")) {
+                form.append("portfolio." + key, value[0]);
+                continue;
+            }
+            form.append("portfolio." +key, value);
+            console.log(key, value)
+        }
+
+        axios({
+            method: 'post',
+            withCredentials: true,
+            headers: {
+                'Content-Type': `multipart/form-data`
+            },
+            url: TEMPLATE_BASE_URL,
+            data: form
+        })
+            .then((res) => {
+                // history.push({
+                //     pathname: "/template/" + res.data
+                // })
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+        console.log(form);
+        // console.log(file)
     };
 
     return (
@@ -26,9 +64,13 @@ const Template1 = () =>{
             <Grid container direction="row" alignItems="center" justify="center"
                   style={{marginTop: 102, textAlign: "center", paddingLeft: '15%', paddingRight: '15%'}}>
                 <Grid item xs={4}>
-                    <Button variant="contained" component="label">
+                    {picture ?
+                        <img src={picture} width="80%"/> :
+                        <></>
+                    }
+                    <Button variant="contained" component="label" onChange={onChangePicture}>
                         Image Upload
-                        <input type="file" hidden/>
+                        <input ref={register} name="thumbnail" type="file" hidden/>
                     </Button>
                 </Grid>
                 <Grid container xs={8} style={{textAlign: 'left'}}>
@@ -60,7 +102,7 @@ const Template1 = () =>{
                             <CustomTextField
                                 register={register}
                                 errors={errors.eng_name}
-                                name="eng_name" label="영어이름" required={true}
+                                name="englishName" label="영어이름" required={true}
                             />
                         </Grid>
                     </Grid>
@@ -99,7 +141,9 @@ const Template1 = () =>{
                 <Grid item xs={12} style={{textAlign: 'left', marginBottom: 24}}>
                     {/*<Paper variant="outlined"></Paper>*/}
                     <TableContainer component={Paper} variant="outlined">
-                        <Typography variant="h6" style={{paddingLeft: 10, backgroundColor: '#081328', color: 'whitesmoke'}}>학 력 사 항</Typography>
+                        <Typography variant="h6"
+                                    style={{paddingLeft: 10, backgroundColor: '#081328', color: 'whitesmoke'}}>학 력 사
+                            항</Typography>
                         <Table>
                             <TableHead>
                                 <TableRow>
@@ -114,10 +158,12 @@ const Template1 = () =>{
                                 {/* HighSchool */}
                                 <TableRow>
                                     <TableCell>
-                                        <CustomTextField register={register} defaultValue=" " required={false} name="highSchoolDate" label=""/>
+                                        <CustomTextField register={register} defaultValue=" " required={false}
+                                                         name="highSchoolDate" label=""/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="highSchoolName" required={false} label="고등학교"/>
+                                        <CustomTextField register={register} name="highSchoolName" required={false}
+                                                         label="고등학교"/>
                                     </TableCell>
                                     <TableCell>
                                         <CustomTextField register={register} name="highSchoolMajor" label=""/>
@@ -172,7 +218,9 @@ const Template1 = () =>{
                 <Grid item xs={12} style={{textAlign: 'left', marginBottom: 24}}>
                     {/*<Paper variant="outlined"></Paper>*/}
                     <TableContainer component={Paper} variant="outlined">
-                        <Typography variant="h6" style={{paddingLeft: 10, backgroundColor: '#081328', color: 'whitesmoke'}}>경 력 사 항</Typography>
+                        <Typography variant="h6"
+                                    style={{paddingLeft: 10, backgroundColor: '#081328', color: 'whitesmoke'}}>경 력 사
+                            항</Typography>
                         <Table>
                             <TableHead>
                                 <TableRow>
@@ -219,8 +267,10 @@ const Template1 = () =>{
                 </Grid>
                 <Grid item xs={12} style={{textAlign: 'left', marginBottom: 24}}>
                     <TableContainer component={Paper} variant="outlined">
-                        <Typography variant="h6" style={{paddingLeft: 10, backgroundColor: '#081328', color: 'whitesmoke'}}>자 격 사 항</Typography>
-                {/**/}
+                        <Typography variant="h6"
+                                    style={{paddingLeft: 10, backgroundColor: '#081328', color: 'whitesmoke'}}>자 격 사
+                            항</Typography>
+                        {/**/}
                         <Table>
                             <TableHead>
                                 <TableRow>
@@ -245,7 +295,8 @@ const Template1 = () =>{
                                 {/* certificate2 */}
                                 <TableRow>
                                     <TableCell>
-                                        <CustomTextField register={register} name="certificate2Date" label="" required={false}/>
+                                        <CustomTextField register={register} name="certificate2Date" label=""
+                                                         required={false}/>
                                     </TableCell>
                                     <TableCell>
                                         <CustomTextField register={register} name="certiificate2Title" label=""/>
@@ -260,14 +311,16 @@ const Template1 = () =>{
                 </Grid>
                 <Grid item xs={5} style={{textAlign: 'left', marginBottom: 24}}>
                     <TableContainer component={Paper} variant="outlined">
-                        <Typography variant="h6" style={{paddingLeft: 10, backgroundColor: '#081328', color: 'whitesmoke'}}>병 역 사 항</Typography>
-                {/**/}
+                        <Typography variant="h6"
+                                    style={{paddingLeft: 10, backgroundColor: '#081328', color: 'whitesmoke'}}>병 역 사
+                            항</Typography>
+                        {/**/}
                         <FormControl component="fieldset" style={{margin: 20}}>
-                            <RadioGroup row  name="military_status" defaultValue="init">
-                                <FormControlLabel value="fulfilled" control={<Radio color="primary" />} label="군필" />
-                                <FormControlLabel value="unfulfilled" control={<Radio color="primary" />} label="미필" />
-                                <FormControlLabel value="Exempted" control={<Radio color="primary" />} label="면제" />
-                                <FormControlLabel value="etc" control={<Radio color="primary" />} label="기타" />
+                            <RadioGroup row name="military_status" defaultValue="init">
+                                <FormControlLabel value="fulfilled" control={<Radio color="primary"/>} label="군필"/>
+                                <FormControlLabel value="unfulfilled" control={<Radio color="primary"/>} label="미필"/>
+                                <FormControlLabel value="Exempted" control={<Radio color="primary"/>} label="면제"/>
+                                <FormControlLabel value="etc" control={<Radio color="primary"/>} label="기타"/>
                             </RadioGroup>
                         </FormControl>
                     </TableContainer>
@@ -275,8 +328,10 @@ const Template1 = () =>{
                 <Grid item xs={1}></Grid>
                 <Grid item xs={6} style={{textAlign: 'left', marginBottom: 24}}>
                     <TableContainer component={Paper} variant="outlined" style={{height: 116}}>
-                        <Typography variant="h6" style={{paddingLeft: 10, backgroundColor: '#081328', color: 'whitesmoke'}}>기 타 사 항</Typography>
-                {/**/}
+                        <Typography variant="h6"
+                                    style={{paddingLeft: 10, backgroundColor: '#081328', color: 'whitesmoke'}}>기 타 사
+                            항</Typography>
+                        {/**/}
                     </TableContainer>
                 </Grid>
                 <Grid item xs={12}>

@@ -5,7 +5,8 @@
 }
 
 .template2-career-item-container{
-  margin-top: 100px !important;
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
   box-shadow: 20px 20px 20px grey;
   background-color: white
 }
