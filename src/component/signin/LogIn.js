@@ -33,6 +33,10 @@ let LogIn = () =>{
     .catch((err)=>{
       console.log(err);
       alert("Error")
+      return
+        <div>
+          asdf
+        </div>
     });
   }
 
