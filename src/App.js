@@ -7,6 +7,7 @@ import SignIn from './component/signin/SignIn';
 import Home from './component/home/Home';
 import Search from './component/service/Search';
 import Template from './component/template/Template';
+import Profile from "./component/profile/Profile";
 
 function App() {
     localStorage.memberId = 0;
@@ -17,20 +18,21 @@ function App() {
                 <Route path="/"><Nav/></Route>
             </Switch>
 
-            <Switch>
-                <Route path="/login"><SignIn/></Route>
-                {/*<Route path="/template"><Template/></Route>*/}
+      <Switch>
+        <Route path="/login"><SignIn /></Route>
 
-                <AuthRoute
-                    authenticated={sessionStorage}
-                    path="/template"
-                    render={props => <Template {...props} />}
-                />
-                <Route path="/search/:path"><Search/></Route>
-                {/*<Route path="/template"><Template/></Route>*/}
-            </Switch>
-        </>
-    );
+
+        <AuthRoute
+            authenticated={sessionStorage}
+            path="/template"
+            render={props => <Template {...props} />}
+          />
+        <Route path="/search/:path"><Search/></Route>
+        {/*<Route path="/template"><Template/></Route>*/}
+      </Switch>
+    </>
+  );
+
 }
 
 export default App;

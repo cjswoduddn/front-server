@@ -28,14 +28,38 @@ const Template1 = () => {
     };
 
     const onSubmit = (data) => {
+      console.log(data);
         const form = new FormData();
         for (const [key, value] of Object.entries(data)) {
-            if(key.startsWith("thumbnail")) {
-                form.append("portfolio." + key, value[0]);
-                continue;
+          if(key === "portfolio"){
+            for(const [k, v] of Object.entries(value)){
+              if(k === "thumbnail"){
+                form.append("portfolio."+k, v[0]);
+              }else{
+                form.append("portfolio."+k, v);
+              }
             }
-            form.append("portfolio." +key, value);
-            console.log(key, value)
+          }else if(key === "careers"){
+            let idx = 0;
+            value.map(item=>{
+              let myKey = key+`[${idx++}].`;
+              for(const [k, v] of Object.entries(item)){
+                form.append(myKey+k, v);
+              }
+            })
+          }else if(key === 'certificates'){
+            let idx = 0;
+            value.map(item=>{
+              let myKey = key+`[${idx++}].`;
+              for(const [k, v] of Object.entries(item)){
+                form.append(myKey+k, v);
+              }
+            })
+          }else if(key === 'militaryStatus'){
+            console.log(value);
+          }else{
+            form.append(key, value);
+          }
         }
 
         axios({
@@ -48,15 +72,10 @@ const Template1 = () => {
             data: form
         })
             .then((res) => {
-                // history.push({
-                //     pathname: "/template/" + res.data
-                // })
             })
             .catch((err) => {
                 console.log(err);
             });
-        console.log(form);
-        // console.log(file)
     };
 
     return (
@@ -70,32 +89,16 @@ const Template1 = () => {
                     }
                     <Button variant="contained" component="label" onChange={onChangePicture}>
                         Image Upload
-                        <input ref={register} name="thumbnail" type="file" hidden/>
+                        <input ref={register} name="portfolio.thumbnail" type="file" hidden/>
                     </Button>
                 </Grid>
                 <Grid container xs={8} style={{textAlign: 'left'}}>
                     <Grid item xs={5}>
                         <Grid item xs={12}>
-                            {/* Customize TextField */}
-                            {/*<FormControl className="input">*/}
-                            {/*    <TextField*/}
-                            {/*        onChange={handleChange}*/}
-                            {/*        id="name" name="name"*/}
-                            {/*        label="이름 *"*/}
-                            {/*        variant="outlined"*/}
-                            {/*        inputRef={*/}
-                            {/*            register({*/}
-                            {/*                required: true, minLength: 2 })}*/}
-                            {/*        error={errors.name ? true : false}*/}
-                            {/*        helperText={errors.name ?*/}
-                            {/*            errors.name.type === "required" ? "This field is required" :*/}
-                            {/*            "min length is 2 characters" : null}*/}
-                            {/*    />*/}
-                            {/*</FormControl>*/}
                             <CustomTextField
                                 register={register}
                                 errors={errors.name}    // 사용 errors.[사용할 filed name]
-                                name="name" label="이름" required={true}
+                                name="portfolio.name" label="이름" required={true}
                             />
                         </Grid>
                         <Grid item xs={12}>
@@ -159,20 +162,20 @@ const Template1 = () => {
                                 <TableRow>
                                     <TableCell>
                                         <CustomTextField register={register} defaultValue=" " required={false}
-                                                         name="highSchoolDate" label=""/>
+                                                         name="highschoolDate" label=""/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="highSchoolName" required={false}
+                                        <CustomTextField register={register} name="highschoolName" required={false}
                                                          label="고등학교"/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="highSchoolMajor" label=""/>
+                                        <CustomTextField register={register} name="highschoolMajor" label=""/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="highSchoolGraduation" label=""/>
+                                        <CustomTextField register={register} name="highschoolGraduation" label=""/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="highSchoolScore" label=""/>
+                                        <CustomTextField register={register} name="highschoolScore" label=""/>
                                     </TableCell>
                                 </TableRow>
                                 {/* University */}
@@ -196,19 +199,19 @@ const Template1 = () => {
                                 {/* GraduateSchool */}
                                 <TableRow>
                                     <TableCell>
-                                        <CustomTextField register={register} name="graduateSchoolDate" label=""/>
+                                        <CustomTextField register={register} name="graduateschoolDate" label=""/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="graduateSchoolName" label="대학원"/>
+                                        <CustomTextField register={register} name="graduateschoolName" label="대학원"/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="graduateSchoolMajor" label=""/>
+                                        <CustomTextField register={register} name="graduateschoolMajor" label=""/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="graduateSchoolGraduation" label=""/>
+                                        <CustomTextField register={register} name="graduateschoolGraduation" label=""/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="graduateSchoolScore" label=""/>
+                                        <CustomTextField register={register} name="graduateschoolScore" label=""/>
                                     </TableCell>
                                 </TableRow>
                             </TableBody>
@@ -234,31 +237,31 @@ const Template1 = () => {
                                 {/* Career1 */}
                                 <TableRow>
                                     <TableCell>
-                                        <CustomTextField register={register} name="career1Date" label=""/>
+                                        <CustomTextField register={register} name="careers[0].date" label=""/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="career1Name" label=""/>
+                                        <CustomTextField register={register} name="careers[0].name" label=""/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="career1Title" label=""/>
+                                        <CustomTextField register={register} name="careers[0].title" label=""/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="career1Postion" label=""/>
+                                        <CustomTextField register={register} name="careers[0].postion" label=""/>
                                     </TableCell>
                                 </TableRow>
                                 {/* Career2 */}
                                 <TableRow>
                                     <TableCell>
-                                        <CustomTextField register={register} name="career2Date" label=""/>
+                                        <CustomTextField register={register} name="careers[1].date" label=""/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="career2Name" label=""/>
+                                        <CustomTextField register={register} name="careers[1].name" label=""/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="career2Title" label=""/>
+                                        <CustomTextField register={register} name="careers[1].title" label=""/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="career2Postion" label=""/>
+                                        <CustomTextField register={register} name="careers[1].postion" label=""/>
                                     </TableCell>
                                 </TableRow>
                             </TableBody>
@@ -283,26 +286,26 @@ const Template1 = () => {
                                 {/* certificate1 */}
                                 <TableRow>
                                     <TableCell>
-                                        <CustomTextField register={register} name="certificate1Date" label=""/>
+                                        <CustomTextField register={register} name="certificates[0].date" label=""/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="certiificate1Title" label=""/>
+                                        <CustomTextField register={register} name="certificates[0].title" label=""/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="certiificate1Origin" label=""/>
+                                        <CustomTextField register={register} name="certificates[0].origin" label=""/>
                                     </TableCell>
                                 </TableRow>
                                 {/* certificate2 */}
                                 <TableRow>
                                     <TableCell>
-                                        <CustomTextField register={register} name="certificate2Date" label=""
+                                        <CustomTextField register={register} name="certificates[1].date" label=""
                                                          required={false}/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="certiificate2Title" label=""/>
+                                        <CustomTextField register={register} name="certificates[1].title" label=""/>
                                     </TableCell>
                                     <TableCell>
-                                        <CustomTextField register={register} name="certiificate2Origin" label=""/>
+                                        <CustomTextField register={register} name="certificates[1].origin" label=""/>
                                     </TableCell>
                                 </TableRow>
                             </TableBody>
@@ -316,7 +319,7 @@ const Template1 = () => {
                             항</Typography>
                         {/**/}
                         <FormControl component="fieldset" style={{margin: 20}}>
-                            <RadioGroup row name="military_status" defaultValue="init">
+                            <RadioGroup row name="militaryStatus" defaultValue="init">
                                 <FormControlLabel value="fulfilled" control={<Radio color="primary"/>} label="군필"/>
                                 <FormControlLabel value="unfulfilled" control={<Radio color="primary"/>} label="미필"/>
                                 <FormControlLabel value="Exempted" control={<Radio color="primary"/>} label="면제"/>
