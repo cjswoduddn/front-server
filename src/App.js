@@ -19,7 +19,6 @@ function App() {
 
       <Switch>
         <Route path="/login"><SignIn /></Route>
-        <Route path="/template"><Template /></Route>
 
         <AuthRoute
             authenticated={sessionStorage}

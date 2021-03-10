@@ -53,6 +53,7 @@ const Template2 = () =>{
       let myKey = `projects[${idx++}].`;
       for(const [key, value] of Object.entries(item)){
         if(key.startsWith("preview")) continue;
+        if(key === 'thumbnail' && value === undefined) continue;
         form.append(myKey+key, value);
       }
     })
