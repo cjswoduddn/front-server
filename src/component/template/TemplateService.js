@@ -3,10 +3,10 @@ import {useParams} from 'react-router-dom';
 import axios from 'axios';
 import Template2Viewer from '../template2/viewer/Template2Viewer';
 
-const TEMPLATE_BASE_URL = 'http://localhost:8080/portfolio';
+const TEMPLATE_BASE_URL = 'http://localhost:8080/';
 
 function TemplateService(){
-  const {id} = useParams();
+  const {id, type} = useParams();
 
   const [data, setData] = useState();
 
