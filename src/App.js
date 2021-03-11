@@ -11,6 +11,7 @@ import Profile from "./component/profile/Profile";
 
 function App() {
     localStorage.memberId = 0;
+    
     return (
         <>
             <Switch>

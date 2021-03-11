@@ -9,6 +9,7 @@ import Pagination from './pagination.js/Pagination';
 const COUNT = 3;
 
 const List = ({keyword, resume}) =>{
+  console.log(resume);
 
   const [mode, setMode] = useState(0);    // horizontal : 0, 전체모드
 
