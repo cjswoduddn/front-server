@@ -25,7 +25,7 @@ const CustomizedMenus = ({shrink}) => {
       })
           .then((res)=>{
             history.push({
-              pathname: "/search/mytemplate",
+              pathname: "/search",
               state:{
                 resume: res.data
               }

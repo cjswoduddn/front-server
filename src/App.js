@@ -29,7 +29,8 @@ function App() {
             render={props => <Template {...props} />}
           />
         <Route path="/search/:path"><Search/></Route>
-        {/*<Route path="/template"><Template/></Route>*/}
+
+        <Route path="/search"><Search/></Route>
         <Route path="/profile"><Profile/></Route>
       </Switch>
     </>
