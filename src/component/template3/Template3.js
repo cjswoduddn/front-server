@@ -16,6 +16,8 @@ import edit from '../../factory/images/edit.png';
 import upload from '../../factory/images/upload.png';
 import {Link} from "react-router-dom";
 import CustomTextField from "../template/CustomTextField";
+import Picture from "./Picture";
+import ProjectItem from "../template2/ProjectItem";
 
 function TabPanel(props) {
     const {children, value, index, ...other} = props;
@@ -50,21 +52,53 @@ const Template3 = () => {
         setValue(newValue);
     };
 
-    const [picture1, setPicture1] = useState('');
-    const [picture2, setPicture2] = useState('');
-    const [picture3, setPicture3] = useState('');
-    const [picture4, setPicture4] = useState('');
-    const [picture5, setPicture5] = useState('');
-    const [picture6, setPicture6] = useState('');
+    const [picture, setPicture] = useState({
+        key: 0,
+        items: [
+            {
+                id: 0,
+                thumbnail: undefined
+            }
+        ]
+    });
+    const addPicture = () => {
+        setPicture({
+            key: picture.key + 1,
+            items: picture.items.concat({
+                id: picture.key + 1,
+                thumbnail: undefined,
+                previewThumbnail: undefined
+            })
+        })
+    }
+
+    const removePicture = (id) => {
+        setPicture({key: picture.key, items: picture.items.filter(item => item.id !== id)})
+    }
+
+    const updatePicture = (id, data) => {
+        setPicture({
+            key: picture.key,
+            items: picture.items.map(item => id === item.id ? {...item, ...data} : item)
+        })
+    }
+
+    // delete fixing
+    // const [picture1, setPicture1] = useState('');
+    // const [picture2, setPicture2] = useState('');
+    // const [picture3, setPicture3] = useState('');
+    // const [picture4, setPicture4] = useState('');
+    // const [picture5, setPicture5] = useState('');
+    // const [picture6, setPicture6] = useState('');
     // const [picture7, setPicture7] = useState('');
     // const [picture8, setPicture8] = useState('');
     // const [picture9, setPicture9] = useState('');
-
-    const onChangePicture = (e, set) => {
-        console.log('picture: ', set);
-        set(URL.createObjectURL(e.target.files[0]));
-        // setPicture(URL.createObjectURL(e.target.files[0]));
-    };
+    //
+    // const onChangePicture = (e, set) => {
+    //     console.log('picture: ', set);
+    //     set(URL.createObjectURL(e.target.files[0]));
+    //     // setPicture(URL.createObjectURL(e.target.files[0]));
+    // };
 
 
     const {handleSubmit, register, errors} = useForm();
@@ -104,71 +138,118 @@ const Template3 = () => {
                       style={{marginLeft: '10%', marginRight: '10%', textAlign: 'center'}}>
                     <TabPanel value={value} index={0}>
                         <Grid item container direction="row" style={{textAlign: 'center'}}>
+                            {/*<Grid item xs={4}>*/}
+                            {/*    <Picture/>*/}
+                            {/*</Grid>*/}
+                            {/*<Grid item xs={4}>*/}
+                            {/*    <Picture/>*/}
+                            {/*</Grid>*/}
+                            {/*<Grid item xs={4}>*/}
+                            {/*    <Picture/>*/}
+                            {/*</Grid>*/}
+
                             <Grid item xs={4}>
-                                <div>
-                                    <label htmlFor="file-upload" className="custom-file-upload">
-                                        <img src={upload} width="50%"/>
-                                    </label><input id="file-upload" type="file" onChange={(e) => onChangePicture(e, setPicture1)}/>
-                                    <img className="card" width="100%"
-                                         src={picture1 ? (picture1) : (t2_1)}
-                                         // onChange={onChangePicture}
-                                    />
-                                </div>
+                                {picture.items.map(item => (
+                                    <Picture key={item.id} field={item} updatePicture={updatePicture}
+                                                 removePicture={removePicture}/>))}
                             </Grid>
-                            <Grid item xs={4}>
-                                <div>
-                                    <label htmlFor="file-upload" className="custom-file-upload">
-                                        <img src={upload} width="50%"/>
-                                    </label><input id="file-upload" type="file" onChange={(e) => onChangePicture(e, setPicture2)}/>
-                                    <img className="card" width="100%"
-                                         src={picture2 ? (picture2) : (t2_2)}
-                                         // onChange={onChangePicture}
-                                    />
-                                </div>
-                            </Grid><Grid item xs={4}>
-                            <div>
-                                <label htmlFor="file-upload" className="custom-file-upload">
-                                    <img src={upload} width="50%"/>
-                                </label><input id="file-upload" type="file" onChange={(e) => onChangePicture(e, setPicture3)}/>
-                                <img className="card" width="100%"
-                                     src={picture3 ? (picture3) : (t2_3)}
-                                     onChange={onChangePicture}
-                                />
-                            </div>
-                        </Grid>
-                            <Grid item xs={4}>
-                                <div>
-                                    <label htmlFor="file-upload" className="custom-file-upload">
-                                        <img src={upload} width="50%"/>
-                                    </label><input id="file-upload" type="file" onChange={(e) => onChangePicture(e, setPicture4)}/>
-                                    <img className="card" width="100%"
-                                         src={picture4 ? (picture4) : (t2_4)}
-                                         onChange={onChangePicture}
-                                    />
-                                </div>
-                            </Grid>
-                            <Grid item xs={4}>
-                                <div>
-                                    <label htmlFor="file-upload" className="custom-file-upload">
-                                        <img src={upload} width="50%"/>
-                                    </label><input id="file-upload" type="file" onChange={(e) => onChangePicture(e, setPicture5)}/>
-                                    <img className="card" width="100%"
-                                         src={picture5 ? (picture5) : (t2_5)}
-                                         onChange={onChangePicture}
-                                    />
-                                </div>
-                            </Grid>
-                            <Grid item xs={4}>
-                                <div>
-                                    <label htmlFor="file-upload" className="custom-file-upload">
-                                        <img src={upload} width="50%"/>
-                                    </label><input id="file-upload" type="file" onChange={(e) => onChangePicture(e, setPicture6)}/>
-                                    <img className="card" width="100%"
-                                         src={picture6 ? (picture6) : (t2_6)}
-                                         onChange={onChangePicture}
-                                    />
-                                </div>
-                            </Grid>
+
+
+                            {/*    <div>*/}
+                            {/*        <label htmlFor="file-upload2" className="custom-file-upload">*/}
+                            {/*            <img src={upload} width="50%"/>*/}
+                            {/*        </label><input id="file-upload2" type="file"*/}
+                            {/*                       onChange={(e) => onChangePicture(e, setPicture2)}/>*/}
+                            {/*        <img className="card" width="100%"*/}
+                            {/*             src={picture2 ? (picture2) : (t2_2)}*/}
+                            {/*            // onChange={onChangePicture}*/}
+                            {/*        />*/}
+                            {/*    </div>*/}
+                            {/*</Grid>*/}
+                            {/*<Grid item xs={4}>*/}
+                            {/*    <div>*/}
+                            {/*        <label htmlFor="file-upload3" className="custom-file-upload">*/}
+                            {/*            <img src={upload} width="50%"/>*/}
+                            {/*        </label><input id="file-upload3" type="file"*/}
+                            {/*                       onChange={(e) => onChangePicture(e, setPicture3)}/>*/}
+                            {/*        <img className="card" width="100%"*/}
+                            {/*             src={picture3 ? (picture3) : (t2_3)}*/}
+                            {/*             onChange={onChangePicture}*/}
+                            {/*        />*/}
+                            {/*    </div>*/}
+                            {/*</Grid>*/}
+                            {/*<Grid item xs={4}>*/}
+                            {/*    <div>*/}
+                            {/*        <label htmlFor="file-upload4" className="custom-file-upload">*/}
+                            {/*            <img src={upload} width="50%"/>*/}
+                            {/*        </label><input id="file-upload4" type="file"*/}
+                            {/*                       onChange={(e) => onChangePicture(e, setPicture4)}/>*/}
+                            {/*        <img className="card" width="100%"*/}
+                            {/*             src={picture4 ? (picture4) : (t2_4)}*/}
+                            {/*             onChange={onChangePicture}*/}
+                            {/*        />*/}
+                            {/*    </div>*/}
+                            {/*</Grid>*/}
+                            {/*<Grid item xs={4}>*/}
+                            {/*    <div>*/}
+                            {/*        <label htmlFor="file-upload5" className="custom-file-upload">*/}
+                            {/*            <img src={upload} width="50%"/>*/}
+                            {/*        </label><input id="file-upload5" type="file"*/}
+                            {/*                       onChange={(e) => onChangePicture(e, setPicture5)}/>*/}
+                            {/*        <img className="card" width="100%"*/}
+                            {/*             src={picture5 ? (picture5) : (t2_5)}*/}
+                            {/*             onChange={onChangePicture}*/}
+                            {/*        />*/}
+                            {/*    </div>*/}
+                            {/*</Grid>*/}
+                            {/*<Grid item xs={4}>*/}
+                            {/*    <div>*/}
+                            {/*        <label htmlFor="file-upload6" className="custom-file-upload">*/}
+                            {/*            <img src={upload} width="50%"/>*/}
+                            {/*        </label><input id="file-upload6" type="file"*/}
+                            {/*                       onChange={(e) => onChangePicture(e, setPicture6)}/>*/}
+                            {/*        <img className="card" width="100%"*/}
+                            {/*             src={picture6 ? (picture6) : (t2_6)}*/}
+                            {/*             onChange={onChangePicture}*/}
+                            {/*        />*/}
+                            {/*    </div>*/}
+                            {/*</Grid>*/}
+                            {/*<Grid item xs={4}>*/}
+                            {/*    <div>*/}
+                            {/*        <label htmlFor="file-upload6" className="custom-file-upload">*/}
+                            {/*            <img src={upload} width="50%"/>*/}
+                            {/*        </label><input id="file-upload6" type="file"*/}
+                            {/*                       onChange={(e) => onChangePicture(e, setPicture6)}/>*/}
+                            {/*        <img className="card" width="100%"*/}
+                            {/*             src={picture6 ? (picture6) : (t2_6)}*/}
+                            {/*             onChange={onChangePicture}*/}
+                            {/*        />*/}
+                            {/*    </div>*/}
+                            {/*</Grid>*/}
+                            {/*<Grid item xs={4}>*/}
+                            {/*    <div>*/}
+                            {/*        <label htmlFor="file-upload6" className="custom-file-upload">*/}
+                            {/*            <img src={upload} width="50%"/>*/}
+                            {/*        </label><input id="file-upload6" type="file"*/}
+                            {/*                       onChange={(e) => onChangePicture(e, setPicture6)}/>*/}
+                            {/*        <img className="card" width="100%"*/}
+                            {/*             src={picture6 ? (picture6) : (t2_6)}*/}
+                            {/*             onChange={onChangePicture}*/}
+                            {/*        />*/}
+                            {/*    </div>*/}
+                            {/*</Grid>*/}
+                            {/*<Grid item xs={4}>*/}
+                            {/*    <div>*/}
+                            {/*        <label htmlFor="file-upload6" className="custom-file-upload">*/}
+                            {/*            <img src={upload} width="50%"/>*/}
+                            {/*        </label><input id="file-upload6" type="file"*/}
+                            {/*                       onChange={(e) => onChangePicture(e, setPicture6)}/>*/}
+                            {/*        <img className="card" width="100%"*/}
+                            {/*             src={picture6 ? (picture6) : (t2_6)}*/}
+                            {/*             onChange={onChangePicture}*/}
+                            {/*        />*/}
+                            {/*    </div>*/}
+                            {/*</Grid>*/}
 
 
                             {/*<Grid item xs={4}>*/}
