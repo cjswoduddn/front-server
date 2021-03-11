@@ -4,6 +4,7 @@ import {Controller} from "react-hook-form";
 import {useForm} from 'react-hook-form';
 import axios from "axios";
 import {useState, useEffect} from "react";
+import {useLocation} from 'react-router-dom';
 
 
 const Profile = () => {
@@ -27,6 +28,9 @@ const Profile = () => {
     const onSubmit = () => {
         console.log("adsf")
     }
+
+    const account = useLocation().state.account;
+    console.log(account);
 
     return (
         <Grid container justify="center" alignItems="center" style={{height: '100vh'}}>
