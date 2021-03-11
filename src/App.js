@@ -29,6 +29,7 @@ function App() {
           />
         <Route path="/search/:path"><Search/></Route>
         {/*<Route path="/template"><Template/></Route>*/}
+        <Route path="/profile"><Profile/></Route>
       </Switch>
     </>
   );
