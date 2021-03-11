@@ -5,6 +5,7 @@ import Item from './Item';
 const Vertical = ({resume, count}) =>{
 
   const sliceResume = resume.slice(0, count);
+  console.log(resume);
 
   return(
     <Grid container xs={12} spacing={1} style={{marginLeft: 30, marginRight: 30}}>

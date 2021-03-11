@@ -2,18 +2,41 @@ import React from 'react';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import {Link, useHistory} from "react-router-dom";
+import axios from 'axios';
 
 const CustomizedMenus = ({shrink}) => {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const handleClick = (event) => {setAnchorEl(event.currentTarget);};
     const handleClose = () => {setAnchorEl(null);};
 
+    const TEMPLATE_BASE_URL = "http://localhost:8080/portfolio";
+
     const history = useHistory();
     const logout = () => {
       sessionStorage.removeItem("user");
       history.push('/login');
-      window.location.reload();
     }
+
+    const searchMyTemplate = () =>{
+      axios({
+        method: 'get',
+        withCredentials: true,
+        url: TEMPLATE_BASE_URL
+      })
+          .then((res)=>{
+            history.push({
+              pathname: "/search/mytemplate",
+              state:{
+                resume: res.data
+              }
+            });
+  
+          })
+          .catch((err)=>{
+            console.log(err);
+          });
+    }
+      
 
     return (
         <div>
@@ -25,8 +48,8 @@ const CustomizedMenus = ({shrink}) => {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
             >
-                <MenuItem className="navLink" onClick={handleClose} style={{letterSpacing: 1, fontSize: 18, fontVariant: 'small-caps'}}><Link to="/profile" style={{textDecoration: 'none', color: 'black'}}>profile</Link></MenuItem>
-                <MenuItem onClick={handleClose} style={{letterSpacing: 1, fontSize: 18, fontVariant: 'small-caps'}}>my template</MenuItem>
+                <MenuItem className="navLink" style={{letterSpacing: 1, fontSize: 18, fontVariant: 'small-caps'}}><Link to="/profile" style={{textDecoration: 'none', color: 'black'}}>profile</Link></MenuItem>
+                <MenuItem onClick={()=>searchMyTemplate()} style={{letterSpacing: 1, fontSize: 18, fontVariant: 'small-caps'}}>my template</MenuItem>
                 <MenuItem onClick={logout} style={{letterSpacing: 1, fontSize: 18, fontVariant: 'small-caps'}}>logout</MenuItem>
             </Menu>
         </div>
