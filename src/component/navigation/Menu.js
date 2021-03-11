@@ -17,11 +17,10 @@ const CustomizedMenus = ({shrink}) => {
       history.push('/login');
     }
 
-    const searchMyTemplate = (e) =>{
-      e.preventDefault();
+    const searchMyTemplate = () =>{
       axios({
-        // method: 'post',
         method: 'get',
+        withCredentials: true,
         url: TEMPLATE_BASE_URL
       })
           .then((res)=>{
@@ -37,6 +36,7 @@ const CustomizedMenus = ({shrink}) => {
             console.log(err);
           });
     }
+      
 
     return (
         <div>
@@ -49,7 +49,7 @@ const CustomizedMenus = ({shrink}) => {
                 onClose={handleClose}
             >
                 <MenuItem className="navLink" style={{letterSpacing: 1, fontSize: 18, fontVariant: 'small-caps'}}><Link to="/profile" style={{textDecoration: 'none', color: 'black'}}>profile</Link></MenuItem>
-                <MenuItem onClick={searchMyTemplate} style={{letterSpacing: 1, fontSize: 18, fontVariant: 'small-caps'}}>my template</MenuItem>
+                <MenuItem onClick={()=>searchMyTemplate()} style={{letterSpacing: 1, fontSize: 18, fontVariant: 'small-caps'}}>my template</MenuItem>
                 <MenuItem onClick={logout} style={{letterSpacing: 1, fontSize: 18, fontVariant: 'small-caps'}}>logout</MenuItem>
             </Menu>
         </div>
