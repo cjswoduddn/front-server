@@ -14,17 +14,19 @@ import './vertical.css';
 import woo from '../../../factory/images/woo.png';
 
 const Item = ({item}) => {
+    console.log(item)
 
     return (
         <>
             <Grid item xs={4}>
                 <Card style={{marginRight: 10, border: "none", boxShadow: "none"}}>
                     <CardActionArea style={{backgroundColor: "", border: "none"}}>
-                        <CardMedia image={woo} style={{height: 200}} title="Contemplative Reptile"/>
+                        <CardMedia image={item.thumbnail} style={{height: 200}} title="Contemplative Reptile"/>
                         <CardContent style={{paddingLeft: 10, paddingRight: 0, marginBottom: 10}}>
                             <Typography gutterBottom variant="body2" component="h2" noWrap='True'>
-                                {item.valueword}value word ? user name ?
+                                {item.skill}value word ? user name ?
                             </Typography>
+                            {item.skill}
                         </CardContent>
                     </CardActionArea>
                 </Card>

@@ -15,7 +15,6 @@ const Picture = ({field, updatePicture, removePicture}) => {
     //     setPicture(URL.createObjectURL(e.target.files[0]));
     // };
 
-
     const onChangePicture = (e) => {
         let reader = new FileReader();
         let filelist = e.target.files;
@@ -32,28 +31,28 @@ const Picture = ({field, updatePicture, removePicture}) => {
 
     return (
         <div style={{textAlign: 'center'}}>
-            {/*<label htmlFor="field.id" className="custom-file-upload">*/}
-            {/*    <img src={upload} width="50%"/>*/}
-            {/*</label>*/}
-
-            <label className="custom-file-upload"
-                   htmlFor={field.id}
-                   style={{backgroundImage: `url(${field.previewThumbnail})`}}>
-                file upload
-                <input
-                    id={field.id}
-                    accept="image/*" type="file"
-                    className="card"
-                    onChange={onChangePicture}
-                />
+            <label htmlFor={field.id} className="custom-file-upload">
+                <img src={upload} width="50%"/>
             </label>
 
+            {/*<label className="custom-file-upload"*/}
+            {/*       htmlFor={field.id}*/}
+            {/*       style={{backgroundImage: `url(${field.previewThumbnail})`}}>*/}
+            {/*    file upload*/}
+            {/*    <input*/}
+            {/*        id={field.id}*/}
+            {/*        accept="image/*" type="file"*/}
+            {/*        className="card"*/}
+            {/*        onChange={onChangePicture}*/}
+            {/*    />*/}
+            {/*</label>*/}
 
-            {/*<input id={field.id} type="file" onChange={(e) => onChangePicture(e)}/>*/}
-            {/*<img className="card" width="100%"*/}
-            {/*     // src={picture ? (picture) : (t2_1)}*/}
-                {/*onChange={onChangePicture}*/}
-            {/*/>*/}
+
+            <input id={field.id} type="file" onChange={(e) => onChangePicture(e)}/>
+            <img className="card" width="100%"
+                 src={field.previewThumbnail ? (field.previewThumbnail) : (t2_1)}
+                onChange={onChangePicture}
+            />
             <Button onClick={() => removePicture(field.id)} style={{width: '100%', marginBottom: 10}}>
                 <DeleteOutlineIcon/>
             </Button>
