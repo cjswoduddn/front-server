@@ -9,15 +9,19 @@ import woo from '../../../factory/images/woo.png';
 import './horizontal.css';
 
 const Item = ({item}) => {
+    console.log(item)
 
     return (
         <Grid item xs={4} className='horizontal-item-grid'>
             <Card style={{marginRight: 10, border: "none", boxShadow: "none"}}>
                 <CardActionArea style={{backgroundColor: "", border: "none"}}>
-                    <CardMedia image={woo} style={{height: 200}} title="Contemplative Reptile"/>
+                    <CardMedia image={item.thumbnail} style={{height: 200}} title="Contemplative Reptile"/>
                     <CardContent style={{paddingLeft: 10, paddingRight: 0, marginBottom: 10}}>
                         <Typography gutterBottom variant="body2" component="h2" noWrap='True'>
-                            {item.valueword}value word ? user name ?
+                            {item.title} Title Main Name ? 
+                        </Typography>
+                        <Typography gutterBottom variant="body2" component="h2" noWrap='True' style={{float: 'right'}}>
+                            {item.skill} | {item.name}
                         </Typography>
                     </CardContent>
                 </CardActionArea>
