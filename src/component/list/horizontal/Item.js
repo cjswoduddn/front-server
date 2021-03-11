@@ -18,7 +18,7 @@ const Item = ({item}) => {
                     <CardMedia image={item.thumbnail} style={{height: 200}} title="Contemplative Reptile"/>
                     <CardContent style={{paddingLeft: 10, paddingRight: 0, marginBottom: 10}}>
                         <Typography gutterBottom variant="body2" component="h2" noWrap='True'>
-                            {item.title} Title Main Name ? 
+                            {item.title} Title Main Name ?
                         </Typography>
                         <Typography gutterBottom variant="body2" component="h2" noWrap='True' style={{float: 'right'}}>
                             {item.skill} | {item.name}
