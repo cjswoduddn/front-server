@@ -12,8 +12,7 @@ const Search = () =>{
   const [mode, setMode] = useState(0);
   const [focused, setFocus] = useState(false);
   const history = useHistory();
-  // const TEMPLATE_BASE_URL = 'http://localhost:8080/template';
-  const TEMPLATE_BASE_URL = 'http://localhost:8000/api/products';
+  const TEMPLATE_BASE_URL = 'http://localhost:8080/portfolio';
 
   const modeHandler = () =>{
     if(mode === 0){
