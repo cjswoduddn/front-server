@@ -12,52 +12,51 @@ const CareerItem = ({field, updateCareer, removeCareer}) => {
 
 
     return (
-        <Grid container direction="column" item xs="7" spacing="5" className="template2-career-item-container">
-            <Grid container>
+        <Grid container direction="column" item xs="7" className="template2-career-item-container">
+            <Grid item xs="12">
                 <Button variant="outlined" size="large" onClick={() => removeCareer(field.id)}
                         style={{border: 'none'}}>
                     <ClearIcon/>
                 </Button>
             </Grid>
-            <Grid item>
+            <Grid item xs="12" style={{marginTop: 10}}>
                 <input type="text" name="title" className="template2-career-item-title"
                        defaultValue={field.title}
                        onChange={handleChange}
-                       placeholder="company name"/>
+                       placeholder="COMPANY NAME"/>
             </Grid>
 
-            <Grid container>
-
-                <Grid container xs="4" direction="column" alignContent="center">
+            <Grid container item>
+                <Grid item xs="4" direction="column" alignContent="center">
                     <input className="template2-career-item-date"
                            name="date"
                            defaultValue={field.date}
                            onChange={handleChange}
-                           placeholder="when"/>
+                           placeholder="WHEN"/>
                     <input className="template2-career-item-position"
                            name="position"
                            defaultValue={field.position}
                            onChange={handleChange}
-                           placeholder="position"/>
+                           placeholder="POSITION"/>
                     <input className="template2-career-item-stack"
                            name="stack"
                            defaultValue={field.stack}
                            onChange={handleChange}
-                           placeholder="stack"/>
+                           placeholder="STACK"/>
                 </Grid>
 
-                <Grid container item xs="8" justify="center">
-            <textarea
-                className="template2-career-item-intro"
-                placeholder="INTRO"
-                onChange={handleChange}
-                name="intro"
-                defaultValue={field.intro}
-            />
+                <Grid item xs="8" justify="center">
+                    <textarea
+                        className="template2-career-item-intro"
+                        placeholder="INTRO"
+                        onChange={handleChange}
+                        name="intro"
+                        defaultValue={field.intro}
+                    />
                 </Grid>
             </Grid>
         </Grid>
     )
-}
+};
 
 export default CareerItem;
