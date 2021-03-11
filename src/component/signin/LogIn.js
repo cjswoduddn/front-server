@@ -28,7 +28,7 @@ let LogIn = () =>{
       console.log(sessionStorage.getItem('user'));
       // redirect home page
       history.push('/template');
-      window.location.reload();
+      // window.location.reload();
     })
     .catch((err)=>{
       console.log(err);

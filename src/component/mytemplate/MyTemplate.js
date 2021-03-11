@@ -1,9 +1,9 @@
 import React from 'react';
 
-const MyTemplate = () => {a
+const MyTemplate = () => {
     return (
         // <Item />
-    );
+    )
 }
 
 export default MyTemplate;
