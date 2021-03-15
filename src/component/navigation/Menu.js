@@ -9,7 +9,7 @@ const CustomizedMenus = ({shrink}) => {
     const handleClick = (event) => {setAnchorEl(event.currentTarget);};
     const handleClose = () => {setAnchorEl(null);};
 
-    const TEMPLATE_BASE_URL = "http://localhost:8080/";
+    const TEMPLATE_BASE_URL = 'http://ec2-3-35-145-52.ap-northeast-2.compute.amazonaws.com:8080/';
 
     const history = useHistory();
     const logout = () => {

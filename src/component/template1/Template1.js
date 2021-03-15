@@ -16,7 +16,8 @@ import CustomTextField from "../template/CustomTextField";
 import axios from "axios";
 
 const Template1 = () => {
-    const TEMPLATE_BASE_URL = 'http://localhost:8080/templateone'
+    const TEMPLATE_BASE_URL = 'http://ec2-3-35-145-52.ap-northeast-2.compute.amazonaws.com:8080/templateone';
+
     const {handleSubmit, register, errors} = useForm();
     const [picture, setPicture] = useState('');
     const [portfolioCommon, setPortfolioCommon] = useState({});
@@ -28,38 +29,38 @@ const Template1 = () => {
     };
 
     const onSubmit = (data) => {
-      console.log(data);
+        console.log(data);
         const form = new FormData();
         for (const [key, value] of Object.entries(data)) {
-          if(key === "portfolio"){
-            for(const [k, v] of Object.entries(value)){
-              if(k === "thumbnail"){
-                form.append("portfolio."+k, v[0]);
-              }else{
-                form.append("portfolio."+k, v);
-              }
+            if (key === "portfolio") {
+                for (const [k, v] of Object.entries(value)) {
+                    if (k === "thumbnail") {
+                        form.append("portfolio." + k, v[0]);
+                    } else {
+                        form.append("portfolio." + k, v);
+                    }
+                }
+            } else if (key === "careers") {
+                let idx = 0;
+                value.map(item => {
+                    let myKey = key + `[${idx++}].`;
+                    for (const [k, v] of Object.entries(item)) {
+                        form.append(myKey + k, v);
+                    }
+                })
+            } else if (key === 'certificates') {
+                let idx = 0;
+                value.map(item => {
+                    let myKey = key + `[${idx++}].`;
+                    for (const [k, v] of Object.entries(item)) {
+                        form.append(myKey + k, v);
+                    }
+                })
+            } else if (key === 'militaryStatus') {
+                console.log(value);
+            } else {
+                form.append(key, value);
             }
-          }else if(key === "careers"){
-            let idx = 0;
-            value.map(item=>{
-              let myKey = key+`[${idx++}].`;
-              for(const [k, v] of Object.entries(item)){
-                form.append(myKey+k, v);
-              }
-            })
-          }else if(key === 'certificates'){
-            let idx = 0;
-            value.map(item=>{
-              let myKey = key+`[${idx++}].`;
-              for(const [k, v] of Object.entries(item)){
-                form.append(myKey+k, v);
-              }
-            })
-          }else if(key === 'militaryStatus'){
-            console.log(value);
-          }else{
-            form.append(key, value);
-          }
         }
 
         axios({

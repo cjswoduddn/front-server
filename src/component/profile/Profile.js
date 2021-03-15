@@ -13,7 +13,7 @@ const Profile = () => {
     const password = useRef({});
     password.current = watch("password", "");
     const [data, setData] = useState();
-    const TEMPLATE_BASE_URL = 'http://localhost:8080/member';
+    const TEMPLATE_BASE_URL = 'http://ec2-3-35-145-52.ap-northeast-2.compute.amazonaws.com:8080/member';
     console.log(data)
 
     useEffect(async() => {
@@ -30,7 +30,7 @@ const Profile = () => {
     }
 
     const account = useLocation().state.account;
-    console.log(account);
+    // console.log(account);
 
     return (
         <Grid container justify="center" alignItems="center" style={{height: '100vh'}}>
@@ -43,11 +43,25 @@ const Profile = () => {
                         {/*    as={*/}
                                 <TextField
                                     // label={data.email}
-                                    name="name"
+                                    name={account.name}
                                     variant="filled"
                                     type="text"
                                     style={{marginTop: '3%'}}/>
                             {/*}*/}
+                        {/*/>*/}
+                    </FormControl>
+                    <FormControl style={{width: '100%'}}>
+                        {/*<Controller*/}
+                        {/*    name="password"*/}
+                        {/*    control={control}*/}
+                        {/*    as={*/}
+                        <TextField
+                            label="기존 패스워드"
+                            name="password"
+                            variant="filled"
+                            type="password"
+                            style={{marginTop: '3%'}}/>
+                        {/*}*/}
                         {/*/>*/}
                     </FormControl>
                     <FormControl style={{width: '100%'}}>

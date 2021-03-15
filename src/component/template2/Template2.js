@@ -7,7 +7,7 @@ import AboutMe from './AboutMe';
 import Project from './Project';
 import Career from './Career';
 
-const TEMPLATE_BASE_URL = 'http://localhost:8080/templatetwo';
+const TEMPLATE_BASE_URL = 'http://ec2-3-35-145-52.ap-northeast-2.compute.amazonaws.com:8080/templatetwo';
 
 const Template2 = () =>{
 

@@ -19,6 +19,9 @@ import CustomTextField from "../template/CustomTextField";
 import Picture from "./Picture";
 import ProjectItem from "../template2/ProjectItem";
 
+
+const TEMPLATE_BASE_URL = 'http://ec2-3-35-145-52.ap-northeast-2.compute.amazonaws.com:8080/templatethree';
+
 function TabPanel(props) {
     const {children, value, index, ...other} = props;
     return (
