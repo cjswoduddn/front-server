@@ -1,40 +1,92 @@
 import React, {useState} from 'react';
 import {Button, AppBar, Toolbar, Typography} from '@material-ui/core';
 import axios from 'axios';
-import { Route, Switch, Link } from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
+import {Route, Switch, Link} from 'react-router-dom';
+import AboutMe from './AboutMeViewer';
+import Project from './ProjectViewer';
+import Career from './CareerViewer';
+import AboutMeViewer from "./AboutMeViewer";
+import ProjectViewer from "./ProjectViewer";
+import CareerViewer from "./CareerViewer";
 
-import AboutMeViewer from './AboutMeViewer';
-import ProjectViewer from './ProjectViewer';
-import CareerViewer from './CareerViewer';
+const TEMPLATE_BASE_URL = 'http://ec2-3-35-145-52.ap-northeast-2.compute.amazonaws.com:8080/templatetwo';
 
-const Template2Viewer = ({data}) =>{
+const Template2 = () => {
 
-  const base = '/template/'+data.id;
-  const aboutme = base+'/aboutme';
-  const project = base+'/project';
-  const career = base+'/career';
+    const history = useHistory();
+
+    const data = {
+        project: {
+            "items": [
+                {
+                    "id": "1",
+                    "name": "Hong Gil Dong",
+                    "role": "Project Manger",
+                    "description": "Project management & planning"
+                },
+
+            ]
+        },
+        career: {
+            "items": [
+                {
+                    "id": "1",
+                    "title": "Hong Gil Dong Company",
+                    "date": "20.02.01 ~ 21.02.01",
+                    "position": "Project Manager",
+                    "stack": "JavaScript, TypeScript, Spring Framework",
+                    "intro": "uhm..... hal mal i up num dae..."
+                },
+
+            ]
+        },
+    }
 
 
-  return (
-    <>
-      <AppBar style={{marginTop: "100px",}}>
-        <Toolbar>
-          <Typography type="title" color="inherit" style={{ flex: 1 }}>
-          </Typography>
-          <Link to={aboutme} style={{textDecoration: "none"}}><Button>ABOUTME</Button></Link>
-          <Link to={project} style={{textDecoration: "none"}}><Button>PROJECT</Button></Link>
-          <Link to={career} style={{textDecoration: "none"}}><Button>CAREER</Button></Link>
-        </Toolbar>
-      </AppBar>
+    return (
+        <>
+            <AppBar style={{marginTop: "100px",}}>
+                <Toolbar>
+                    {/*<Button variant="outlined" size="large" onClick={onSubmit}>SUBMIT</Button>*/}
+                    <Typography type="title" color="inherit" style={{flex: 1}}>
+                    </Typography>
+                    <Link to="/template/preview/t2/aboutme" style={{textDecoration: "none"}}><Button
+                        style={{marginRight: 20, letterSpacing: 1}}>ABOUT</Button></Link>
+                    <Link to="/template/preview/t2/project" style={{textDecoration: "none"}}><Button
+                        style={{marginRight: 20, letterSpacing: 1}}>PROJECT</Button></Link>
+                    <Link to="/template/preview/t2/career" style={{textDecoration: "none"}}><Button
+                        style={{marginRight: 20, letterSpacing: 1}}>CAREER</Button></Link>
+                </Toolbar>
+            </AppBar>
 
-      <Switch>
-        <Route exact path={base}><AboutMeViewer data={data}/></Route>
-        <Route path={aboutme}><AboutMeViewer data={data}/></Route>
-        <Route path={project}><ProjectViewer data={data}/></Route>
-        <Route path={career}><CareerViewer data={data}/></Route>
-      </Switch>
-    </>
-  )
+            <Switch>
+                <Route exact path="/template/preview/t2">
+                    <AboutMeViewer
+                        // aboutMe={portfolioCommon}
+                        // setAboutMe={setPortfolioCommon}
+                    />
+                </Route>
+                <Route path="/template/preview/t2/aboutme">
+                    <AboutMeViewer
+                        // aboutMe={portfolioCommon}
+                        // setAboutMe={setPortfolioCommon}
+                    />
+                </Route>
+                <Route path="/template/preview/t2/project">
+                    <ProjectViewer
+                        project={data.project}
+                        // setProject={setProject}
+                    />
+                </Route>
+                <Route path="/template/preview/t2/career">
+                    <CareerViewer
+                        career={data.career}
+                        // setCareer={setCareer}
+                    />
+                </Route>
+            </Switch>
+        </>
+    );
 }
-
-export default Template2Viewer;
+export default Template2;
