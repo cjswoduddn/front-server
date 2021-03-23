@@ -8,7 +8,6 @@ const ProjectItemViewer = ({field}) => {
         <Grid container item xs="7" className="template2-project-item-container">
             <Grid container item xs="7">
                 <Grid container style={{marginTop: 10}}>
-                    {/*<div style={{width: "10px", backgroundColor: "blue", height: "72px"}}/>*/}
                     <Grid container item xs="10" direction="column" spacing="1">
                         <Grid item xs="10">
                             <p className="template2-project-item-name-viewer">{field.name}</p>

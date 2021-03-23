@@ -1,11 +1,7 @@
 import React, {useState} from 'react';
 import {Button, AppBar, Toolbar, Typography} from '@material-ui/core';
-import axios from 'axios';
 import {useHistory} from 'react-router-dom';
 import {Route, Switch, Link} from 'react-router-dom';
-import AboutMe from './AboutMeViewer';
-import Project from './ProjectViewer';
-import Career from './CareerViewer';
 import AboutMeViewer from "./AboutMeViewer";
 import ProjectViewer from "./ProjectViewer";
 import CareerViewer from "./CareerViewer";
