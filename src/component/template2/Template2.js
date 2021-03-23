@@ -92,32 +92,32 @@ const Template2 = () =>{
           <Button variant="outlined" size="large" onClick={onSubmit}>SUBMIT</Button>
           <Typography type="title" color="inherit" style={{ flex: 1 }}>
           </Typography>
-          <Link to="/template/t3/aboutme" style={{textDecoration: "none"}}><Button style={{marginRight: 20, letterSpacing: 1}}>ABOUT</Button></Link>
-          <Link to="/template/t3/project" style={{textDecoration: "none"}}><Button style={{marginRight: 20, letterSpacing: 1}}>PROJECT</Button></Link>
-          <Link to="/template/t3/career" style={{textDecoration: "none"}}><Button style={{marginRight: 20, letterSpacing: 1}}>CAREER</Button></Link>
+          <Link to="/template/t2/aboutme" style={{textDecoration: "none"}}><Button style={{marginRight: 20, letterSpacing: 1}}>ABOUT</Button></Link>
+          <Link to="/template/t2/project" style={{textDecoration: "none"}}><Button style={{marginRight: 20, letterSpacing: 1}}>PROJECT</Button></Link>
+          <Link to="/template/t2/career" style={{textDecoration: "none"}}><Button style={{marginRight: 20, letterSpacing: 1}}>CAREER</Button></Link>
         </Toolbar>
       </AppBar>
 
       <Switch>
-        <Route exact path="/template/t3">
+        <Route exact path="/template/t2">
           <AboutMe 
             aboutMe={portfolioCommon}
             setAboutMe={setPortfolioCommon}
           />
         </Route>
-        <Route path="/template/t3/aboutme">
+        <Route path="/template/t2/aboutme">
           <AboutMe
             aboutMe={portfolioCommon}
             setAboutMe={setPortfolioCommon}
           />
         </Route>
-        <Route path="/template/t3/project">
+        <Route path="/template/t2/project">
           <Project
             project={project}
             setProject={setProject}
           />
         </Route>
-        <Route path="/template/t3/career">
+        <Route path="/template/t2/career">
           <Career
             career={career}
             setCareer={setCareer}

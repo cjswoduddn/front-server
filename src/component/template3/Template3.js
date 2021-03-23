@@ -12,6 +12,7 @@ import t2_7 from '../../factory/images/t2/t2-7.png';
 import t2_8 from '../../factory/images/t2/t2-8.png';
 import t2_9 from '../../factory/images/t2/t2-9.png';
 import avatar from '../../factory/images/t2/avatar.jpg';
+import plus from '../../factory/images/plus2.png';
 import edit from '../../factory/images/edit.png';
 import upload from '../../factory/images/upload.png';
 import {Link} from "react-router-dom";
@@ -117,7 +118,7 @@ const Template3 = () => {
                     <div style={{width: '30%', margin: 'auto', marginBottom: 25}}>
                         {/*<input defaultValue="Y. S. Creator Design" name="title" register={register}*/}
                         {/*       style={{border: 'none', fontSize: 30, fontWeight: 600, textAlign: 'center', marginBottom: 30}}/>*/}
-                        <CustomTextField register={register} name="title" label=""/>
+                        <CustomTextField register={register} name="title" label="title을 작성해주세요."/>
 
                         {/*<div className="TextField-without-border-radius">*/}
                         {/*    <TextField className="inputCus" defaultValue="Y. S. Creator Design"*/}
@@ -137,26 +138,25 @@ const Template3 = () => {
                     <Tab label="about" {...a11yProps(1)} />
                     <Tab label="contact" {...a11yProps(2)} />
                 </Tabs>
+
+
                 <Grid item container direction="row"
                       style={{marginLeft: '10%', marginRight: '10%', textAlign: 'center'}}>
                     <TabPanel value={value} index={0}>
                         <Grid item container direction="row" style={{textAlign: 'center'}}>
-                            {/*<Grid item xs={4}>*/}
-                            {/*    <Picture/>*/}
-                            {/*</Grid>*/}
-                            {/*<Grid item xs={4}>*/}
-                            {/*    <Picture/>*/}
-                            {/*</Grid>*/}
-                            {/*<Grid item xs={4}>*/}
-                            {/*    <Picture/>*/}
-                            {/*</Grid>*/}
-
-                            <Grid item xs={4}>
-                                {picture.items.map(item => (
+                            {picture.items.map(item => (
+                                <Grid item xs={4}>
                                     <Picture key={item.id} field={item} updatePicture={updatePicture}
-                                                 removePicture={removePicture}/>))}
+                                             removePicture={removePicture}/>
+                                </Grid>
+                            ))}
+                            <Grid item xs={4}>
+                                <Button variant="outlined" size="large" onClick={addPicture}
+                                style={{marginTop: '10%', width: '50%', height: '50%', backgroundImage: `url(${plus})`, backgroundPosition: 'center', backgroundSize: 'cover', border: 'none'}}
+                                ></Button>
                             </Grid>
-
+                            <Grid item xs={4}></Grid>
+                            <Grid item xs={4}></Grid>
 
                             {/*    <div>*/}
                             {/*        <label htmlFor="file-upload2" className="custom-file-upload">*/}

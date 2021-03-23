@@ -17,6 +17,7 @@ import CustomTextField2 from "../template/CustomTextField2";
 
 const Template1Viewer = () =>{
     const { handleSubmit, register, errors } = useForm();
+    console.log("t1asdfsdaf")
     const data = {
         name: '홍길동',
         englishName: 'Hong Gil Dong',

@@ -5,11 +5,17 @@ import { useForm, Controller } from 'react-hook-form';
 import axios from 'axios';
 import { useHistory } from "react-router"
 
+<<<<<<< HEAD
 // const TEMPLATE_BASE_URL = 'http://ec2-3-35-145-52.ap-northeast-2.compute.amazonaws.com/signin';
 // const TEMPLATE_BASE_URL = 'http://localhost:8080/signin';
 const TEMPLATE_BASE_URL = 'http://api.appeal.icu/signin';
+=======
+// const TEMPLATE_BASE_URL = 'http://ec2-3-35-145-52.ap-northeast-2.compute.amazonaws.com:8080/signin';
+const TEMPLATE_BASE_URL = 'http://api.appeal.com/signin';
+>>>>>>> master
 
 let LogIn = () =>{
+  
   const methods = useForm();
   const { handleSubmit, reset, control} = methods;
   const history = useHistory();
