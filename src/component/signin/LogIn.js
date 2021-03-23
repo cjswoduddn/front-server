@@ -9,6 +9,7 @@ import { useHistory } from "react-router"
 const TEMPLATE_BASE_URL = 'http://api.appeal.com/signin';
 
 let LogIn = () =>{
+  
   const methods = useForm();
   const { handleSubmit, reset, control} = methods;
   const history = useHistory();
