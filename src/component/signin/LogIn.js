@@ -5,29 +5,30 @@ import { useForm, Controller } from 'react-hook-form';
 import axios from 'axios';
 import { useHistory } from "react-router"
 
-const TEMPLATE_BASE_URL = 'http://ec2-3-35-145-52.ap-northeast-2.compute.amazonaws.com:8080/signin';
+const TEMPLATE_BASE_URL = 'http://api.appeal.icu/signin';
 
 let LogIn = () =>{
+
+  
   const methods = useForm();
   const { handleSubmit, reset, control} = methods;
   const history = useHistory();
   const onSubmit = data =>{
+
     axios({
       method: 'post',
       headers:{
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
       },
-      withCredentials: true,
       url: TEMPLATE_BASE_URL,
+      withCredentials: true,
       data: data
     })
     .then((res)=>{
       sessionStorage.setItem("user", data.email)
-      // sessionStorage.setItem("token", res.data.token);
-      console.log(sessionStorage.getItem('user'));
-      // redirect home page
+      console.log("hello, world")
       history.push('/template');
-      // window.location.reload();
     })
     .catch((err)=>{
       console.log(err);
@@ -37,6 +38,7 @@ let LogIn = () =>{
           asdf
         </div>
     });
+
   }
 
   return(

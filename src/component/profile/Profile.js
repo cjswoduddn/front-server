@@ -1,6 +1,5 @@
 import React, {useRef} from 'react';
 import {Button, FormControl, Grid, TextField} from "@material-ui/core";
-import {Controller} from "react-hook-form";
 import {useForm} from 'react-hook-form';
 import axios from "axios";
 import {useState, useEffect} from "react";
@@ -13,8 +12,7 @@ const Profile = () => {
     const password = useRef({});
     password.current = watch("password", "");
     const [data, setData] = useState();
-    const TEMPLATE_BASE_URL = 'http://ec2-3-35-145-52.ap-northeast-2.compute.amazonaws.com:8080/member';
-    console.log(data)
+    const TEMPLATE_BASE_URL = 'http://api.appeal.icu/member';
 
     useEffect(async() => {
         const data = await axios({
