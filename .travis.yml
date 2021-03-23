@@ -6,6 +6,8 @@ caches:
   directories:
     - node_modules
 script: 
+  - npm cache clean --force
+  - rm -rf ./node_modules
   - npm install
   - npm run-script build
 
