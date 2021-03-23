@@ -1,15 +1,12 @@
 import React, {useState} from 'react';
 import {useForm} from 'react-hook-form';
 import {
-    Button,
-    Card,
-    CardContent, FormControl, FormControlLabel, FormLabel,
+    Button, FormControl, FormControlLabel,
     Grid,
     Paper, Radio, RadioGroup,
     Table,
     TableBody, TableCell, TableContainer,
     TableHead, TableRow,
-    TextField,
     Typography
 } from '@material-ui/core';
 import CustomTextField from "../template/CustomTextField";
