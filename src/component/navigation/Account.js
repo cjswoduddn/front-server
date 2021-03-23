@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import {useHistory} from 'react-router-dom';
 
-const TEMPLATE_BASE_URL = 'http://localhost:8080/signout';
+const TEMPLATE_BASE_URL = 'http://api.appeal.icu/signout';
 
 const Account = ({memberId, mode}) =>{
 
