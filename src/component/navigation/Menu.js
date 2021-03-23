@@ -1,7 +1,7 @@
 import React from 'react';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import {Link, useHistory} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 import axios from 'axios';
 
 const CustomizedMenus = ({shrink}) => {

@@ -1,11 +1,7 @@
 import React, {useState} from 'react';
 import {Button, AppBar, Toolbar, Typography} from '@material-ui/core';
-import axios from 'axios';
 import {useHistory} from 'react-router-dom';
 import {Route, Switch, Link} from 'react-router-dom';
-import AboutMe from './AboutMeViewer';
-import Project from './ProjectViewer';
-import Career from './CareerViewer';
 import AboutMeViewer from "./AboutMeViewer";
 import ProjectViewer from "./ProjectViewer";
 import CareerViewer from "./CareerViewer";
@@ -48,7 +44,6 @@ const Template2 = () => {
         <>
             <AppBar style={{marginTop: "100px",}}>
                 <Toolbar>
-                    {/*<Button variant="outlined" size="large" onClick={onSubmit}>SUBMIT</Button>*/}
                     <Typography type="title" color="inherit" style={{flex: 1}}>
                     </Typography>
                     <Link to="/template/preview/t2/aboutme" style={{textDecoration: "none"}}><Button
@@ -62,27 +57,19 @@ const Template2 = () => {
 
             <Switch>
                 <Route exact path="/template/preview/t2">
-                    <AboutMeViewer
-                        // aboutMe={portfolioCommon}
-                        // setAboutMe={setPortfolioCommon}
-                    />
+                    <AboutMeViewer/>
                 </Route>
                 <Route path="/template/preview/t2/aboutme">
-                    <AboutMeViewer
-                        // aboutMe={portfolioCommon}
-                        // setAboutMe={setPortfolioCommon}
-                    />
+                    <AboutMeViewer/>
                 </Route>
                 <Route path="/template/preview/t2/project">
                     <ProjectViewer
                         project={data.project}
-                        // setProject={setProject}
                     />
                 </Route>
                 <Route path="/template/preview/t2/career">
                     <CareerViewer
                         career={data.career}
-                        // setCareer={setCareer}
                     />
                 </Route>
             </Switch>

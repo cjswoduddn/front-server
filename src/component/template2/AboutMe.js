@@ -1,7 +1,6 @@
 import React from 'react';
 import {Grid} from '@material-ui/core';
 import "./Template2Aboutme.css";
-import logo from '../../factory/images/logo.png';
 
 
 const AboutMe = ({aboutMe, setAboutMe}) =>{

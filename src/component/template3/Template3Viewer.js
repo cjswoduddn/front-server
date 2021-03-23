@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import { useForm } from 'react-hook-form';
 import './Template3.css';
 import {Box, Grid, Tab, Tabs, TextField, Typography} from "@material-ui/core";
 import t2_1 from '../../factory/images/t2/t2-1.png';
@@ -8,13 +7,8 @@ import t2_3 from '../../factory/images/t2/t2-3.png';
 import t2_4 from '../../factory/images/t2/t2-4.png';
 import t2_5 from '../../factory/images/t2/t2-5.png';
 import t2_6 from '../../factory/images/t2/t2-6.png';
-import t2_7 from '../../factory/images/t2/t2-7.png';
-import t2_8 from '../../factory/images/t2/t2-8.png';
-import t2_9 from '../../factory/images/t2/t2-9.png';
 import avatar from '../../factory/images/t2/avatar.jpg';
-import edit from '../../factory/images/edit.png';
 import upload from '../../factory/images/upload.png';
-import {Link} from "react-router-dom";
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -62,14 +56,6 @@ const Template3Viewer = () =>{
             <Grid item xs={12}>
                 <div>
                     <input defaultValue="Y. S. Creator Design" style={{border: 'none', fontSize: 30, fontWeight: 600, textAlign: 'center'}} />
-                    {/*<div className="TextField-without-border-radius">*/}
-                    {/*    <TextField className="inputCus" defaultValue="Y. S. Creator Design"*/}
-                    {/*                variant="outlined"*/}
-                    {/*                InputProps={{ style: {fontSize: 30, fontWeight: 600, textAlign: 'center' } }}*/}
-                    {/*                           hintStyle={{ textAlign: 'center' }}*/}
-                    {/**/}
-                    {/*    />*/}
-                    {/*</div>*/}
                     <Typography variant="h6" style={{fontSize: 30, fontWeight: 600, marginBottom: 30}}>Y. S. Creator Design</Typography>
                 </div>
             </Grid>
@@ -146,26 +132,6 @@ const Template3Viewer = () =>{
                                 />
                             </div>
                         </Grid>
-
-
-
-
-
-                        {/*<Grid item xs={4}>*/}
-                        {/*    <Link to="/t2"><img className="card" width="100%" src={t2_1} /></Link>*/}
-                        {/*    <img className="card" width="100%" src={t2_4} />*/}
-                        {/*    <img className="card" width="100%" src={t2_2} />*/}
-                        {/*</Grid>*/}
-                        {/*<Grid item xs={4}>*/}
-                        {/*    <img className="card" width="100%" src={t2_7} />*/}
-                        {/*    <img className="card" width="100%" src={t2_5} />*/}
-                        {/*    <img className="card" width="100%" src={t2_8} />*/}
-                        {/*</Grid>*/}
-                        {/*<Grid item xs={4}>*/}
-                        {/*    <img className="card" width="100%" src={t2_3} />*/}
-                        {/*    <img className="card" width="100%" src={t2_6} />*/}
-                        {/*    <img className="card" width="100%" src={t2_9} />*/}
-                        {/*</Grid>*/}
                     </Grid>
                 </TabPanel>
                 <TabPanel value={value} index={1} style={{width: '100%'}}>
@@ -177,9 +143,6 @@ const Template3Viewer = () =>{
                             I’m a great place for you to tell a story and let your users know a little more about you."
                                       style={{height: 300, width: '100%', border: 'none', fontSize: 20, fontWeight: 600, textAlign: 'center', overflowY: 'invisible', overflowX: 'invisible'
                                       }} />
-
-
-
                         </Grid>
                     </Grid>
                 </TabPanel>
@@ -215,12 +178,8 @@ const Template3Viewer = () =>{
                             </Grid>
                         </Grid>
                         <Grid item xs={1}></Grid>
-
                     </Grid>
                 </TabPanel>
-
-
-
             </Grid>
         </Grid>
 

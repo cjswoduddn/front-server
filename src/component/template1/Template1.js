@@ -1,15 +1,12 @@
 import React, {useState} from 'react';
 import {useForm} from 'react-hook-form';
 import {
-    Button,
-    Card,
-    CardContent, FormControl, FormControlLabel, FormLabel,
+    Button, FormControl, FormControlLabel,
     Grid,
     Paper, Radio, RadioGroup,
     Table,
     TableBody, TableCell, TableContainer,
     TableHead, TableRow,
-    TextField,
     Typography
 } from '@material-ui/core';
 import CustomTextField from "../template/CustomTextField";
@@ -24,8 +21,6 @@ const Template1 = () => {
     const [portfolioCommon, setPortfolioCommon] = useState({});
 
     const onChangePicture = (e) => {
-        // console.log('picture: ', set);
-        // set(URL.createObjectURL(e.target.files[0]));
         setPicture(URL.createObjectURL(e.target.files[0]));
     };
 

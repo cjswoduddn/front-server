@@ -44,5 +44,3 @@ const Account = ({memberId, mode}) =>{
 }
 
 export default Account;
-
-// https://daveceddia.com/useeffect-hook-examples/

@@ -1,18 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import image from '../../factory/images/min.png';
-import {
-    Button,
-    Card,
-    CardContent, FormControl, FormControlLabel, FormLabel,
-    Grid, InputBase,
-    Paper, Radio, RadioGroup,
-    Table,
-    TableBody, TableCell, TableContainer,
-    TableHead, TableRow,
-    TextField,
-    Typography
-} from '@material-ui/core';
+import {Button, FormControl, FormControlLabel, Grid, Paper, Radio, RadioGroup, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography} from '@material-ui/core';
 import CustomTextField2 from "../template/CustomTextField2";
 
 const Template1Viewer = () =>{
@@ -64,7 +53,6 @@ const Template1Viewer = () =>{
     };
 
     return (
-        // <form onSubmit={handleSubmit(onSubmit)}>
             <Grid container direction="row" alignItems="center" justify="center"
                   style={{marginTop: 102, textAlign: "center", paddingLeft: '15%', paddingRight: '15%'}}>
                 <Grid item xs={4}>
@@ -114,7 +102,6 @@ const Template1Viewer = () =>{
                     </Grid>
                 </Grid>
                 <Grid item xs={12} style={{textAlign: 'left', marginBottom: 24}}>
-                    {/*<Paper variant="outlined"></Paper>*/}
                     <TableContainer component={Paper} variant="outlined">
                         <Typography variant="h6" style={{paddingLeft: 10, backgroundColor: '#081328', color: 'whitesmoke'}}>학 력 사 항</Typography>
                         <Table>
@@ -187,7 +174,6 @@ const Template1Viewer = () =>{
                     </TableContainer>
                 </Grid>
                 <Grid item xs={12} style={{textAlign: 'left', marginBottom: 24}}>
-                    {/*<Paper variant="outlined"></Paper>*/}
                     <TableContainer component={Paper} variant="outlined">
                         <Typography variant="h6" style={{paddingLeft: 10, backgroundColor: '#081328', color: 'whitesmoke'}}>경 력 사 항</Typography>
                         <Table>
@@ -299,7 +285,6 @@ const Template1Viewer = () =>{
                 </Grid>
 
             </Grid>
-        // </form>
     );
 }
 
