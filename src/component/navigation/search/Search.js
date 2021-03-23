@@ -1,9 +1,5 @@
 import React, {useState} from 'react';
-import { fade, makeStyles } from '@material-ui/core/styles';
-import SearchIcon from '@material-ui/icons/Search';
-import InputBase from '@material-ui/core/InputBase';
 import axios from 'axios';
-import { FiSearch } from 'react-icons/fi';
 import {useHistory} from 'react-router-dom';
 
 import './Search.css';

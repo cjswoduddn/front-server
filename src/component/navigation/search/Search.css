@@ -25,18 +25,9 @@
  .container ::-webkit-input-placeholder {
 	 color: #d071a0;
 }
-/* .app .container ::-moz-input-placeholder {*/
-/*	 color: #d071a0;*/
-/*}*/
  .container ::-ms-input-placeholder {
 	 color: #d071a0;
 }
-/* .app .container ::-o-input-placeholder {*/
-/*	 color: #d071a0;*/
-/*}*/
-/* .app .container ::input-placeholder {*/
-/*	 color: #d071a0;*/
-/*}*/
  .container #search-button {
 	 position: absolute;
 	 background: #fff;
