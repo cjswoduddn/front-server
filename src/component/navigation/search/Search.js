@@ -12,7 +12,7 @@ const Search = () =>{
   const [mode, setMode] = useState(0);
   const [focused, setFocus] = useState(false);
   const history = useHistory();
-  const TEMPLATE_BASE_URL = 'http://ec2-3-35-145-52.ap-northeast-2.compute.amazonaws.com:8080/template/';
+  const TEMPLATE_BASE_URL = 'http://api.appeal.icu/portfolio';
 
   const modeHandler = () =>{
     if(mode === 0){
