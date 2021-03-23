@@ -1,44 +1,94 @@
 
-.template2-career-viewer-container{
-  background-color: rgb(219, 212, 197);
-  margin-top: 102px;
+.template2-career-container {
+    background-color: rgb(219, 212, 197);
+    margin-top: 102px;
 }
 
-.template2-career-viewer-item-container{
-  margin-top: 100px !important;
-  box-shadow: 20px 20px 20px grey;
-  background-color: white
+.template2-career-item-container {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+    box-shadow: 20px 20px 20px grey;
+    background-color: white
 }
 
-.template2-career-viewer-item-title{
-  background: transparent;
-  font-size: 30px;
-  font-weight: 700;
-  width: 100%;
+.template2-career-item-title-viewer {
+    background: transparent;
+    width: 90%;
+    font-family: "Noto Sans";
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    margin-bottom: 0;
+    margin-left: 3.5%;
+    padding: 8px 0 0 20px;
+    /*border-radius: 10px;*/
+    /*border: 1px solid rgb(133, 133, 133);*/
 }
-.template2-career-viewer-item-intro{
-  background: transparent;
-  height: 250px;
-  max-height: 250px;
-  width: 75%;
-  font-size: 22px;
+
+.template2-career-item-intro-viewer {
+    background: transparent;
+    /*border: dotted;*/
+    height: 286px;
+    /*max-height: 250px;*/
+    width: 75%;
+    /*font-size: 22px;*/
+    font-family: "Noto Sans";
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 3px;
+
+    margin-left: 15%;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    padding: 8px 0 8px 20px;
+
+    /*border-radius: 10px;*/
+    /*border: 1px solid rgb(133, 133, 133);*/
 }
-.template2-career-viewer-item-date{
-  background: transparent;
-  margin: 10px;
-  font-size: 32px;
-  color: blue;
-  width: 90%;
+
+.template2-career-item-date-viewer {
+    background: transparent;
+    width: 100%;
+    font-family: "Noto Sans";
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    margin-left: 10.5%;
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding: 8px 0 8px 20px;
+    /*border-radius: 10px;*/
+    /*border: 1px solid rgb(133, 133, 133);*/
 }
-.template2-career-viewer-item-stack{
-  background: transparent;
-  margin: 10px;
-  font-size: 20px;
-  width: 90%;
+
+.template2-career-item-stack-viewer {
+    background: transparent;
+    width: 100%;
+    font-family: "Noto Sans";
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    margin-left: 10.5%;
+    margin-top: 5px;
+    padding: 0 0 8px 20px;
+    /*border-radius: 10px;*/
+    /*border: 1px solid rgb(133, 133, 133);*/
 }
-.template2-career-viewer-item-position{
-  background: transparent;
-  margin: 10px;
-  font-size: 20px;
-  width: 90%;
+
+.template2-career-item-position-viewer {
+    background: transparent;
+    width: 100%;
+
+    font-family: "Noto Sans";
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    margin-top: 5px;
+    margin-bottom: 0;
+    margin-left: 10.5%;
+    /*margin-top: 10px;*/
+    padding: 0 0 8px 20px;
+
+    /*border-radius: 10px;*/
+    /*border: 1px solid rgb(133, 133, 133);*/
 }

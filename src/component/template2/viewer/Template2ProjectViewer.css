@@ -1,43 +1,89 @@
-.template2-project-viewer-container{
+.template2-project-container{
   background-color: rgb(219, 212, 197);
   margin-top: 102px;
 }
-.template2-project-viewer-item-container{
-  margin-top: 100px !important;
+
+.template2-project-title{
+}
+
+
+.template2-project-item-container{
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
   box-shadow: 20px 20px 20px grey;
   background-color: white
 }
 
-.template2-project-viewer-item-name{
+.template2-project-item-name-viewer{
   background: transparent;
-  font-size: 30px;
-  font-weight: 700;
   width: 100%;
   margin-left: 10%;
-  color: blue
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-bottom: 0;
+  color: blue;
+  font-family: "Noto Sans";
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  padding-left: 20px;
+  /*border-radius: 10px;*/
+  /*border: 1px solid rgb(133, 133, 133);*/
 }
 
-.template2-project-viewer-item-role{
+.template2-project-item-role-viewer{
   background: transparent;
-  font-size: 15px;
-  font-weight: 700;
   width: 100%;
   margin-left: 10%;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-family: "Noto Sans";
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  padding-left: 20px;
+  /*border-radius: 10px;*/
+  /*border: 1px solid rgb(133, 133, 133);*/
 }
-.template2-project-viewer-item-intro{
+.template2-project-item-intro-viewer{
   background: transparent;
+  /*border: dotted;*/
   height: 250px;
   max-height: 250px;
-  font-size: 22px;
-  margin-top: 20px;
+  /*font-size: 22px;*/
+  margin-top: 10px;
   width: 100%;
+  padding-top: 10px;
+  font-family: "Noto Sans";
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  padding-left: 20px;
+  /*border-radius: 10px;*/
+  /*border: 1px solid rgb(133, 133, 133);*/
 }
-.template2-project-viewer-item-thumbnail-label{
+.template2-project-item-thumbnail-label{
   height: 100%;
   width: 100%;
+  display: inline-block;
+  vertical-align: top;
+
   text-align: center;
-  font-size: xx-large;
+  line-height: 2000%;
+  cursor: pointer;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
+  font-family: "Noto Sans";
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  border-left: 1px solid rgb(133, 133, 133);
+
+}
+.template2-project-item-thumbnail-img{
+  display: none;
+
 }

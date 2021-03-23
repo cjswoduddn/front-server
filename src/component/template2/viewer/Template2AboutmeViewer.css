@@ -7,7 +7,7 @@
   vertical-align: bottom;
 }
 
-.template2-aboutme-item-left-profile-thumbnail-label{
+.template2-aboutme-item-left-profile-thumbnail-label-viewer{
   margin-top: 50px;
   border-radius: 50%;
   border: 1px solid rgb(133, 133, 133);
@@ -15,67 +15,58 @@
   width: 250px;
   text-align: center;
   cursor: pointer;
-  /*background-image: url("../../factory/images/t2/avatar.jpg") !important;*/
+  background-image: url("../../../factory/images/upload.png") !important;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 250px 250px;
 }
 
-.template2-aboutme-item-left-profile-name{
+.template2-aboutme-item-left-profile-name-viewer{
   background: transparent;
   width: 70%;
   height: 50px;
-
+  text-align: center;
   font-family: "Noto Sans";
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 500;
   letter-spacing: 3px;
-  padding-left: 30px;
-  border-radius: 10px;
-  border: 1px solid rgb(133, 133, 133);
 }
 
-.template2-aboutme-item-right-title{
-  margin-top: 11%;
+.template2-aboutme-item-right-title-viewer{
+  margin-top: 20%;
   margin-left: 12%;
   height: 65px;
   min-width: 70%;
-
+  margin-bottom: 10px;
   font-family: "Noto Sans";
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 500;
   letter-spacing: 3px;
   padding-left: 30px;
-  border-radius: 10px;
-  border: 1px solid rgb(133, 133, 133);
+  border: none;
+
 }
-.template2-aboutme-item-right-skill{
-  margin-top: 20px;
+.template2-aboutme-item-right-skill-viewer{
+  margin-top: 0px;
   margin-left: 12%;
   height: 65px;
   min-width: 70%;
-
   font-family: "Noto Sans";
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 500;
   letter-spacing: 3px;
   padding-left: 30px;
-  border-radius: 10px;
-  border: 1px solid rgb(133, 133, 133);
+  border: none;
 }
-.template2-aboutme-item-right-intro{
-  margin-top: 18px;
+.template2-aboutme-item-right-intro-viewer{
   margin-left: 12%;
-  padding-top: 25px;
   height: 260px;
   width: 80%;
-
   font-family: "Noto Sans";
   font-size: 20px;
   font-weight: 500;
   letter-spacing: 3px;
-  padding-left: 30px;
-  border-radius: 10px;
-  border: 1px solid rgb(133, 133, 133);
+  padding-left: 30px !important;
+  border: none;
 }
 
