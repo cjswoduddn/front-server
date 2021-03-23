@@ -25,11 +25,8 @@ let LogIn = () =>{
     })
     .then((res)=>{
       sessionStorage.setItem("user", data.email)
-      // sessionStorage.setItem("token", res.data.token);
-      console.log(sessionStorage.getItem('user'));
-      // redirect home page
+      console.log("hello, world")
       history.push('/template');
-      // window.location.reload();
     })
     .catch((err)=>{
       console.log(err);
