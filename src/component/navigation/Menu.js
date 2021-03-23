@@ -10,6 +10,7 @@ const CustomizedMenus = ({shrink}) => {
     const handleClose = () => {setAnchorEl(null);};
 
     const TEMPLATE_BASE_URL = 'http://api.appeal.icu/';
+    // const TEMPLATE_BASE_URL = 'http://localhot:8080/';
 
     const history = useHistory();
     const logout = () => {
