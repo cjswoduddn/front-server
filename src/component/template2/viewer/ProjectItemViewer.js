@@ -1,5 +1,5 @@
 import React from 'react';
-import {Grid, Button} from '@material-ui/core';
+import {Grid} from '@material-ui/core';
 import "./Template2ProjectViewer.css";
 
 const ProjectItemViewer = ({field}) => {
@@ -33,7 +33,6 @@ const ProjectItemViewer = ({field}) => {
                         id={field.id}
                         accept="image/*" type="file"
                         className="template2-project-item-thumbnail-img"
-                        // onChange={changeThumbnails}
                     />
                 </label>
             </Grid>

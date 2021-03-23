@@ -59,25 +59,12 @@ const Search = () =>{
 
   return(
       <>
-        {/*<div className="app">*/}
         <form onSubmit={searchEvent}>
           <div className="container">
             <input className={'focused' } placeholder="Search" id='keyword' name='keyword' type='keyword'/>
             <button onClick={modeHandler} id="search-button" className={focused && 'active'}>🔍</button>
           </div>
         </form>
-        {/*</div>*/}
-        {/*<button className="search-button" onClick={modeHandler}>*/}
-        {/*  <form onSubmit={searchEvent}>*/}
-        {/*    <p className="search-button-font">*/}
-        {/*      <FiSearch/>*/}
-        {/*      검색{" "}*/}
-        {/*      {mode === 0 ? <></> :*/}
-        {/*        <input className="search-button-input" id='keyword' name='keyword' type='keyword' autoFocus></input>*/}
-        {/*      }*/}
-        {/*    </p>*/}
-        {/*  </form>*/}
-        {/*</button>*/}
       </>
   );
 }

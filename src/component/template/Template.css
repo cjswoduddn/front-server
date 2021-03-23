@@ -24,22 +24,14 @@
     z-index: -1;
     display: block;
     background-size: 100% 100%;
-    /*background-image: url("../../factory/images/can1.gif");*/
     width: 100%;
     height: 100%;
-    /*-webkit-filter: blur(8px);*/
-    /*-moz-filter: blur(8px);*/
-    /*-o-filter: blur(8px);*/
-    /*-ms-filter: blur(8px);*/
-    /*filter: blur(8px);*/
     background-repeat:no-repeat;
 }
 
 .content{
-    /*height: 400px;*/
     height: 70%;
     width: 80%;
-    /*width: 700px;*/
     position: absolute;
     top: 50%;
     left: 50%;
@@ -57,12 +49,9 @@
     height:40%;
     left: 0;
     top: 0;
-    /*background-color:#9CB1FF;*/
     background-image: url("../../factory/images/t1_main.png");
     background-size: cover;
     background-position: center;
-
-    /*line-height: 10px;*/
 }
 
 .x2{
@@ -71,7 +60,6 @@
     width: 39%;
     left: 61%;
     top:0px;
-    /*background-color:#FF6253;*/
     background-image: url("../../factory/images/t3_main.png");
     background-size: cover;
     background-position: center;
@@ -86,7 +74,6 @@
     width: 29%;
     left:0px;
     top: 42%;
-    /*background-color:#6694FC;*/
     background-image: url("../../factory/images/t2_main.png");
     background-size: cover;
     background-position: center;
@@ -133,7 +120,6 @@
     z-index:100;
     opacity: 0.9;
     filter: brightness(1);
-    /*background-image: none;*/
     -webkit-animation:scale 1s linear;
     -moz-animation:scale 1s linear;
     animation:scale 1s linear;

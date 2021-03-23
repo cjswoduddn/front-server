@@ -23,8 +23,6 @@ const Template1 = () => {
     const [portfolioCommon, setPortfolioCommon] = useState({});
 
     const onChangePicture = (e) => {
-        // console.log('picture: ', set);
-        // set(URL.createObjectURL(e.target.files[0]));
         setPicture(URL.createObjectURL(e.target.files[0]));
     };
 
