@@ -7,7 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import './horizontal.css';
 
 const Item = ({item}) => {
-    console.log(item)
+  console.log(item);
 
     return (
         <Grid item xs={4} className='horizontal-item-grid'>

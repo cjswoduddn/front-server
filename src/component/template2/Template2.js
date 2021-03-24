@@ -7,7 +7,8 @@ import AboutMe from './AboutMe';
 import Project from './Project';
 import Career from './Career';
 
-const TEMPLATE_BASE_URL = 'http://api.appeal.icu/templatetwo';
+// const TEMPLATE_BASE_URL = 'http://api.appeal.icu/templatetwo';
+const TEMPLATE_BASE_URL = 'http://localhost:8080/templatetwo';
 
 const Template2 = () =>{
 
@@ -44,6 +45,7 @@ const Template2 = () =>{
     const form = new FormData();
     for(const [key, value] of Object.entries(portfolioCommon)){
       if(key.startsWith("preview")) continue;
+      console.log(key+' '+value);
       form.append("portfolio."+key, value);
     }
 

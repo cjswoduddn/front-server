@@ -8,7 +8,8 @@ const Search = () =>{
   const [mode, setMode] = useState(0);
   const [focused, setFocus] = useState(false);
   const history = useHistory();
-  const TEMPLATE_BASE_URL = 'http://api.appeal.icu/portfolio';
+  // const TEMPLATE_BASE_URL = 'http://api.appeal.icu/portfolio';
+  const TEMPLATE_BASE_URL = 'http://localhost:8080/portfolio';
 
   const modeHandler = () =>{
     if(mode === 0){
@@ -36,8 +37,7 @@ const Search = () =>{
       headers:{
         'Content-Type': 'application/json'
       },
-      url: TEMPLATE_BASE_URL,
-      data: body
+      url: TEMPLATE_BASE_URL+"/"+body.keyword,
     })
         .then((res)=>{
           history.push({

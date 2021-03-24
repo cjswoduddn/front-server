@@ -7,7 +7,6 @@ import SignIn from './component/signin/SignIn';
 import Home from './component/home/Home';
 import Search from './component/service/Search';
 import Template from './component/template/Template';
-import Profile from "./component/profile/Profile";
 
 function App() {
     localStorage.memberId = 0;
@@ -31,7 +30,6 @@ function App() {
         <Route path="/search/:path"><Search/></Route>
 
         <Route path="/search"><Search/></Route>
-        <Route path="/profile"><Profile/></Route>
       </Switch>
     </>
   );

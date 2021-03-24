@@ -9,8 +9,8 @@ const CustomizedMenus = ({shrink}) => {
     const handleClick = (event) => {setAnchorEl(event.currentTarget);};
     const handleClose = () => {setAnchorEl(null);};
 
-    const TEMPLATE_BASE_URL = 'http://api.appeal.icu/';
-    // const TEMPLATE_BASE_URL = 'http://localhot:8080/';
+    // const TEMPLATE_BASE_URL = 'http://api.appeal.icu/';
+    const TEMPLATE_BASE_URL = 'http://localhost:8080/';
 
     const history = useHistory();
     const logout = () => {
@@ -18,25 +18,6 @@ const CustomizedMenus = ({shrink}) => {
       history.push('/login');
     }
 
-    const updateMyAccount = () =>{
-      axios({
-        method: 'get',
-        withCredentials: true,
-        url: TEMPLATE_BASE_URL+"member"
-      })
-          .then((res)=>{
-            history.push({
-              pathname: "/profile",
-              state:{
-                account: res.data
-              }
-            });
-  
-          })
-          .catch((err)=>{
-            console.log(err);
-          });
-    }
     const searchMyTemplate = () =>{
       axios({
         method: 'get',
@@ -68,7 +49,6 @@ const CustomizedMenus = ({shrink}) => {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
             >
-                <MenuItem onClick={updateMyAccount} className="navLink" style={{letterSpacing: 1, fontSize: 18, fontVariant: 'small-caps'}}>profile</MenuItem>
                 <MenuItem onClick={()=>searchMyTemplate()} style={{letterSpacing: 1, fontSize: 18, fontVariant: 'small-caps'}}>my template</MenuItem>
                 <MenuItem onClick={logout} style={{letterSpacing: 1, fontSize: 18, fontVariant: 'small-caps'}}>logout</MenuItem>
             </Menu>

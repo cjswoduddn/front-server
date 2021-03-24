@@ -13,8 +13,8 @@ import CustomTextField from "../template/CustomTextField";
 import axios from "axios";
 
 const Template1 = () => {
-    const TEMPLATE_BASE_URL = 'http://api.appeal.icu/templateone';
-    // const TEMPLATE_BASE_URL = 'http://localhost:8080/templateone';
+    // const TEMPLATE_BASE_URL = 'http://api.appeal.icu/templateone';
+    const TEMPLATE_BASE_URL = 'http://localhost:8080/templateone';
 
     const {handleSubmit, register, errors} = useForm();
     const [picture, setPicture] = useState('');
@@ -31,6 +31,7 @@ const Template1 = () => {
             if (key === "portfolio") {
                 for (const [k, v] of Object.entries(value)) {
                     if (k === "thumbnail") {
+                        if(v[0] == null) continue;
                         form.append("portfolio." + k, v[0]);
                     } else {
                         form.append("portfolio." + k, v);
