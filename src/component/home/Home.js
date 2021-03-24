@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import ReactFullpage from '@fullpage/react-fullpage';
-
 import Grid from "@material-ui/core/Grid";
 import back3 from '../../factory/images/home_back1.gif';
 import LightButton from "./LightButton";
@@ -20,14 +18,6 @@ const Home = () => (
         <img onClick src={logo} style={{top: 0, height: '10%', position: "fixed", zIndex: 1, margin: '1%'}}></img>
       </Link>
           </Typography>
-      {/*<Typography style={{flexGrow:1}}>*/}
-      {/*      <Link to="/">*/}
-      {/*        <img*/}
-      {/*            // onClick src={logo} height={this.state.imgHeight} style={{WebkitTransition: 'all 0.7s ease-in-out', transition: 'all 0.7s ease-in-out', verticalAlign: "middle"}}*/}
-      {/*            heightstyle={{height: '13%'}} src={logo}*/}
-      {/*        />*/}
-      {/*      </Link>*/}
-      {/*    </Typography>*/}
       <ReactFullpage
           scrollingSpeed = {800} navigation
           render={({ state, fullpageApi }) => {
@@ -101,5 +91,3 @@ const Home = () => (
 );
 
 export default Home;
-
-// 참고자료: https://github.com/alvarotrigo/react-fullpage

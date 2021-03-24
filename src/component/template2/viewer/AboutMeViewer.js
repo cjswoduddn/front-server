@@ -10,14 +10,11 @@ const AboutMeViewer = ({aboutMe, setAboutMe}) =>{
         <Grid item xs="5" style={{backgroundColor: 'rgb(219, 212, 197)'}}>
           <Grid container xs="7" className="template2-aboutme-item-left-profile" justify="center">
             <label className="template2-aboutme-item-left-profile-thumbnail-label-viewer"
-              for="thumbnail"
-              // style={{backgroundImage: `url(${aboutMe.previewThumbnail})`}}
-              >
+              for="thumbnail">
               <input
                 id="thumbnail"
                 accept="image/*" type="file"
                 style={{display: 'none'}}
-                // onChange={changeThumbnails}
                 name="thumbnail"
               />
             </label>

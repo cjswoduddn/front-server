@@ -1,30 +1,26 @@
 import React, {useState} from 'react';
 import {useForm} from 'react-hook-form';
 import {
-    Button,
-    Card,
-    CardContent, FormControl, FormControlLabel, FormLabel,
+    Button, FormControl, FormControlLabel,
     Grid,
     Paper, Radio, RadioGroup,
     Table,
     TableBody, TableCell, TableContainer,
     TableHead, TableRow,
-    TextField,
     Typography
 } from '@material-ui/core';
 import CustomTextField from "../template/CustomTextField";
 import axios from "axios";
 
 const Template1 = () => {
-    const TEMPLATE_BASE_URL = 'http://ec2-3-35-145-52.ap-northeast-2.compute.amazonaws.com:8080/templateone';
+    const TEMPLATE_BASE_URL = 'http://api.appeal.icu/templateone';
+    // const TEMPLATE_BASE_URL = 'http://localhost:8080/templateone';
 
     const {handleSubmit, register, errors} = useForm();
     const [picture, setPicture] = useState('');
     const [portfolioCommon, setPortfolioCommon] = useState({});
 
     const onChangePicture = (e) => {
-        // console.log('picture: ', set);
-        // set(URL.createObjectURL(e.target.files[0]));
         setPicture(URL.createObjectURL(e.target.files[0]));
     };
 

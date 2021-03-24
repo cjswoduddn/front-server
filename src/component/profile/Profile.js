@@ -1,6 +1,5 @@
 import React, {useRef} from 'react';
 import {Button, FormControl, Grid, TextField} from "@material-ui/core";
-import {Controller} from "react-hook-form";
 import {useForm} from 'react-hook-form';
 import axios from "axios";
 import {useState, useEffect} from "react";
@@ -13,10 +12,9 @@ const Profile = () => {
     const password = useRef({});
     password.current = watch("password", "");
     const [data, setData] = useState();
-    const TEMPLATE_BASE_URL = 'http://ec2-3-35-145-52.ap-northeast-2.compute.amazonaws.com:8080/member';
-    console.log(data)
+    const TEMPLATE_BASE_URL = 'http://api.appeal.icu/member';
 
-    useEffect(async() => {
+    useEffect(async () => {
         const data = await axios({
             method: 'get',
             withCredentials: true,
@@ -30,59 +28,35 @@ const Profile = () => {
     }
 
     const account = useLocation().state.account;
-    // console.log(account);
 
     return (
         <Grid container justify="center" alignItems="center" style={{height: '100vh'}}>
             <Grid item xs={4} style={{textAlign: 'center'}}>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <FormControl style={{width: '100%'}}>
-                        {/*<Controller*/}
-                        {/*    name="name"*/}
-                        {/*    control={control}*/}
-                        {/*    as={*/}
-                                <TextField
-                                    // label={data.email}
-                                    name={account.name}
-                                    variant="filled"
-                                    type="text"
-                                    style={{marginTop: '3%'}}/>
-                            {/*}*/}
-                        {/*/>*/}
+                        <TextField
+                            name={account.name}
+                            variant="filled"
+                            type="text"
+                            style={{marginTop: '3%'}}/>
                     </FormControl>
                     <FormControl style={{width: '100%'}}>
-                        {/*<Controller*/}
-                        {/*    name="password"*/}
-                        {/*    control={control}*/}
-                        {/*    as={*/}
                         <TextField
                             label="기존 패스워드"
                             name="password"
                             variant="filled"
                             type="password"
                             style={{marginTop: '3%'}}/>
-                        {/*}*/}
-                        {/*/>*/}
                     </FormControl>
                     <FormControl style={{width: '100%'}}>
-                        {/*<Controller*/}
-                        {/*    name="password"*/}
-                        {/*    control={control}*/}
-                        {/*    as={*/}
                         <TextField
                             label="패스워드"
                             name="password"
                             variant="filled"
                             type="password"
                             style={{marginTop: '3%'}}/>
-                        {/*}*/}
-                        {/*/>*/}
                     </FormControl>
                     <FormControl style={{width: '100%'}}>
-                        {/*<Controller*/}
-                        {/*    name="password_repeat"*/}
-                        {/*    control={control}*/}
-                        {/*    as={*/}
                         <TextField
                             label="패스워드 확인"
                             name="password_repeat"
@@ -94,8 +68,6 @@ const Profile = () => {
                                     value === password.current || "The passwords do not match"
                             })}
                             style={{marginTop: '3%'}}/>
-                        {/*}*/}
-                        {/*/>*/}
                         {errors.password_repeat && <p>{errors.password_repeat.message}</p>}
 
                     </FormControl>

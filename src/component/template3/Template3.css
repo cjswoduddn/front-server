@@ -1,5 +1,4 @@
 .card {
-    /*padding-bottom: 10px;*/
     width: 95%;
 }
 .card:hover {
@@ -25,7 +24,6 @@ input[type="file"] {
     position: absolute;
     z-index: 9999;
     padding: 7px;
-    /*border: 1px solid #ccc;*/
     display: inline-block;
     cursor: pointer;
 }

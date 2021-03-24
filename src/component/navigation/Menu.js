@@ -1,7 +1,7 @@
 import React from 'react';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import {Link, useHistory} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 import axios from 'axios';
 
 const CustomizedMenus = ({shrink}) => {
@@ -9,7 +9,8 @@ const CustomizedMenus = ({shrink}) => {
     const handleClick = (event) => {setAnchorEl(event.currentTarget);};
     const handleClose = () => {setAnchorEl(null);};
 
-    const TEMPLATE_BASE_URL = 'http://ec2-3-35-145-52.ap-northeast-2.compute.amazonaws.com:8080/';
+    const TEMPLATE_BASE_URL = 'http://api.appeal.icu/';
+    // const TEMPLATE_BASE_URL = 'http://localhot:8080/';
 
     const history = useHistory();
     const logout = () => {

@@ -3,10 +3,6 @@
   margin-top: 102px;
 }
 
-.template2-project-title{
-}
-
-
 .template2-project-item-container{
   margin-top: 20px !important;
   margin-bottom: 20px !important;
@@ -46,10 +42,8 @@
 }
 .template2-project-item-intro{
   background: transparent;
-  /*border: dotted;*/
   height: 250px;
   max-height: 250px;
-  /*font-size: 22px;*/
   margin-top: 10px;
   width: 100%;
   padding-top: 10px;
@@ -66,7 +60,6 @@
   width: 100%;
   display: inline-block;
   vertical-align: top;
-
   text-align: center;
   line-height: 2000%;
   cursor: pointer;
@@ -78,9 +71,7 @@
   font-weight: 500;
   letter-spacing: 3px;
   border-left: 1px solid rgb(133, 133, 133);
-
 }
 .template2-project-item-thumbnail-img{
   display: none;
-
 }

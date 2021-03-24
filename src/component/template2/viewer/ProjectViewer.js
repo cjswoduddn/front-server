@@ -1,6 +1,5 @@
 import React from 'react';
-// import ProjectItem from './ProjectItem';
-import {Button, Grid} from '@material-ui/core';
+import {Grid} from '@material-ui/core';
 import "./Template2ProjectViewer.css";
 import ProjectItemViewer from "./ProjectItemViewer";
 

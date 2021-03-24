@@ -33,7 +33,6 @@ const ProjectItem = ({field, updateProject, removeProject}) => {
                     </Button>
                 </Grid>
                 <Grid container style={{marginTop: 10}}>
-                    {/*<div style={{width: "10px", backgroundColor: "blue", height: "72px"}}/>*/}
                     <Grid container item xs="10" direction="column" spacing="1">
                         <Grid item xs="10">
                             <input type="text"

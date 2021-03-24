@@ -6,6 +6,7 @@ import axios from 'axios';
 import { useHistory } from "react-router"
 
 const TEMPLATE_BASE_URL = 'http://api.appeal.icu/signin';
+// const TEMPLATE_BASE_URL = 'http://localhost:8080/signin';
 
 let LogIn = () =>{
 
@@ -27,6 +28,7 @@ let LogIn = () =>{
     })
     .then((res)=>{
       sessionStorage.setItem("user", data.email)
+      console.log("hello, world")
       history.push('/template');
     })
     .catch((err)=>{

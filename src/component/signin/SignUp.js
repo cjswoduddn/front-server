@@ -13,7 +13,7 @@ import {useForm, Controller} from 'react-hook-form';
 import axios from 'axios';
 import {useHistory} from "react-router-dom";
 
-const TEMPLATE_BASE_URL = 'http://ec2-3-35-145-52.ap-northeast-2.compute.amazonaws.com:8080/member';
+const TEMPLATE_BASE_URL = 'http://api.appeal.icu/member';
 
 const SignUp = () => {
     const methods = useForm();
