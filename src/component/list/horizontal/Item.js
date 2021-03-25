@@ -9,7 +9,6 @@ import {useHistory} from 'react-router-dom';
 import './horizontal.css';
 
 const Item = ({item}) => {
-
     // const TEMPLATE_BASE_URL = 'http://api.appeal.icu/'+item.templateType+'/'+item.id;
     const TEMPLATE_BASE_URL = 'http://localhost:8080/'+item.templateType+'/'+item.id;
     const history = useHistory();
