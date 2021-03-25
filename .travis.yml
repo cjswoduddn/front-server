@@ -1,10 +1,7 @@
 language: node_js
 
 node_js: 
-  - "14"
-caches:
-  directories:
-    - node_modules
+  - '14'
 script: 
   - npm install
   - npm run build
