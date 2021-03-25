@@ -1,45 +1,15 @@
 import React, {useState} from 'react';
 import {Button, AppBar, Toolbar, Typography} from '@material-ui/core';
-import {useHistory} from 'react-router-dom';
+import {useHistory, useLocation} from 'react-router-dom';
 import {Route, Switch, Link} from 'react-router-dom';
 import AboutMeViewer from "./AboutMeViewer";
 import ProjectViewer from "./ProjectViewer";
 import CareerViewer from "./CareerViewer";
 
-// const TEMPLATE_BASE_URL = 'http://ec2-3-35-145-52.ap-northeast-2.compute.amazonaws.com:8080/templatetwo'
-const TEMPLATE_BASE_URL = 'api.appeal.icu/templatetwo'
 
-const Template2 = () => {
+const Template2 = ({data}) => {
 
-    const history = useHistory();
-
-    const data = {
-        project: {
-            "items": [
-                {
-                    "id": "1",
-                    "name": "Hong Gil Dong",
-                    "role": "Project Manger",
-                    "description": "Project management & planning"
-                },
-
-            ]
-        },
-        career: {
-            "items": [
-                {
-                    "id": "1",
-                    "title": "Hong Gil Dong Company",
-                    "date": "20.02.01 ~ 21.02.01",
-                    "position": "Project Manager",
-                    "stack": "JavaScript, TypeScript, Spring Framework",
-                    "intro": "uhm..... hal mal i up num dae..."
-                },
-
-            ]
-        },
-    }
-
+    let tData = data.data;
 
     return (
         <>
@@ -65,12 +35,12 @@ const Template2 = () => {
                 </Route>
                 <Route path="/template/preview/t2/project">
                     <ProjectViewer
-                        project={data.project}
+                        project={tData.project}
                     />
                 </Route>
                 <Route path="/template/preview/t2/career">
                     <CareerViewer
-                        career={data.career}
+                        career={tData.career}
                     />
                 </Route>
             </Switch>

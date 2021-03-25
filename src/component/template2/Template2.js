@@ -77,7 +77,7 @@ const Template2 = () =>{
     })
     .then((res)=>{
       history.push({
-        pathname: "/template/"+res.data
+        pathname: "/template"
       })
     })
     .catch((err)=>{

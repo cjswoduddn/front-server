@@ -11,14 +11,16 @@ import {
 } from '@material-ui/core';
 import CustomTextField from "../template/CustomTextField";
 import axios from "axios";
+import {useHistory} from 'react-router-dom';
 
 const Template1 = () => {
-    const TEMPLATE_BASE_URL = 'http://api.appeal.icu/templateone';
-    // const TEMPLATE_BASE_URL = 'http://localhost:8080/templateone';
+    // const TEMPLATE_BASE_URL = 'http://api.appeal.icu/templateone';
+    const TEMPLATE_BASE_URL = 'http://localhost:8080/templateone';
 
     const {handleSubmit, register, errors} = useForm();
     const [picture, setPicture] = useState('');
     const [portfolioCommon, setPortfolioCommon] = useState({});
+    const history = useHistory();
 
     const onChangePicture = (e) => {
         setPicture(URL.createObjectURL(e.target.files[0]));
@@ -68,6 +70,9 @@ const Template1 = () => {
             data: form
         })
             .then((res) => {
+              history.push({
+                pathname: "/template"
+              })
             })
             .catch((err) => {
                 console.log(err);
