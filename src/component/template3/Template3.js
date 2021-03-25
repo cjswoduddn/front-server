@@ -62,6 +62,18 @@ const Template3 = () => {
         })
     }
 
+    const [avatar, setAvatar] = useState('');
+    const onChangeAvatar = (e) => {
+        setAvatar(URL.createObjectURL(e.target.files[0]));
+    };
+    const [avatarClick, setAvatarClickOn] = useState(false);
+    const onClickAvatar = () => {
+        // onChangeAvatar(e);
+        // avatarClick = true;
+        setAvatarClickOn(avatarClick => true);
+    }
+
+
     const removePicture = (id) => {
         setPicture({key: picture.key, items: picture.items.filter(item => item.id !== id)})
     }
@@ -125,20 +137,7 @@ const Template3 = () => {
                     <TabPanel value={value} index={1} style={{width: '100%'}}>
                         <Grid item container direction="row" style={{textAlign: 'center', height: 400}}>
                             <Grid item xs={12}>
-                            <textarea defaultValue="
-                            I'm a paragraph. Click here to add your own text and edit me.
-                            It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.
-                            I’m a great place for you to tell a story and let your users know a little more about you."
-                                      style={{
-                                          height: 300,
-                                          width: '100%',
-                                          border: 'none',
-                                          fontSize: 20,
-                                          fontWeight: 600,
-                                          textAlign: 'center',
-                                          overflowY: 'invisible',
-                                          overflowX: 'invisible'
-                                      }}/>
+                                <CustomTextField register={register} name="skill" label="기술사항을 입력해주세요."/>
                             </Grid>
                         </Grid>
                     </TabPanel>
@@ -146,35 +145,45 @@ const Template3 = () => {
                         <Grid item container alignItems="center" direction="row" style={{textAlign: 'center'}}>
                             <Grid item xs={1}></Grid>
                             <Grid item xs={5}>
-                                <img src={avatar} width="70%" style={{borderRadius: '50%'}}/>
+                                {avatar ?
+                                    <img onClick={onClickAvatar} src={avatar} width="70%" style={{borderRadius: '50%'}}/>
+
+                                    :
+                                    <Button variant="contained" component="label" onChange={onChangeAvatar}>
+                                        Image Upload
+                                        <input ref={register} name="portfolio.thumbnail" type="file" hidden/>
+                                    </Button>
+                                }
+
+
                             </Grid>
                             <Grid item xs={5} style={{textAlign: 'left'}}>
-                                <Typography variant="h3">Peder Elias</Typography>
-                                <Typography variant="overline" style={{fontSize: 25}}>Musical, Artist</Typography>
-                                <br/><br/><br/>
+                                <CustomTextField register={register} name="name" label="이름을 입력해주세요."/>
+                                <p></p>
+                                <CustomTextField register={register} name="selfSnippet" label="간단한 자기소개를 해주세요."/>
+                                <br/><br/>
                                 <Grid container alignItems="center">
                                     <Grid item xs={3}>
                                         <Typography variant="subtitle2"
-                                                    style={{fontWeight: 600, fontSize: 18}}>Phone</Typography>
+                                                    style={{fontWeight: 600, fontSize: 18}}>Phone</Typography><p></p>
                                     </Grid>
                                     <Grid item xs={9}>
-                                        <Typography variant="overline" style={{fontSize: 15}}>123-4567-8900</Typography>
+                                        <CustomTextField register={register} name="phone" label="연락처를 적어주세요."/><p></p>
                                     </Grid>
                                     <Grid item xs={3}>
                                         <Typography variant="subtitle2"
-                                                    style={{fontWeight: 600, fontSize: 18}}>Email</Typography>
+                                                    style={{fontWeight: 600, fontSize: 18}}>Email</Typography><p></p>
                                     </Grid>
                                     <Grid item xs={9}>
-                                        <Typography variant="overline"
-                                                    style={{fontSize: 15}}>Info@gmail.com</Typography>
+                                        <CustomTextField register={register} name="email" label="이메일을 적어주세요."/><p></p>
                                     </Grid>
                                     <Grid item xs={3}>
                                         <Typography variant="subtitle2"
-                                                    style={{fontWeight: 600, fontSize: 18}}>Address</Typography>
+                                                    style={{fontWeight: 600, fontSize: 18}}>Address</Typography><p></p>
+
                                     </Grid>
                                     <Grid item xs={9}>
-                                        <Typography variant="overline" style={{fontSize: 15}}>San Francisco,
-                                            CA</Typography>
+                                        <CustomTextField register={register} name="address" label="주소를 적어주세요."/><p></p>
                                     </Grid>
                                 </Grid>
                             </Grid>
