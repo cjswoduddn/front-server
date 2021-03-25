@@ -6,7 +6,8 @@ import AboutMeViewer from "./AboutMeViewer";
 import ProjectViewer from "./ProjectViewer";
 import CareerViewer from "./CareerViewer";
 
-const TEMPLATE_BASE_URL = 'http://ec2-3-35-145-52.ap-northeast-2.compute.amazonaws.com:8080/templatetwo';
+// const TEMPLATE_BASE_URL = 'http://ec2-3-35-145-52.ap-northeast-2.compute.amazonaws.com:8080/templatetwo'
+const TEMPLATE_BASE_URL = 'api.appeal.icu/templatetwo'
 
 const Template2 = () => {
 
