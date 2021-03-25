@@ -8,6 +8,10 @@ import './horizontal.css';
 
 const Item = ({item}) => {
   console.log(item);
+  const redirect = () => {
+
+  }
+
 
     return (
         <Grid item xs={4} className='horizontal-item-grid'>
