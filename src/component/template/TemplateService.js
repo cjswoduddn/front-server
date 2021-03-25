@@ -1,7 +1,8 @@
 import React from 'react';
 import Template2Viewer from '../template2/viewer/Template2Viewer';
 
-const TEMPLATE_BASE_URL = 'http://localhost:8080/';
+// const TEMPLATE_BASE_URL = 'http://localhost:8080/';
+const TEMPLATE_BASE_URL = 'http://api.appeal.icu/';
 
 function TemplateService(){
   const {id, type} = useParams();

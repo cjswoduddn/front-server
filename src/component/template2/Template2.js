@@ -7,8 +7,8 @@ import AboutMe from './AboutMe';
 import Project from './Project';
 import Career from './Career';
 
-// const TEMPLATE_BASE_URL = 'http://api.appeal.icu/templatetwo';
-const TEMPLATE_BASE_URL = 'http://localhost:8080/templatetwo';
+const TEMPLATE_BASE_URL = 'http://api.appeal.icu/templatetwo';
+// const TEMPLATE_BASE_URL = 'http://localhost:8080/templatetwo';
 
 const Template2 = () =>{
 

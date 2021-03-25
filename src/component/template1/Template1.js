@@ -13,8 +13,8 @@ import CustomTextField from "../template/CustomTextField";
 import axios from "axios";
 
 const Template1 = () => {
-    // const TEMPLATE_BASE_URL = 'http://api.appeal.icu/templateone';
-    const TEMPLATE_BASE_URL = 'http://localhost:8080/templateone';
+    const TEMPLATE_BASE_URL = 'http://api.appeal.icu/templateone';
+    // const TEMPLATE_BASE_URL = 'http://localhost:8080/templateone';
 
     const {handleSubmit, register, errors} = useForm();
     const [picture, setPicture] = useState('');
