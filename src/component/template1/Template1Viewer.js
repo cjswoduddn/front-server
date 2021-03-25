@@ -3,10 +3,12 @@ import { useForm } from 'react-hook-form';
 import image from '../../factory/images/min.png';
 import {Button, FormControl, FormControlLabel, Grid, Paper, Radio, RadioGroup, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography} from '@material-ui/core';
 import CustomTextField2 from "../template/CustomTextField2";
+import CustomTextField from "../template/CustomTextField";
 
 const Template1Viewer = () =>{
     const { handleSubmit, register, errors } = useForm();
-    console.log("t1asdfsdaf")
+    // console.log("t1asdfsdaf")
+
     const data = {
         name: '홍길동',
         englishName: 'Hong Gil Dong',
@@ -44,7 +46,7 @@ const Template1Viewer = () =>{
         certificate2Date: ' ',
         certiificate2Title: ' ',
         certiificate2Origin: ' ',
-        militaryCheck: ' '
+        skill: ' ',
     }
 
 
@@ -100,6 +102,21 @@ const Template1Viewer = () =>{
                                 label={data.email} required={true}
                             />
                     </Grid>
+                </Grid>
+                <Grid item xs={12} style={{textAlign: 'left', marginBottom: 24}}>
+                    <TableContainer component={Paper} variant="outlined" style={{}}>
+                        <Typography variant="h6"
+                                    style={{paddingLeft: 10, backgroundColor: '#081328', color: 'whitesmoke'}}>기 술 사 항</Typography>
+                        <Table>
+                            <TableBody>
+                                <TableRow>
+                                    <TableCell>
+                                        <CustomTextField2 register={register} disabled="true" label={data.skill}/>
+                                    </TableCell>
+                                </TableRow>
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
                 </Grid>
                 <Grid item xs={12} style={{textAlign: 'left', marginBottom: 24}}>
                     <TableContainer component={Paper} variant="outlined">
@@ -257,27 +274,6 @@ const Template1Viewer = () =>{
                                 </TableRow>
                             </TableBody>
                         </Table>
-                    </TableContainer>
-                </Grid>
-                <Grid item xs={5} style={{textAlign: 'left', marginBottom: 24}}>
-                    <TableContainer component={Paper} variant="outlined">
-                        <Typography variant="h6" style={{paddingLeft: 10, backgroundColor: '#081328', color: 'whitesmoke'}}>병 역 사 항</Typography>
-
-                        <FormControl component="fieldset" style={{margin: 20}}>
-                            <RadioGroup row  name="military_status" defaultValue="init">
-                                <FormControlLabel value="fulfilled" control={<Radio color="primary" />} label="군필" />
-                                <FormControlLabel value="unfulfilled" control={<Radio color="primary" />} label="미필" />
-                                <FormControlLabel value="Exempted" control={<Radio color="primary" />} label="면제" />
-                                <FormControlLabel value="etc" control={<Radio color="primary" />} label="기타" />
-                            </RadioGroup>
-                        </FormControl>
-                    </TableContainer>
-                </Grid>
-                <Grid item xs={1}></Grid>
-                <Grid item xs={6} style={{textAlign: 'left', marginBottom: 24}}>
-                    <TableContainer component={Paper} variant="outlined" style={{height: 116}}>
-                        <Typography variant="h6" style={{paddingLeft: 10, backgroundColor: '#081328', color: 'whitesmoke'}}>기 타 사 항</Typography>
-
                     </TableContainer>
                 </Grid>
                 <Grid item xs={12}>

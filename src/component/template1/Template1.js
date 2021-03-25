@@ -31,7 +31,7 @@ const Template1 = () => {
             if (key === "portfolio") {
                 for (const [k, v] of Object.entries(value)) {
                     if (k === "thumbnail") {
-                        if(v[0] == null) continue;
+                        if (v[0] == null) continue;
                         form.append("portfolio." + k, v[0]);
                     } else {
                         form.append("portfolio." + k, v);
@@ -53,8 +53,6 @@ const Template1 = () => {
                         form.append(myKey + k, v);
                     }
                 })
-            } else if (key === 'militaryStatus') {
-                console.log(value);
             } else {
                 form.append(key, value);
             }
@@ -140,7 +138,21 @@ const Template1 = () => {
                     </Grid>
                 </Grid>
                 <Grid item xs={12} style={{textAlign: 'left', marginBottom: 24}}>
-                    {/*<Paper variant="outlined"></Paper>*/}
+                    <TableContainer component={Paper} variant="outlined" style={{}}>
+                        <Typography variant="h6"
+                                    style={{paddingLeft: 10, backgroundColor: '#081328', color: 'whitesmoke'}}>기 술 사 항</Typography>
+                        <Table>
+                            <TableBody>
+                                <TableRow>
+                                    <TableCell>
+                                        <CustomTextField register={register} name="portfolio.skill" label=""/>
+                                    </TableCell>
+                                </TableRow>
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+                </Grid>
+                <Grid item xs={12} style={{textAlign: 'left', marginBottom: 24}}>
                     <TableContainer component={Paper} variant="outlined">
                         <Typography variant="h6"
                                     style={{paddingLeft: 10, backgroundColor: '#081328', color: 'whitesmoke'}}>학 력 사
@@ -217,7 +229,6 @@ const Template1 = () => {
                     </TableContainer>
                 </Grid>
                 <Grid item xs={12} style={{textAlign: 'left', marginBottom: 24}}>
-                    {/*<Paper variant="outlined"></Paper>*/}
                     <TableContainer component={Paper} variant="outlined">
                         <Typography variant="h6"
                                     style={{paddingLeft: 10, backgroundColor: '#081328', color: 'whitesmoke'}}>경 력 사
@@ -271,7 +282,6 @@ const Template1 = () => {
                         <Typography variant="h6"
                                     style={{paddingLeft: 10, backgroundColor: '#081328', color: 'whitesmoke'}}>자 격 사
                             항</Typography>
-                        {/**/}
                         <Table>
                             <TableHead>
                                 <TableRow>
@@ -308,31 +318,6 @@ const Template1 = () => {
                                 </TableRow>
                             </TableBody>
                         </Table>
-                    </TableContainer>
-                </Grid>
-                <Grid item xs={5} style={{textAlign: 'left', marginBottom: 24}}>
-                    <TableContainer component={Paper} variant="outlined">
-                        <Typography variant="h6"
-                                    style={{paddingLeft: 10, backgroundColor: '#081328', color: 'whitesmoke'}}>병 역 사
-                            항</Typography>
-                        {/**/}
-                        <FormControl component="fieldset" style={{margin: 20}}>
-                            <RadioGroup row name="militaryStatus" defaultValue="init">
-                                <FormControlLabel value="fulfilled" control={<Radio color="primary"/>} label="군필"/>
-                                <FormControlLabel value="unfulfilled" control={<Radio color="primary"/>} label="미필"/>
-                                <FormControlLabel value="Exempted" control={<Radio color="primary"/>} label="면제"/>
-                                <FormControlLabel value="etc" control={<Radio color="primary"/>} label="기타"/>
-                            </RadioGroup>
-                        </FormControl>
-                    </TableContainer>
-                </Grid>
-                <Grid item xs={1}></Grid>
-                <Grid item xs={6} style={{textAlign: 'left', marginBottom: 24}}>
-                    <TableContainer component={Paper} variant="outlined" style={{height: 116}}>
-                        <Typography variant="h6"
-                                    style={{paddingLeft: 10, backgroundColor: '#081328', color: 'whitesmoke'}}>기 타 사
-                            항</Typography>
-                        {/**/}
                     </TableContainer>
                 </Grid>
                 <Grid item xs={12}>
