@@ -55,7 +55,6 @@ const Template3Viewer = () =>{
         <Grid container justify="center" alignItems="center" style={{marginTop: '9%', textAlign: 'center'}}>
             <Grid item xs={12}>
                 <div>
-                    <input defaultValue="Y. S. Creator Design" style={{border: 'none', fontSize: 30, fontWeight: 600, textAlign: 'center'}} />
                     <Typography variant="h6" style={{fontSize: 30, fontWeight: 600, marginBottom: 30}}>Y. S. Creator Design</Typography>
                 </div>
             </Grid>

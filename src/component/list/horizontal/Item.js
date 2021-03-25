@@ -9,6 +9,7 @@ import {useHistory} from 'react-router-dom';
 import './horizontal.css';
 
 const Item = ({item}) => {
+<<<<<<< HEAD
 
     // const TEMPLATE_BASE_URL = 'http://api.appeal.icu/'+item.templateType+'/'+item.id;
     const TEMPLATE_BASE_URL = 'http://localhost:8080/'+item.templateType+'/'+item.id;
@@ -32,6 +33,9 @@ const Item = ({item}) => {
         console.log(err);
       });
     }
+=======
+  console.log(item);
+>>>>>>> 9a615a3a98a184f8edb27f007d2ff3e7d10a37a3
 
     return (
         <Grid item xs={4} className='horizontal-item-grid'>
