@@ -14,7 +14,7 @@ const Template = () => {
             <Route path="/template/t1"><Template1/></Route>
             <Route path="/template/t2"><Template2/></Route>
             <Route path="/template/t3"><Template3/></Route>
-            <Route path="/template/preview"><Preview/></Route>
+            <Route path="/templateone/"><Preview/></Route>
         </Switch>
     );
 }
