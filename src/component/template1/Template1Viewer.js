@@ -9,7 +9,6 @@ const Template1Viewer = ({tData}) =>{
     const { handleSubmit, register, errors } = useForm();
 
     const data = tData.data;
-    console.log(data);
 
     return (
             <Grid container direction="row" alignItems="center" justify="center"
