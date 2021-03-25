@@ -3,60 +3,19 @@ import { useForm } from 'react-hook-form';
 import image from '../../factory/images/min.png';
 import {Button, FormControl, FormControlLabel, Grid, Paper, Radio, RadioGroup, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography} from '@material-ui/core';
 import CustomTextField2 from "../template/CustomTextField2";
+import CustomTextField from "../template/CustomTextField";
 
-const Template1Viewer = () =>{
+const Template1Viewer = ({tData}) =>{
     const { handleSubmit, register, errors } = useForm();
-    console.log("t1asdfsdaf")
-    const data = {
-        name: '홍길동',
-        englishName: 'Hong Gil Dong',
-        birth: '2001-01-01',
-        phone: '010-1234-5678',
-        address: '충청도',
-        email: 'hongildong@gmail.com',
-        avatar: image,
-        highSchoolDate: '2002-01-01',
-        highSchoolName: '길동고등학교',
-        highSchoolMajor: '무과',
-        highSchoolGraduation: '졸업',
-        highSchoolScore: '4.0',
-        collegeDate: '2003-01-01',
-        collegeName: '길동대학교',
-        collegeMajor: '정치외교학과',
-        collegeGraduation: '졸업',
-        collegeScore: '4.5',
-        graduateSchoolDate: ' ',
-        graduateSchoolName: ' ',
-        graduateSchoolMajor: ' ',
-        graduateSchoolGraduation: ' ',
-        graduateSchoolScore: ' ',
-        career1Date: '2004-01-01',
-        career1Name: '관청',
-        career1Title: ' ',
-        career1Postion: ' ',
-        career2Date: ' ',
-        career2Name: ' ',
-        career2Title: ' ',
-        career2Postion: ' ',
-        certificate1Date: ' ',
-        certiificate1Title: ' ',
-        certiificate1Origin: ' ',
-        certificate2Date: ' ',
-        certiificate2Title: ' ',
-        certiificate2Origin: ' ',
-        militaryCheck: ' '
-    }
 
-
-    const onSubmit = (data) => {
-        console.log(data);
-    };
+    const data = tData.data;
+    console.log(data);
 
     return (
             <Grid container direction="row" alignItems="center" justify="center"
                   style={{marginTop: 102, textAlign: "center", paddingLeft: '15%', paddingRight: '15%'}}>
                 <Grid item xs={4}>
-                    <img width="75%" src={image}/>
+                    <img width="75%" src={data.portfolio.thumbnail}/>
                 </Grid>
                 <Grid container xs={8} style={{textAlign: 'left'}}>
                     <Grid item xs={5}>
@@ -100,6 +59,21 @@ const Template1Viewer = () =>{
                                 label={data.email} required={true}
                             />
                     </Grid>
+                </Grid>
+                <Grid item xs={12} style={{textAlign: 'left', marginBottom: 24}}>
+                    <TableContainer component={Paper} variant="outlined" style={{}}>
+                        <Typography variant="h6"
+                                    style={{paddingLeft: 10, backgroundColor: '#081328', color: 'whitesmoke'}}>기 술 사 항</Typography>
+                        <Table>
+                            <TableBody>
+                                <TableRow>
+                                    <TableCell>
+                                        <CustomTextField2 register={register} disabled="true" label={data.skill}/>
+                                    </TableCell>
+                                </TableRow>
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
                 </Grid>
                 <Grid item xs={12} style={{textAlign: 'left', marginBottom: 24}}>
                     <TableContainer component={Paper} variant="outlined">
@@ -257,27 +231,6 @@ const Template1Viewer = () =>{
                                 </TableRow>
                             </TableBody>
                         </Table>
-                    </TableContainer>
-                </Grid>
-                <Grid item xs={5} style={{textAlign: 'left', marginBottom: 24}}>
-                    <TableContainer component={Paper} variant="outlined">
-                        <Typography variant="h6" style={{paddingLeft: 10, backgroundColor: '#081328', color: 'whitesmoke'}}>병 역 사 항</Typography>
-
-                        <FormControl component="fieldset" style={{margin: 20}}>
-                            <RadioGroup row  name="military_status" defaultValue="init">
-                                <FormControlLabel value="fulfilled" control={<Radio color="primary" />} label="군필" />
-                                <FormControlLabel value="unfulfilled" control={<Radio color="primary" />} label="미필" />
-                                <FormControlLabel value="Exempted" control={<Radio color="primary" />} label="면제" />
-                                <FormControlLabel value="etc" control={<Radio color="primary" />} label="기타" />
-                            </RadioGroup>
-                        </FormControl>
-                    </TableContainer>
-                </Grid>
-                <Grid item xs={1}></Grid>
-                <Grid item xs={6} style={{textAlign: 'left', marginBottom: 24}}>
-                    <TableContainer component={Paper} variant="outlined" style={{height: 116}}>
-                        <Typography variant="h6" style={{paddingLeft: 10, backgroundColor: '#081328', color: 'whitesmoke'}}>기 타 사 항</Typography>
-
                     </TableContainer>
                 </Grid>
                 <Grid item xs={12}>

@@ -20,7 +20,6 @@ let LogIn = () =>{
       method: 'post',
       headers:{
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
       },
       url: TEMPLATE_BASE_URL,
       withCredentials: true,
@@ -28,16 +27,10 @@ let LogIn = () =>{
     })
     .then((res)=>{
       sessionStorage.setItem("user", data.email)
-      console.log("hello, world")
       history.push('/template');
     })
     .catch((err)=>{
-      console.log(err);
       alert("Error")
-      return
-        <div>
-          asdf
-        </div>
     });
 
   }

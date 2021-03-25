@@ -5,12 +5,33 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+import axios from 'axios';
+import {useHistory} from 'react-router-dom';
 import './vertical.css';
 
 const Item = ({item}) => {
 
+    // const TEMPLATE_BASE_URL = 'http://api.appeal.icu/'+item.templateType+'/'+item.id;
+    const TEMPLATE_BASE_URL = 'http://localhost:8080/'+item.templateType+'/'+item.id;
+    const history = useHistory();
+
     const handleClick = () =>{
-      console.log(item);
+      axios({
+        method: 'get',
+        withCredentials: true,
+        url: TEMPLATE_BASE_URL,
+      })
+      .then((res)=>{
+        history.push({
+          pathname: '/'+item.templateType+'/'+item.id,
+          state: {
+            data: res.data
+          }
+        })
+      })
+      .catch((err)=>{
+        console.log(err);
+      });
     }
     
     return (
