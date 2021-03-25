@@ -7,12 +7,15 @@ import CardContent from '@material-ui/core/CardContent';
 import './horizontal.css';
 
 const Item = ({item}) => {
-  console.log(item);
+
+    const handleClick = () =>{
+      console.log(item);
+    }
 
     return (
         <Grid item xs={4} className='horizontal-item-grid'>
             <Card style={{marginRight: 10, border: "none", boxShadow: "none"}}>
-                <CardActionArea style={{backgroundColor: "", border: "none"}}>
+                <CardActionArea onClick={handleClick} style={{backgroundColor: "", border: "none"}}>
                     <CardMedia image={item.thumbnail} style={{height: 200}} title="Contemplative Reptile"/>
                     <CardContent style={{paddingLeft: 10, paddingRight: 0, marginBottom: 10}}>
                         <Typography gutterBottom variant="body2" component="h2" noWrap='True'>

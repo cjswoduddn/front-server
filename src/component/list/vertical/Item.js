@@ -8,13 +8,16 @@ import Typography from '@material-ui/core/Typography';
 import './vertical.css';
 
 const Item = ({item}) => {
-    console.log(item)
 
+    const handleClick = () =>{
+      console.log(item);
+    }
+    
     return (
         <>
             <Grid item xs={4}>
                 <Card style={{marginRight: 10, border: "none", boxShadow: "none"}}>
-                    <CardActionArea style={{backgroundColor: "", border: "none"}}>
+                    <CardActionArea style={{backgroundColor: "", border: "none"}} onClick={handleClick}>
                         <CardMedia image={item.thumbnail} style={{height: 200}} title="Contemplative Reptile"/>
                         <CardContent style={{paddingLeft: 10, paddingRight: 0, marginBottom: 10}}>
                             <Typography gutterBottom variant="body2" component="h2" noWrap='True'>
